@@ -9,21 +9,39 @@
 /* Begin PBXBuildFile section */
 		62ED7A4125F038C300EEADFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A4025F038C300EEADFD /* AppDelegate.swift */; };
 		62ED7A4325F038C300EEADFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A4225F038C300EEADFD /* SceneDelegate.swift */; };
-		62ED7A4525F038C300EEADFD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A4425F038C300EEADFD /* ViewController.swift */; };
 		62ED7A4825F038C300EEADFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A4625F038C300EEADFD /* Main.storyboard */; };
 		62ED7A4A25F038C500EEADFD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A4925F038C500EEADFD /* Assets.xcassets */; };
 		62ED7A4D25F038C500EEADFD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A4B25F038C500EEADFD /* LaunchScreen.storyboard */; };
+		62ED7A5925F039CE00EEADFD /* EntryAuthenticationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A5725F039CE00EEADFD /* EntryAuthenticationViewController.swift */; };
+		62ED7A5A25F039CE00EEADFD /* EntryAuthenticationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A5825F039CE00EEADFD /* EntryAuthenticationViewController.xib */; };
+		62ED7A6125F039EC00EEADFD /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A5F25F039EC00EEADFD /* LoginViewController.swift */; };
+		62ED7A6225F039EC00EEADFD /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A6025F039EC00EEADFD /* LoginViewController.xib */; };
+		62ED7A6825F03A0000EEADFD /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A6625F03A0000EEADFD /* RegisterViewController.swift */; };
+		62ED7A6925F03A0000EEADFD /* RegisterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A6725F03A0000EEADFD /* RegisterViewController.xib */; };
+		62ED7A6F25F03A1F00EEADFD /* PhoneVerificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A6D25F03A1F00EEADFD /* PhoneVerificationViewController.swift */; };
+		62ED7A7025F03A1F00EEADFD /* PhoneVerificationViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A6E25F03A1F00EEADFD /* PhoneVerificationViewController.xib */; };
+		62ED7A7625F03A4100EEADFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A7425F03A4100EEADFD /* HomeViewController.swift */; };
+		62ED7A7725F03A4100EEADFD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A7525F03A4100EEADFD /* HomeViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		62ED7A3D25F038C300EEADFD /* Spaound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spaound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62ED7A4025F038C300EEADFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62ED7A4225F038C300EEADFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		62ED7A4425F038C300EEADFD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		62ED7A4725F038C300EEADFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		62ED7A4925F038C500EEADFD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		62ED7A4C25F038C500EEADFD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		62ED7A4E25F038C500EEADFD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		62ED7A5725F039CE00EEADFD /* EntryAuthenticationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryAuthenticationViewController.swift; sourceTree = "<group>"; };
+		62ED7A5825F039CE00EEADFD /* EntryAuthenticationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EntryAuthenticationViewController.xib; sourceTree = "<group>"; };
+		62ED7A5F25F039EC00EEADFD /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		62ED7A6025F039EC00EEADFD /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		62ED7A6625F03A0000EEADFD /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		62ED7A6725F03A0000EEADFD /* RegisterViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RegisterViewController.xib; sourceTree = "<group>"; };
+		62ED7A6D25F03A1F00EEADFD /* PhoneVerificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhoneVerificationViewController.swift; sourceTree = "<group>"; };
+		62ED7A6E25F03A1F00EEADFD /* PhoneVerificationViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneVerificationViewController.xib; sourceTree = "<group>"; };
+		62ED7A7425F03A4100EEADFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		62ED7A7525F03A4100EEADFD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +74,96 @@
 		62ED7A3F25F038C300EEADFD /* Spaound */ = {
 			isa = PBXGroup;
 			children = (
-				62ED7A4025F038C300EEADFD /* AppDelegate.swift */,
-				62ED7A4225F038C300EEADFD /* SceneDelegate.swift */,
-				62ED7A4425F038C300EEADFD /* ViewController.swift */,
-				62ED7A4625F038C300EEADFD /* Main.storyboard */,
-				62ED7A4925F038C500EEADFD /* Assets.xcassets */,
-				62ED7A4B25F038C500EEADFD /* LaunchScreen.storyboard */,
+				62ED7A5525F039AE00EEADFD /* Controllers */,
+				62ED7A7B25F03A5D00EEADFD /* Views */,
+				62ED7A7A25F03A4700EEADFD /* Resources */,
 				62ED7A4E25F038C500EEADFD /* Info.plist */,
 			);
 			path = Spaound;
+			sourceTree = "<group>";
+		};
+		62ED7A5525F039AE00EEADFD /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				62ED7A5625F039BD00EEADFD /* Entry Authentication */,
+				62ED7A5E25F039DD00EEADFD /* Login */,
+				62ED7A6525F039F000EEADFD /* Register */,
+				62ED7A6C25F03A0500EEADFD /* Phone Verification */,
+				62ED7A7325F03A2900EEADFD /* Home */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		62ED7A5625F039BD00EEADFD /* Entry Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				62ED7A5725F039CE00EEADFD /* EntryAuthenticationViewController.swift */,
+				62ED7A5825F039CE00EEADFD /* EntryAuthenticationViewController.xib */,
+			);
+			path = "Entry Authentication";
+			sourceTree = "<group>";
+		};
+		62ED7A5E25F039DD00EEADFD /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				62ED7A5F25F039EC00EEADFD /* LoginViewController.swift */,
+				62ED7A6025F039EC00EEADFD /* LoginViewController.xib */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
+		62ED7A6525F039F000EEADFD /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				62ED7A6625F03A0000EEADFD /* RegisterViewController.swift */,
+				62ED7A6725F03A0000EEADFD /* RegisterViewController.xib */,
+			);
+			name = Register;
+			sourceTree = "<group>";
+		};
+		62ED7A6C25F03A0500EEADFD /* Phone Verification */ = {
+			isa = PBXGroup;
+			children = (
+				62ED7A6D25F03A1F00EEADFD /* PhoneVerificationViewController.swift */,
+				62ED7A6E25F03A1F00EEADFD /* PhoneVerificationViewController.xib */,
+			);
+			path = "Phone Verification";
+			sourceTree = "<group>";
+		};
+		62ED7A7325F03A2900EEADFD /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				62ED7A7425F03A4100EEADFD /* HomeViewController.swift */,
+				62ED7A7525F03A4100EEADFD /* HomeViewController.xib */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		62ED7A7A25F03A4700EEADFD /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				62ED7A4025F038C300EEADFD /* AppDelegate.swift */,
+				62ED7A4225F038C300EEADFD /* SceneDelegate.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		62ED7A7B25F03A5D00EEADFD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				62ED7A7C25F03A6C00EEADFD /* Storyboards */,
+				62ED7A4925F038C500EEADFD /* Assets.xcassets */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		62ED7A7C25F03A6C00EEADFD /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				62ED7A4625F038C300EEADFD /* Main.storyboard */,
+				62ED7A4B25F038C500EEADFD /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -124,9 +223,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62ED7A6225F039EC00EEADFD /* LoginViewController.xib in Resources */,
 				62ED7A4D25F038C500EEADFD /* LaunchScreen.storyboard in Resources */,
 				62ED7A4A25F038C500EEADFD /* Assets.xcassets in Resources */,
+				62ED7A7025F03A1F00EEADFD /* PhoneVerificationViewController.xib in Resources */,
 				62ED7A4825F038C300EEADFD /* Main.storyboard in Resources */,
+				62ED7A5A25F039CE00EEADFD /* EntryAuthenticationViewController.xib in Resources */,
+				62ED7A6925F03A0000EEADFD /* RegisterViewController.xib in Resources */,
+				62ED7A7725F03A4100EEADFD /* HomeViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,9 +241,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				62ED7A4525F038C300EEADFD /* ViewController.swift in Sources */,
+				62ED7A6125F039EC00EEADFD /* LoginViewController.swift in Sources */,
+				62ED7A6825F03A0000EEADFD /* RegisterViewController.swift in Sources */,
 				62ED7A4125F038C300EEADFD /* AppDelegate.swift in Sources */,
 				62ED7A4325F038C300EEADFD /* SceneDelegate.swift in Sources */,
+				62ED7A6F25F03A1F00EEADFD /* PhoneVerificationViewController.swift in Sources */,
+				62ED7A7625F03A4100EEADFD /* HomeViewController.swift in Sources */,
+				62ED7A5925F039CE00EEADFD /* EntryAuthenticationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -288,6 +396,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Spaound/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -306,6 +415,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Spaound/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
