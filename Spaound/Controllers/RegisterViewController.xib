@@ -13,11 +13,11 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Spaound" customModuleProvider="target">
             <connections>
                 <outlet property="continueButton" destination="rbA-jr-AZe" id="O7v-3I-oMD"/>
-                <outlet property="emailTextField" destination="PUD-hT-TZf" id="7kb-BE-co2"/>
-                <outlet property="firstNameTextField" destination="K4o-qU-jeW" id="joK-D2-vO0"/>
-                <outlet property="lastNameTextField" destination="PUD-hT-TZf" id="2vr-aO-VZB"/>
-                <outlet property="passwordTextField" destination="7fF-rN-8Ab" id="Lyc-sc-Av3"/>
-                <outlet property="phoneNumberTextField" destination="2zM-gH-3OC" id="TfV-LU-FxI"/>
+                <outlet property="emailTextField" destination="2zM-gH-3OC" id="u1Y-qN-vJ3"/>
+                <outlet property="firstNameTextField" destination="K4o-qU-jeW" id="L5R-cL-6C0"/>
+                <outlet property="lastNameTextField" destination="PUD-hT-TZf" id="1eZ-0p-sWS"/>
+                <outlet property="passwordTextField" destination="DyF-If-9ep" id="JMq-Pe-hqs"/>
+                <outlet property="phoneNumberTextField" destination="7fF-rN-8Ab" id="Omx-te-MYv"/>
                 <outlet property="view" destination="ZOe-X2-UHf" id="f19-Oz-jbJ"/>
             </connections>
         </placeholder>
@@ -45,7 +45,7 @@
                         <constraint firstAttribute="height" constant="50" id="MPe-eI-ERg"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="family-name"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
                 </textField>
                 <textField opaque="NO" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2zM-gH-3OC">
                     <rect key="frame" x="16" y="341.5" width="382" height="50"/>
@@ -54,7 +54,7 @@
                         <constraint firstAttribute="height" constant="50" id="abO-FL-HYW"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
-                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
                 </textField>
                 <textField opaque="NO" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone +20" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7fF-rN-8Ab">
                     <rect key="frame" x="16" y="399.5" width="382" height="50"/>
@@ -107,12 +107,14 @@
                         <constraint firstAttribute="height" constant="50" id="qEl-DJ-9ZK"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
-                    <textInputTraits key="textInputTraits" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" returnKeyType="next" textContentType="name"/>
                 </textField>
-                <textField opaque="NO" alpha="0.30000001192092896" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DyF-If-9ep">
-                    <rect key="frame" x="16" y="457" width="382" height="50"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <textField opaque="NO" alpha="0.30000001192092896" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DyF-If-9ep">
+                    <rect key="frame" x="16" y="457.5" width="382" height="50"/>
                     <color key="backgroundColor" red="0.91517548309999996" green="0.91839227349999997" blue="0.92804264479999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="pcx-1f-hZJ"/>
+                    </constraints>
                     <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="17"/>
                     <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                 </textField>
@@ -123,6 +125,7 @@
                 <constraint firstItem="PUD-hT-TZf" firstAttribute="centerX" secondItem="ZOe-X2-UHf" secondAttribute="centerX" id="17L-ic-abD"/>
                 <constraint firstItem="0rj-gq-d9T" firstAttribute="trailing" secondItem="Oyo-BL-mNS" secondAttribute="trailing" constant="32" id="3eO-iV-vlB"/>
                 <constraint firstItem="0rj-gq-d9T" firstAttribute="trailing" secondItem="7fF-rN-8Ab" secondAttribute="trailing" constant="16" id="6x6-zy-QcJ"/>
+                <constraint firstItem="DyF-If-9ep" firstAttribute="leading" secondItem="0rj-gq-d9T" secondAttribute="leading" constant="16" id="7ws-SB-J1G"/>
                 <constraint firstItem="Oyo-BL-mNS" firstAttribute="top" secondItem="STY-FC-X1g" secondAttribute="bottom" constant="16" id="8K2-Mw-DUK"/>
                 <constraint firstItem="rbA-jr-AZe" firstAttribute="leading" secondItem="0rj-gq-d9T" secondAttribute="leading" constant="32" id="AjD-OE-U1E"/>
                 <constraint firstItem="Oyo-BL-mNS" firstAttribute="leading" secondItem="0rj-gq-d9T" secondAttribute="leading" constant="32" id="BzU-oA-siZ"/>
@@ -134,6 +137,7 @@
                 <constraint firstItem="K4o-qU-jeW" firstAttribute="leading" secondItem="0rj-gq-d9T" secondAttribute="leading" constant="16" id="Lr6-Oh-TXc"/>
                 <constraint firstItem="STY-FC-X1g" firstAttribute="top" secondItem="0rj-gq-d9T" secondAttribute="top" constant="45" id="Omo-cT-bhj"/>
                 <constraint firstItem="vEZ-hq-lyX" firstAttribute="top" secondItem="0rj-gq-d9T" secondAttribute="top" constant="11" id="Pw4-Pc-uCA"/>
+                <constraint firstItem="DyF-If-9ep" firstAttribute="top" secondItem="7fF-rN-8Ab" secondAttribute="bottom" constant="8" id="SDf-ND-ER8"/>
                 <constraint firstItem="PUD-hT-TZf" firstAttribute="top" secondItem="K4o-qU-jeW" secondAttribute="bottom" constant="8" id="UJm-ao-BKd"/>
                 <constraint firstItem="0rj-gq-d9T" firstAttribute="trailing" secondItem="STY-FC-X1g" secondAttribute="trailing" constant="265" id="UdW-0m-dS7"/>
                 <constraint firstItem="2zM-gH-3OC" firstAttribute="leading" secondItem="0rj-gq-d9T" secondAttribute="leading" constant="16" id="Y05-V1-PUF"/>
@@ -142,10 +146,12 @@
                 <constraint firstItem="vEZ-hq-lyX" firstAttribute="leading" secondItem="0rj-gq-d9T" secondAttribute="leading" constant="32" id="c2S-Mk-BR0"/>
                 <constraint firstItem="7fF-rN-8Ab" firstAttribute="top" secondItem="2zM-gH-3OC" secondAttribute="bottom" constant="8" id="ewA-wc-owD"/>
                 <constraint firstItem="0rj-gq-d9T" firstAttribute="trailing" secondItem="rbA-jr-AZe" secondAttribute="trailing" constant="32" id="fY6-ba-saj"/>
+                <constraint firstItem="DyF-If-9ep" firstAttribute="centerX" secondItem="ZOe-X2-UHf" secondAttribute="centerX" id="iyV-gP-jLn"/>
                 <constraint firstItem="7fF-rN-8Ab" firstAttribute="leading" secondItem="0rj-gq-d9T" secondAttribute="leading" constant="16" id="jnj-6r-6kn"/>
                 <constraint firstItem="PUD-hT-TZf" firstAttribute="leading" secondItem="0rj-gq-d9T" secondAttribute="leading" constant="16" id="mgy-HW-BCN"/>
                 <constraint firstItem="0rj-gq-d9T" firstAttribute="bottom" secondItem="rbA-jr-AZe" secondAttribute="bottom" constant="32" id="pWb-ef-SFa"/>
                 <constraint firstItem="2zM-gH-3OC" firstAttribute="top" secondItem="PUD-hT-TZf" secondAttribute="bottom" constant="8" id="pXn-xU-Cug"/>
+                <constraint firstItem="0rj-gq-d9T" firstAttribute="trailing" secondItem="DyF-If-9ep" secondAttribute="trailing" constant="16" id="rNb-g4-5OO"/>
                 <constraint firstItem="K4o-qU-jeW" firstAttribute="centerX" secondItem="ZOe-X2-UHf" secondAttribute="centerX" id="soz-8R-YI9"/>
             </constraints>
             <point key="canvasLocation" x="94" y="102"/>

@@ -1,5 +1,6 @@
 
 import UIKit
+import FirebaseAuth
 
 class RegisterViewController: UIViewController {
 
@@ -44,6 +45,14 @@ class RegisterViewController: UIViewController {
         }
             //firebase login
             
+        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] authResult,error in
+            guard let result = authResult, error == nil else {
+                print("error creating user")
+                return
+            }
+            let user = result.user
+            print("created user \(user)")
+        })
         let vc = PhoneVerificationViewController()
         self.navigationController?.pushViewController(vc, animated: true)
     }
