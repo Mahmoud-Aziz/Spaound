@@ -1,29 +1,58 @@
-//
-//  LoginViewController.swift
-//  Spaound
-//
-//  Created by Mahmoud Aziz on 03/03/2021.
-//
 
 import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet private var emailTextField:UITextField!
+    @IBOutlet private var passwordTextField:UITextField! 
+    @IBOutlet private var loginButton:UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
 
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction private func loginButtonTapped(_ sender:UIButton) {
+        
+        emailTextField.resignFirstResponder()
+        passwordTextField.resignFirstResponder()
+        
+        guard let email = emailTextField.text,
+              let password = passwordTextField.text,
+              !email.isEmpty, !password.isEmpty, password.count >= 6 else {
+            
+            alertUserLoginError()
+            return
+        }
+            //firebase login
+            
+        let vc = HomeViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func alertUserLoginError() {
+        
+        let alert = UIAlertController(title: "Warning", message: "Please complete all required info.", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
     }
 
 
-    /*
-    // MARK: - Navigation
+}
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension LoginViewController:UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == emailTextField {
+            passwordTextField.becomeFirstResponder()
+        } else if textField == passwordTextField {
+            loginButtonTapped(loginButton)
+        }
+        return true
     }
-    */
-
+    
 }

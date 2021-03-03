@@ -1,9 +1,3 @@
-//
-//  EntryAuthenticationViewController.swift
-//  Spaound
-//
-//  Created by Mahmoud Aziz on 03/03/2021.
-//
 
 import UIKit
 
@@ -12,18 +6,20 @@ class EntryAuthenticationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+    }
+    
+    @IBAction private func loginButtonTapped(_ sender:UIButton) {
+        
+        let vc = LoginViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction private func registerButtonTapped(_ sender:UIButton) {
+        
+        let vc = RegisterViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
