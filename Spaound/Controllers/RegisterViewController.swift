@@ -32,34 +32,46 @@ class RegisterViewController: UIViewController {
         lastNameTextField.resignFirstResponder()
         phoneNumberTextField.resignFirstResponder()
         
+        //can't guard phone number is not empty cause it's int
         guard let firstName = firstNameTextField.text,
               let lastName = lastNameTextField.text,
               let email = emailTextField.text,
-              let phone = phoneNumberTextField.text,
+              let phone = Int(phoneNumberTextField.text!),
               let password = passwordTextField.text,
               !email.isEmpty,!password.isEmpty,
-              !firstName.isEmpty,!lastName.isEmpty, !phone.isEmpty,password.count >= 6 else {
+              !firstName.isEmpty,!lastName.isEmpty,
+              password.count >= 6 else {
             
             alertUserRegisterError()
             return
         }
             //firebase login
             
-        FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: { [weak self] authResult,error in
-            guard let result = authResult, error == nil else {
-                print("error creating user")
+        DatabaseManager.shared.userExists(with: email, completion: {[weak self] exists in
+            guard !exists else {
+                //user already exists
+                self?.alertUserRegisterError(with: "User already exist, Try to log In instead.")
                 return
             }
-            let user = result.user
-            print("created user \(user)")
+            
+            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: {[weak self] authResult,error in
+                guard authResult != nil, error == nil else {
+                    print("error creating user")
+                    return
+                }
+                
+                DatabaseManager.shared.insertUser(with: SpaoundUser(firstName: firstName, lastName: lastName, emailAddress: email, phoneNumber: phone))
+                
+                let vc = PhoneVerificationViewController()
+                self?.navigationController?.pushViewController(vc, animated: true)
+            })
         })
-        let vc = PhoneVerificationViewController()
-        self.navigationController?.pushViewController(vc, animated: true)
+ 
     }
     
-    func alertUserRegisterError() {
+    func alertUserRegisterError(with message:String = "Please complete all required info.") {
         
-        let alert = UIAlertController(title: "Warning", message: "Please complete all required info.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)

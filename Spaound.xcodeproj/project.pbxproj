@@ -24,6 +24,7 @@
 		62ED7A7625F03A4100EEADFD /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A7425F03A4100EEADFD /* HomeViewController.swift */; };
 		62ED7A7725F03A4100EEADFD /* HomeViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A7525F03A4100EEADFD /* HomeViewController.xib */; };
 		62ED7A9F25F051A900EEADFD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A9E25F051A900EEADFD /* GoogleService-Info.plist */; };
+		62ED7AB625F05B5100EEADFD /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7AB525F05B5100EEADFD /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +46,7 @@
 		62ED7A7425F03A4100EEADFD /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		62ED7A7525F03A4100EEADFD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		62ED7A9E25F051A900EEADFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		62ED7AB525F05B5100EEADFD /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 		6C4181FE1850D10296DC489F /* Pods_Spaound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spaound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5E7443E0DC4A8B7E5D75BB /* Pods-Spaound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaound.debug.xcconfig"; path = "Target Support Files/Pods-Spaound/Pods-Spaound.debug.xcconfig"; sourceTree = "<group>"; };
 		E7F5151D60687B3A9A981045 /* Pods-Spaound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaound.release.xcconfig"; path = "Target Support Files/Pods-Spaound/Pods-Spaound.release.xcconfig"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				62ED7A4025F038C300EEADFD /* AppDelegate.swift */,
 				62ED7A4225F038C300EEADFD /* SceneDelegate.swift */,
+				62ED7AB525F05B5100EEADFD /* DatabaseManager.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -313,6 +316,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62ED7AB625F05B5100EEADFD /* DatabaseManager.swift in Sources */,
 				62ED7A6125F039EC00EEADFD /* LoginViewController.swift in Sources */,
 				62ED7A6825F03A0000EEADFD /* RegisterViewController.swift in Sources */,
 				62ED7A4125F038C300EEADFD /* AppDelegate.swift in Sources */,
