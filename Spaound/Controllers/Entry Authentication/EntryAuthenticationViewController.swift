@@ -5,7 +5,8 @@ class EntryAuthenticationViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+      
     }
     
     @IBAction private func loginButtonTapped(_ sender:UIButton) {

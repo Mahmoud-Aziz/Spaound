@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -15,6 +14,7 @@
                 <outlet property="emailTextField" destination="Gd8-lA-VbI" id="ZYA-ge-vnl"/>
                 <outlet property="loginButton" destination="QZW-h6-S0K" id="M4b-r1-e47"/>
                 <outlet property="passwordTextField" destination="GrP-5G-H8c" id="rSu-OK-bUE"/>
+                <outlet property="resetPassword" destination="cB1-Xf-a7a" id="SJz-Sc-Acv"/>
                 <outlet property="view" destination="v2b-Ho-N97" id="bqt-mE-9xv"/>
             </connections>
         </placeholder>
@@ -88,39 +88,16 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1BA-gD-3sh">
-                    <rect key="frame" x="32" y="55" width="49" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="49" id="RHC-HZ-i7V"/>
-                        <constraint firstAttribute="height" constant="21" id="jAh-Yg-IiA"/>
-                    </constraints>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal">
-                        <attributedString key="attributedTitle">
-                            <fragment content="Back">
-                                <attributes>
-                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <font key="NSFont" size="14" name="Avenir-Heavy"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                        <imageReference key="image" image="arrow.left" catalog="system" symbolScale="small"/>
-                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
-                    </state>
-                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="SUa-kc-CJK"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="SUa-kc-CJK" firstAttribute="trailing" secondItem="QZW-h6-S0K" secondAttribute="trailing" constant="32" id="27g-Fd-P6K"/>
                 <constraint firstItem="SUa-kc-CJK" firstAttribute="trailing" secondItem="gqD-CX-OV2" secondAttribute="trailing" constant="278" id="2A9-hY-OgL"/>
-                <constraint firstItem="1BA-gD-3sh" firstAttribute="leading" secondItem="SUa-kc-CJK" secondAttribute="leading" constant="32" id="38c-eD-eF4"/>
                 <constraint firstItem="SUa-kc-CJK" firstAttribute="trailing" secondItem="Gd8-lA-VbI" secondAttribute="trailing" constant="16" id="4DG-yz-S1G"/>
                 <constraint firstItem="GrP-5G-H8c" firstAttribute="top" secondItem="Gd8-lA-VbI" secondAttribute="bottom" constant="8" id="72f-Bc-3pV"/>
                 <constraint firstItem="gqD-CX-OV2" firstAttribute="leading" secondItem="SUa-kc-CJK" secondAttribute="leading" constant="32" id="7JL-2I-biC"/>
                 <constraint firstItem="Gd8-lA-VbI" firstAttribute="centerX" secondItem="v2b-Ho-N97" secondAttribute="centerX" id="AvP-xS-Yty"/>
-                <constraint firstItem="1BA-gD-3sh" firstAttribute="top" secondItem="SUa-kc-CJK" secondAttribute="top" constant="11" id="BFe-dA-8FZ"/>
                 <constraint firstItem="SUa-kc-CJK" firstAttribute="trailing" secondItem="GrP-5G-H8c" secondAttribute="trailing" constant="16" id="UOg-ZZ-Z0u"/>
                 <constraint firstItem="cB1-Xf-a7a" firstAttribute="centerX" secondItem="v2b-Ho-N97" secondAttribute="centerX" id="Up4-YV-wfD"/>
                 <constraint firstItem="Gd8-lA-VbI" firstAttribute="leading" secondItem="SUa-kc-CJK" secondAttribute="leading" constant="16" id="VMl-Rq-wg7"/>
@@ -139,7 +116,6 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
