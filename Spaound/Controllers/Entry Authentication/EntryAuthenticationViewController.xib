@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EntryAuthenticationViewController" customModule="Spaound" customModuleProvider="target">
             <connections>
+                <outlet property="loginButton" destination="0Wm-ie-HUZ" id="Fnm-V5-H8J"/>
                 <outlet property="view" destination="VWe-dK-cpe" id="jke-tZ-5ZF"/>
             </connections>
         </placeholder>

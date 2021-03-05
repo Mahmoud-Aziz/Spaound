@@ -13,7 +13,8 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-     
+        validateAuth()
+
     }
 
     override func viewDidAppear(_ animated: Bool) {
@@ -21,7 +22,6 @@ class HomeViewController: UIViewController {
         
         self.navigationItem.setHidesBackButton(true, animated: true)
 
-        validateAuth()
     }
     
     private func validateAuth() {

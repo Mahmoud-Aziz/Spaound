@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -21,27 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v3Q-c8-AZc">
-                    <rect key="frame" x="32" y="55" width="49" height="21"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="21" id="6KT-sJ-VCl"/>
-                        <constraint firstAttribute="width" constant="49" id="WId-Sm-rO0"/>
-                    </constraints>
-                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <state key="normal">
-                        <attributedString key="attributedTitle">
-                            <fragment content="Back">
-                                <attributes>
-                                    <color key="NSColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <font key="NSFont" size="14" name="Avenir-Heavy"/>
-                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
-                                </attributes>
-                            </fragment>
-                        </attributedString>
-                        <imageReference key="image" image="arrow.left" catalog="system" symbolScale="small"/>
-                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="bold"/>
-                    </state>
-                </button>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Verify Phone" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xQk-mi-BMg">
                     <rect key="frame" x="32" y="89" width="182" height="44"/>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="32"/>
@@ -119,10 +97,8 @@
                 <constraint firstItem="95E-qb-owP" firstAttribute="top" secondItem="YVR-Ol-Tu3" secondAttribute="bottom" constant="16" id="Kld-Lu-uot"/>
                 <constraint firstItem="dnY-8u-yOx" firstAttribute="trailing" secondItem="Pbg-2D-r3x" secondAttribute="trailing" constant="169.33000000000001" id="LC1-39-ubt"/>
                 <constraint firstItem="bqH-ob-Yja" firstAttribute="top" secondItem="xQk-mi-BMg" secondAttribute="bottom" constant="16" id="PpO-OH-T7K"/>
-                <constraint firstItem="v3Q-c8-AZc" firstAttribute="leading" secondItem="dnY-8u-yOx" secondAttribute="leading" constant="32" id="SbQ-za-C4U"/>
                 <constraint firstItem="dnY-8u-yOx" firstAttribute="trailing" secondItem="HUk-2K-e7Z" secondAttribute="trailing" constant="32" id="U9g-Ba-Ate"/>
                 <constraint firstItem="YVR-Ol-Tu3" firstAttribute="top" secondItem="bqH-ob-Yja" secondAttribute="bottom" constant="30" id="cLE-NN-0sf"/>
-                <constraint firstItem="v3Q-c8-AZc" firstAttribute="top" secondItem="dnY-8u-yOx" secondAttribute="top" constant="11" id="crT-ib-XdZ"/>
                 <constraint firstItem="xQk-mi-BMg" firstAttribute="top" secondItem="dnY-8u-yOx" secondAttribute="top" constant="45" id="iFC-hw-g3k"/>
                 <constraint firstItem="dnY-8u-yOx" firstAttribute="trailing" secondItem="xQk-mi-BMg" secondAttribute="trailing" constant="200" id="lbs-mI-LgL"/>
                 <constraint firstItem="95E-qb-owP" firstAttribute="centerX" secondItem="zp2-su-DFH" secondAttribute="centerX" id="lyH-GM-eFb"/>
@@ -136,7 +112,6 @@
         </view>
     </objects>
     <resources>
-        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

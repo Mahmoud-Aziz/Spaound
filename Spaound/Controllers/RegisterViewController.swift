@@ -140,5 +140,14 @@ extension RegisterViewController:UITextFieldDelegate {
         return true
     }
     
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (phoneNumberTextField.text?.rangeOfCharacter(from: NSCharacterSet.decimalDigits)) != nil {
+            return true
+        } else {
+            return false
+        }
+    }
+    
 }
 

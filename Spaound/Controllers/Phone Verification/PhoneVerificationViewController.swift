@@ -27,6 +27,12 @@ class PhoneVerificationViewController: UIViewController {
         
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.navigationItem.setHidesBackButton(true, animated: true)
+    }
+    
     func alertCodeError(with message:String = "Please enter the code that was sent to your mobile number.") {
         let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
         let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -60,6 +66,17 @@ class PhoneVerificationViewController: UIViewController {
             self.navigationController?.pushViewController(vc, animated: true)
             
         })
+    }
+}
+
+extension PhoneVerificationViewController:UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (sentCodeTextField.text?.rangeOfCharacter(from: NSCharacterSet.decimalDigits)) != nil {
+            return true
+        } else {
+            return false
+        }
     }
 }
 
