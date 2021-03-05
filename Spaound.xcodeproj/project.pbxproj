@@ -47,6 +47,7 @@
 		62ED7A7525F03A4100EEADFD /* HomeViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeViewController.xib; sourceTree = "<group>"; };
 		62ED7A9E25F051A900EEADFD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62ED7AB525F05B5100EEADFD /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
+		62ED7ACC25F1762900EEADFD /* Spaound.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Spaound.entitlements; sourceTree = "<group>"; };
 		6C4181FE1850D10296DC489F /* Pods_Spaound.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Spaound.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5E7443E0DC4A8B7E5D75BB /* Pods-Spaound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaound.debug.xcconfig"; path = "Target Support Files/Pods-Spaound/Pods-Spaound.debug.xcconfig"; sourceTree = "<group>"; };
 		E7F5151D60687B3A9A981045 /* Pods-Spaound.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaound.release.xcconfig"; path = "Target Support Files/Pods-Spaound/Pods-Spaound.release.xcconfig"; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 		62ED7A3F25F038C300EEADFD /* Spaound */ = {
 			isa = PBXGroup;
 			children = (
+				62ED7ACC25F1762900EEADFD /* Spaound.entitlements */,
 				62ED7A5525F039AE00EEADFD /* Controllers */,
 				62ED7A7B25F03A5D00EEADFD /* Views */,
 				62ED7A7A25F03A4700EEADFD /* Resources */,
@@ -471,7 +473,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Spaound/Spaound.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SKQ6J4JJN6;
 				INFOPLIST_FILE = Spaound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -491,7 +495,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Spaound/Spaound.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = SKQ6J4JJN6;
 				INFOPLIST_FILE = Spaound/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (

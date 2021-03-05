@@ -12,6 +12,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhoneVerificationViewController" customModule="Spaound" customModuleProvider="target">
             <connections>
+                <outlet property="sentCodeTextField" destination="eWm-Vd-zYs" id="G5c-St-4ot"/>
                 <outlet property="view" destination="zp2-su-DFH" id="my7-BA-QvU"/>
             </connections>
         </placeholder>
@@ -63,30 +64,15 @@
                     <state key="normal" title="Create your account">
                         <color key="titleColor" red="0.91517548309999996" green="0.91839227349999997" blue="0.92804264479999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
+                    <connections>
+                        <action selector="createYourAccountButtonTapped:" destination="-1" eventType="touchUpInside" id="VFj-Ym-qZh"/>
+                    </connections>
                 </button>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YVR-Ol-Tu3">
                     <rect key="frame" x="64" y="225.5" width="286" height="50"/>
                     <subviews>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="-" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vVV-tP-P6C">
-                            <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
-                            <color key="backgroundColor" red="0.97261267900000004" green="0.97638136149999999" blue="0.98039346930000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="-" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a1i-6G-81f">
-                            <rect key="frame" x="74" y="0.0" width="64" height="50"/>
-                            <color key="backgroundColor" red="0.97261267900000004" green="0.97638136149999999" blue="0.98039346930000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
-                        </textField>
                         <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="-" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="eWm-Vd-zYs">
-                            <rect key="frame" x="148" y="0.0" width="64" height="50"/>
-                            <color key="backgroundColor" red="0.97261267900000004" green="0.97638136149999999" blue="0.98039346930000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>
-                        </textField>
-                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="-" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="yyE-EE-ZSH">
-                            <rect key="frame" x="222" y="0.0" width="64" height="50"/>
+                            <rect key="frame" x="0.0" y="0.0" width="286" height="50"/>
                             <color key="backgroundColor" red="0.97261267900000004" green="0.97638136149999999" blue="0.98039346930000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="numberPad" textContentType="one-time-code"/>

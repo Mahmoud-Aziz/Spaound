@@ -11,7 +11,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet private var passwordTextField:UITextField!
     @IBOutlet private var continueButton:UIButton! 
     
-    
+    var currentVerificationId = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +48,7 @@ class RegisterViewController: UIViewController {
         guard let firstName = firstNameTextField.text,
               let lastName = lastNameTextField.text,
               let email = emailTextField.text,
-              let phone = Int(phoneNumberTextField.text!),
+              let userPhoneNumber = Int(phoneNumberTextField.text!),
               let password = passwordTextField.text,
               !email.isEmpty,!password.isEmpty,
               !firstName.isEmpty,!lastName.isEmpty,
@@ -60,25 +60,45 @@ class RegisterViewController: UIViewController {
             //firebase login
             
         DatabaseManager.shared.userExists(with: email, completion: {[weak self] exists in
+            
             guard !exists else {
                 //user already exists
                 self?.alertUserRegisterError(with: "User already exist, Try to log In instead.")
                 return
             }
             
-            FirebaseAuth.Auth.auth().createUser(withEmail: email, password: password, completion: {[weak self] authResult,error in
-                guard authResult != nil, error == nil else {
-                    print("error creating user")
-                    return
-                }
+            
+         Auth.auth().languageCode = "en";
+       
+            let phoneNumber = self?.phoneNumberTextField.text
+         
+            PhoneAuthProvider.provider().verifyPhoneNumber(phoneNumber!, uiDelegate: nil, completion: { [self]verficationID, error in
+             
+            print("code sent")
+            
+             guard let verificationID = verficationID, error == nil else {
+                 print(error?.localizedDescription)
+                 return
+             }
+             
+             self?.currentVerificationId = verificationID
+             
+                UserDefaults.standard.set(verificationID, forKey: "authVerificationID")
+
+
+            let vc = PhoneVerificationViewController()
                 
-                DatabaseManager.shared.insertUser(with: SpaoundUser(firstName: firstName, lastName: lastName, emailAddress: email, phoneNumber: phone))
+                vc.emailFromRegister = email
+                vc.firstNameFromRegister = firstName
+                vc.lastNameFromRegister = lastName
+                vc.passwordFromRegister = password
+                vc.phoneFromRegister = userPhoneNumber
                 
-                let vc = PhoneVerificationViewController()
-                self?.navigationController?.pushViewController(vc, animated: true)
-            })
+            self?.navigationController?.pushViewController(vc, animated: true)
+          
         })
  
+    })
     }
     
     func alertUserRegisterError(with message:String = "Please complete all required info.") {
@@ -110,3 +130,4 @@ extension RegisterViewController:UITextFieldDelegate {
     }
     
 }
+
