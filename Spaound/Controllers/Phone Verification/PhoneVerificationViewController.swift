@@ -25,10 +25,17 @@ class PhoneVerificationViewController: UIViewController {
         
     }
     
+    func alertCodeError(with message:String = "Please enter the code that was sent to your mobile number.") {
+        let alert = UIAlertController(title: "Warning", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+    
     @IBAction private func createYourAccountButtonTapped(_ sender:UIButton) {
         
         guard sentCodeTextField.text != nil else {
-            print("sent code field empty")
+            alertCodeError()
             return
         }
         

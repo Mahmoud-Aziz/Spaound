@@ -67,6 +67,9 @@
                             </fragment>
                         </attributedString>
                     </state>
+                    <connections>
+                        <action selector="resetPasswordButtonTappedWith_sender:" destination="-1" eventType="touchUpInside" id="zhy-Kl-MnO"/>
+                    </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QZW-h6-S0K">
                     <rect key="frame" x="32" y="775" width="350" height="55"/>

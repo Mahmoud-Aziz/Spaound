@@ -74,9 +74,46 @@ class LoginViewController: UIViewController {
         
     }
     
-    func alertUserLoginError() {
+    @IBAction private func resetPasswordButtonTapped(_sender:UIButton) {
+    
+        guard let email = emailTextField.text, !email.isEmpty else {
+            alertUserLoginError(message: "Please enter your email.")
+            return
+        }
         
-        let alert = UIAlertController(title: "Warning", message: "Please complete all required info.", preferredStyle: .alert)
+        DatabaseManager.shared.userExists(with:email, completion: { [weak self] exists in
+            
+            guard !exists else {
+                //user doesn't exists
+                self?.alertUserLoginError(title: "Warning", message: "Email is't registered, Please sign up")
+                return
+            }
+            
+            self?.resetPassword(email: email, onSuccess: {
+                self?.alertUserLoginError(title: "", message: "Password reset email is sent to your email.")
+            }, onError: {[weak self] _ in
+                self?.alertUserLoginError(message: "Email is't registered, Please sign up")
+            })
+            
+        })
+        
+        
+
+    }
+    
+    func resetPassword(email:String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
+        Auth.auth().sendPasswordReset(withEmail: email, completion: {error in
+            if error == nil {
+                onSuccess()
+            } else {
+                onError(error!.localizedDescription)
+            }
+        })
+    }
+    
+    func alertUserLoginError(title:String = "Warning" ,message:String = "Please complete all required info.") {
+        
+        let alert = UIAlertController(title:title, message:message , preferredStyle: .alert)
         let action = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
