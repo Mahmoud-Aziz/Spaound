@@ -1,6 +1,7 @@
 
 import UIKit
 import FirebaseAuth
+import JGProgressHUD
 
 class RegisterViewController: UIViewController {
 
@@ -12,6 +13,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet private var continueButton:UIButton! 
     
     var currentVerificationId = ""
+    private let spinner = JGProgressHUD(style: .dark)
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +60,9 @@ class RegisterViewController: UIViewController {
             alertUserRegisterError()
             return
         }
+        
+        spinner.show(in: view)
+
             //firebase login
             
         DatabaseManager.shared.userExists(with: email, completion: {[weak self] exists in
@@ -93,6 +99,11 @@ class RegisterViewController: UIViewController {
                 vc.lastNameFromRegister = lastName
                 vc.passwordFromRegister = password
                 vc.phoneFromRegister = userPhoneNumber
+                
+                DispatchQueue.main.async {
+                    self?.spinner.dismiss()
+                    
+                }
                 
             self?.navigationController?.pushViewController(vc, animated: true)
           

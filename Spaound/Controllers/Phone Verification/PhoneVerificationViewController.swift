@@ -1,7 +1,7 @@
 
 import UIKit
 import FirebaseAuth
-
+import JGProgressHUD
 
 class PhoneVerificationViewController: UIViewController {
     
@@ -15,6 +15,8 @@ class PhoneVerificationViewController: UIViewController {
     var phoneFromRegister:Int = 0
     var verificationIDfromRegister = ""
     
+    private let spinner = JGProgressHUD(style: .dark)
+
     let verificationID = UserDefaults.standard.string(forKey: "authVerificationID")
     
     
@@ -34,11 +36,14 @@ class PhoneVerificationViewController: UIViewController {
     
     @IBAction private func createYourAccountButtonTapped(_ sender:UIButton) {
         
+        sentCodeTextField.resignFirstResponder()
+        
         guard sentCodeTextField.text != nil else {
             alertCodeError()
             return
         }
-        
+        spinner.show(in: view)
+
         FirebaseAuth.Auth.auth().createUser(withEmail: emailFromRegister, password: passwordFromRegister, completion: { authResult,error in
             guard authResult != nil, error == nil else {
                 print("error creating user")
@@ -46,6 +51,10 @@ class PhoneVerificationViewController: UIViewController {
             }
             
             DatabaseManager.shared.insertUser(with: SpaoundUser(firstName: self.firstNameFromRegister, lastName:self.lastNameFromRegister, emailAddress: self.emailFromRegister, phoneNumber: self.phoneFromRegister))
+            
+            DispatchQueue.main.async {
+                self.spinner.dismiss()
+            }
             
             let vc = HomeViewController()
             self.navigationController?.pushViewController(vc, animated: true)

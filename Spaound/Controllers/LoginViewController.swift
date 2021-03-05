@@ -2,9 +2,12 @@
 import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
+import JGProgressHUD
 
 
 class LoginViewController: UIViewController {
+    
+    private let spinner = JGProgressHUD(style: .dark)
     
     private let facebookLoginButton: FBLoginButton = {
         
@@ -59,14 +62,23 @@ class LoginViewController: UIViewController {
             alertUserLoginError()
             return
         }
+        
+        spinner.show(in: view)
+        
         //firebase login
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] authResult,error in
+            
             guard let results = authResult, error == nil else {
                 print("failed to log user in with email: \(email)")
                 return
             }
             let user = results.user
             print("logged in user with\(user)")
+            
+            DispatchQueue.main.async {
+                self?.spinner.dismiss()
+                
+            }
             
             let vc = HomeViewController()
             self?.navigationController?.pushViewController(vc, animated: true)
