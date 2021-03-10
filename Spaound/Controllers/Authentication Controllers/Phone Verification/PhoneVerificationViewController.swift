@@ -5,7 +5,7 @@ import JGProgressHUD
 
 class PhoneVerificationViewController: UIViewController {
     
-    @IBOutlet private var sentCodeTextField:UITextField!
+    @IBOutlet private weak var sentCodeTextField:UITextField!
     
     
     var emailFromRegister = ""
@@ -62,7 +62,7 @@ class PhoneVerificationViewController: UIViewController {
                 self.spinner.dismiss()
             }
             
-            let vc = HomeViewController()
+            let vc = TabBarViewController()
             self.navigationController?.pushViewController(vc, animated: true)
             
         })

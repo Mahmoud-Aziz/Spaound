@@ -22,10 +22,11 @@ class LoginViewController: UIViewController {
     }()
     
     
-    @IBOutlet private var emailTextField:UITextField!
-    @IBOutlet private var passwordTextField:UITextField! 
-    @IBOutlet private var loginButton:UIButton!
-    @IBOutlet private var resetPassword:UIButton!
+    @IBOutlet private weak var emailTextField:UITextField!
+    @IBOutlet private weak var passwordTextField:UITextField!
+    @IBOutlet private weak var loginButton:UIButton!
+    
+    @IBOutlet private weak var resetPassword:UIButton!
     
     
     override func viewDidLoad() {
@@ -80,7 +81,7 @@ class LoginViewController: UIViewController {
                 
             }
             
-            let vc = HomeViewController()
+            let vc = TabBarViewController()
             self?.navigationController?.pushViewController(vc, animated: true)
         })
         
@@ -202,8 +203,9 @@ extension LoginViewController: LoginButtonDelegate {
                 }
                 print("Successfully logged user in")
                 
-                let vc = HomeViewController()
+                let vc = TabBarViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)
+            
             })
         })
         

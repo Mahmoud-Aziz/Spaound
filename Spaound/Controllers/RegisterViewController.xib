@@ -11,12 +11,12 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RegisterViewController" customModule="Spaound" customModuleProvider="target">
             <connections>
-                <outlet property="continueButton" destination="rbA-jr-AZe" id="O7v-3I-oMD"/>
-                <outlet property="emailTextField" destination="2zM-gH-3OC" id="u1Y-qN-vJ3"/>
-                <outlet property="firstNameTextField" destination="K4o-qU-jeW" id="L5R-cL-6C0"/>
-                <outlet property="lastNameTextField" destination="PUD-hT-TZf" id="1eZ-0p-sWS"/>
-                <outlet property="passwordTextField" destination="DyF-If-9ep" id="JMq-Pe-hqs"/>
-                <outlet property="phoneNumberTextField" destination="7fF-rN-8Ab" id="Omx-te-MYv"/>
+                <outlet property="continueButton" destination="rbA-jr-AZe" id="rgl-h3-x4G"/>
+                <outlet property="emailTextField" destination="2zM-gH-3OC" id="SKo-Db-UZG"/>
+                <outlet property="firstNameTextField" destination="K4o-qU-jeW" id="c1c-qk-fWV"/>
+                <outlet property="lastNameTextField" destination="PUD-hT-TZf" id="fUN-r1-Ox4"/>
+                <outlet property="passwordTextField" destination="DyF-If-9ep" id="ZDE-d7-26o"/>
+                <outlet property="phoneNumberTextField" destination="7fF-rN-8Ab" id="ppI-XU-iHt"/>
                 <outlet property="view" destination="ZOe-X2-UHf" id="f19-Oz-jbJ"/>
             </connections>
         </placeholder>

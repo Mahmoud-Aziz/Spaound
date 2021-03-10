@@ -3,7 +3,7 @@ import UIKit
 
 class EntryAuthenticationViewController: UIViewController {
 
-    @IBOutlet private var loginButton:UIButton!
+    @IBOutlet private weak var loginButton:UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

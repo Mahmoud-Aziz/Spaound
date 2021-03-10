@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="Spaound" customModuleProvider="target">
+            <connections>
+                <outlet property="infoLabel" destination="IKA-Sh-uTN" id="vfT-c6-OfG"/>
+                <outlet property="mobileNumberLabel" destination="rYX-6G-Dbj" id="Uch-3B-Koc"/>
+                <outlet property="profileImageView" destination="ixb-Bi-lTx" id="zU5-Tu-5N8"/>
+                <outlet property="signOutButton" destination="5oF-59-CfA" id="3St-MG-ws0"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5oF-59-CfA">
+                    <rect key="frame" x="24" y="724" width="366" height="50"/>
+                    <color key="backgroundColor" red="0.94901960784313721" green="0.96078431372549022" blue="0.97647058823529409" alpha="1" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="Uug-kK-O6R"/>
+                        <constraint firstAttribute="width" constant="366" id="ZTo-Mv-pgk"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Roman" family="Avenir" pointSize="20"/>
+                    <state key="normal" title="Sign Out">
+                        <color key="titleColor" red="0.078431372549019607" green="0.21176470588235294" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
+                    </state>
+                    <connections>
+                        <action selector="signOutButtonPressed:" destination="-1" eventType="touchUpInside" id="Ykt-9f-sfh"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IKA-Sh-uTN">
+                    <rect key="frame" x="48" y="387" width="318" height="38.5"/>
+                    <string key="text">More settings and information to be added int the
+coming releases. Also there will be a lot of settings.</string>
+                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
+                    <color key="textColor" red="0.46666666666666667" green="0.46666666666666667" blue="0.46666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hi, User" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JGU-il-sU5">
+                    <rect key="frame" x="58" y="275" width="298" height="44"/>
+                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="32"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+20 01002303356" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYX-6G-Dbj">
+                    <rect key="frame" x="133.5" y="327" width="147.5" height="25"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="ixb-Bi-lTx">
+                    <rect key="frame" x="87" y="90" width="240" height="128"/>
+                    <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="240" id="b4f-Vb-VqS"/>
+                        <constraint firstAttribute="height" constant="129" id="eWq-xR-ycu"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="ixb-Bi-lTx" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="45.5" id="1RF-C5-o8v"/>
+                <constraint firstItem="ixb-Bi-lTx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="87" id="2RC-ve-8z2"/>
+                <constraint firstItem="5oF-59-CfA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="3ce-2n-5bC"/>
+                <constraint firstItem="rYX-6G-Dbj" firstAttribute="top" secondItem="JGU-il-sU5" secondAttribute="bottom" constant="8" symbolic="YES" id="F5E-vH-buI"/>
+                <constraint firstItem="5oF-59-CfA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="680" id="HEw-Yp-Z6Z"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JGU-il-sU5" secondAttribute="trailing" constant="58" id="Kk1-ka-MmQ"/>
+                <constraint firstItem="JGU-il-sU5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="231" id="Qvm-JD-dkc"/>
+                <constraint firstItem="rYX-6G-Dbj" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Vzm-h0-3bB"/>
+                <constraint firstItem="JGU-il-sU5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="58" id="WxC-cP-uqU"/>
+                <constraint firstItem="5oF-59-CfA" firstAttribute="top" secondItem="IKA-Sh-uTN" secondAttribute="bottom" constant="298.5" id="c1w-JY-eYN"/>
+                <constraint firstItem="IKA-Sh-uTN" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="zdU-61-AwU"/>
+            </constraints>
+            <point key="canvasLocation" x="-7.2463768115942031" y="103.79464285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="person.circle" catalog="system" width="128" height="121"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

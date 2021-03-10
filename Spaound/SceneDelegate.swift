@@ -18,14 +18,16 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             //1. Create window
             let window = UIWindow(windowScene: windowScene)
             //2.Create view controller
-            let viewController = HomeViewController(nibName:"HomeViewController", bundle: nil)
-            
+            let viewController = TabBarViewController(nibName: "TabBarViewController", bundle: nil)
+           
             let navigationController = UINavigationController(rootViewController: viewController)
             //3.Setup Window
             window.rootViewController = navigationController
             //4.Setup application window
             self.window = window
             window.makeKeyAndVisible()
+            
+            
         }
     }
 

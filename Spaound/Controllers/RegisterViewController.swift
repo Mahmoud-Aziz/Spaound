@@ -5,12 +5,12 @@ import JGProgressHUD
 
 class RegisterViewController: UIViewController {
 
-    @IBOutlet private var firstNameTextField:UITextField!
-    @IBOutlet private var lastNameTextField:UITextField!
-    @IBOutlet private var emailTextField:UITextField!
-    @IBOutlet private var phoneNumberTextField:UITextField!
-    @IBOutlet private var passwordTextField:UITextField!
-    @IBOutlet private var continueButton:UIButton! 
+    @IBOutlet private weak var firstNameTextField:UITextField!
+    @IBOutlet private weak var lastNameTextField:UITextField!
+    @IBOutlet private weak var emailTextField:UITextField!
+    @IBOutlet private weak var phoneNumberTextField:UITextField!
+    @IBOutlet private weak var passwordTextField:UITextField!
+    @IBOutlet private weak var continueButton:UIButton! 
     
     var currentVerificationId = ""
     private let spinner = JGProgressHUD(style: .dark)
@@ -140,14 +140,14 @@ extension RegisterViewController:UITextFieldDelegate {
         return true
     }
     
-    
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if (phoneNumberTextField.text?.rangeOfCharacter(from: NSCharacterSet.decimalDigits)) != nil {
-            return true
-        } else {
-            return false
-        }
-    }
+//
+//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+//        if (phoneNumberTextField.text?.rangeOfCharacter(from: NSCharacterSet.decimalDigits)) != nil {
+//            return true
+//        } else {
+//            return false
+//        }
+//    }
     
 }
 
