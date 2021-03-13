@@ -73,14 +73,16 @@ class LoginViewController: UIViewController {
                 print("failed to log user in with email: \(email)")
                 return
             }
+          
             let user = results.user
+            print("auth is \(authResult!)")
             print("logged in user with\(user)")
             
             DispatchQueue.main.async {
                 self?.spinner.dismiss()
                 
             }
-            
+        
             let vc = TabBarViewController()
             self?.navigationController?.pushViewController(vc, animated: true)
         })
@@ -94,7 +96,7 @@ class LoginViewController: UIViewController {
             return
         }
         
-        DatabaseManager.shared.userExists(with:email, completion: { [weak self] exists in
+        UserDatabaseManager.shared.userExists(with:email, completion: { [weak self] exists in
             
             guard !exists else {
                 //user doesn't exists
@@ -185,10 +187,10 @@ extension LoginViewController: LoginButtonDelegate {
             let firstName = nameComponents[0]
             let lastName = nameComponents[1]
             
-            DatabaseManager.shared.userExists(with: email, completion: { exists in
+            UserDatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
                     
-                    DatabaseManager.shared.insertUser(with: SpaoundUser(firstName: firstName, lastName: lastName, emailAddress: email, phoneNumber: nil))
+                    UserDatabaseManager.shared.insertUser(with: SpaoundUser(firstName: firstName, lastName: lastName, emailAddress: email, phoneNumber: nil))
                 }
             })
             

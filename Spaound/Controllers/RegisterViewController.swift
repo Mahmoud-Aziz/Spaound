@@ -65,7 +65,7 @@ class RegisterViewController: UIViewController {
 
             //firebase login
             
-        DatabaseManager.shared.userExists(with: email, completion: {[weak self] exists in
+        UserDatabaseManager.shared.userExists(with: email, completion: {[weak self] exists in
             
             guard !exists else {
                 //user already exists
@@ -83,7 +83,7 @@ class RegisterViewController: UIViewController {
             print("code sent")
             
              guard let verificationID = verficationID, error == nil else {
-                 print(error?.localizedDescription)
+                print(error?.localizedDescription as Any)
                  return
              }
              

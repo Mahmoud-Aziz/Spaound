@@ -16,6 +16,7 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        spacesDatabaseInsert.shared.insertSpaces()
         
         recommendedPlacesCollectionView.dataSource = recommendedDataSource
         popularSpacesTableView.dataSource = popularSpacesDataSource
@@ -36,6 +37,13 @@ class HomeViewController: UIViewController {
         
         self.navigationItem.setHidesBackButton(true, animated: true)
 
+    }
+    
+    @IBAction private func seeAllButtonPressed(_ Sender:UIButton) {
+        
+        let vc = PopularSpacesViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
 
     private func validateAuth() {

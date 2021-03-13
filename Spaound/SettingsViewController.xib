@@ -15,6 +15,7 @@
                 <outlet property="mobileNumberLabel" destination="rYX-6G-Dbj" id="Uch-3B-Koc"/>
                 <outlet property="profileImageView" destination="ixb-Bi-lTx" id="zU5-Tu-5N8"/>
                 <outlet property="signOutButton" destination="5oF-59-CfA" id="3St-MG-ws0"/>
+                <outlet property="userNameLabel" destination="JGU-il-sU5" id="RrK-TF-eGt"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -52,7 +53,7 @@ coming releases. Also there will be a lot of settings.</string>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+20 01002303356" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYX-6G-Dbj">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+20 01002303356" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYX-6G-Dbj">
                     <rect key="frame" x="133.5" y="327" width="147.5" height="25"/>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                     <nil key="textColor"/>

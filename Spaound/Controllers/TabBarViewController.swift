@@ -36,8 +36,6 @@ class TabBarViewController: UITabBarController {
         //        let appearance = UITabBarAppearance()
         //        settingsTabItem.standardAppearance = appearance
         
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {

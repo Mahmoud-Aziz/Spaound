@@ -13,18 +13,14 @@ class CustomCellCollectionView: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
        
-    
+        SpacesDatabaseManager.shared.retrieveSpace(with: "spaceOne", completion: { space in
+            self.spaceNameLabel.text = space.spaceName
+            self.priceLabel.text = "L.E \(space.pricePerDay)"
+        })
+        
   
     }
     
-//    func configure(with space:Space) {
-//        spaceNameLabel.text = space.name
-//        priceLabel.text = String(space.price)
-//        
-//    }
-    
- 
 
 }

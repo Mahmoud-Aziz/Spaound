@@ -9,12 +9,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var mobileNumberLabel: UILabel!
     @IBOutlet weak var infoLabel: UILabel!
+    @IBOutlet weak var userNameLabel:UILabel! 
     @IBOutlet weak var signOutButton:UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -22,10 +22,28 @@ class SettingsViewController: UIViewController {
         
         
         signOutButton.layer.cornerRadius = 16.0
-        
         profileImageView.layer.masksToBounds = true
         profileImageView.isUserInteractionEnabled = true
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
+        
+        
+//        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
+//              switch user {
+//              case .none:
+//                  print("USER NOT FOUND IN CHECK AUTH STATE")
+//              case .some(let user):
+//                  print("USER FOUND WITH ID: \(user.uid)")
+//                print("display name \(user.displayName)")
+//                self?.userNameLabel.text = user.displayName
+//
+//              }
+//          }
+      
+            let user = Auth.auth().currentUser
+            if let user = user {
+                let userName = user.displayName
+                self.userNameLabel.text = userName
+            }
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfileImage))
         
@@ -110,9 +128,9 @@ extension SettingsViewController:UINavigationControllerDelegate,UIImagePickerCon
         
         
         picker.dismiss(animated: true, completion: nil)
-        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-            return
-        }
+//        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+//            return
+//        }
 //        self.profileImageView.image = selectedImage
 //        
 //        let fileName = SpaoundUser

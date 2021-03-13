@@ -55,8 +55,7 @@ class PhoneVerificationViewController: UIViewController {
                 print("error creating user")
                 return
             }
-            
-            DatabaseManager.shared.insertUser(with: SpaoundUser(firstName: self.firstNameFromRegister, lastName:self.lastNameFromRegister, emailAddress: self.emailFromRegister, phoneNumber: self.phoneFromRegister))
+            UserDatabaseManager.shared.insertUser(with: SpaoundUser(firstName: self.firstNameFromRegister, lastName:self.lastNameFromRegister, emailAddress: self.emailFromRegister, phoneNumber: self.phoneFromRegister))
             
             DispatchQueue.main.async {
                 self.spinner.dismiss()
