@@ -14,6 +14,24 @@ final class SpacesDatabaseManager {
 
 extension SpacesDatabaseManager {
     
+    public func sort() {
+        
+        database.child("spaound-f249d-default-rtdb").queryOrdered(byChild: "spaceOne").queryEqual(toValue: "Makram Ebeid").observeSingleEvent(of: .value, with: { snapshot in
+            var array:[SpaceInfo] = []
+            for i in snapshot.children {
+                let spaceSnap = i as! DataSnapshot
+                let spaceDic = spaceSnap.value as! [String:String]
+                var space = SpaceInfo()
+                space.spaceStreetName = spaceDic["spaceStreetName"]!
+                print("spaaace \(space.spaceName)")
+                array.append(space)
+                print(array)
+                
+                
+            }
+        })
+    }
+    
     public func insertSpace(with space: Space) {
         
         database.child(space.spaceName).setValue([
@@ -34,9 +52,71 @@ extension SpacesDatabaseManager {
             "facebookLink": space.facebookLink,
             "whatsAppNumber": space.whatsAppNumber,
             "contactNumber": space.contactNumber,
-        ])
+            
+        ], withCompletionBlock: { error, _ in
+            guard error == nil else {
+                print("failed to write to database")
+                return
+            }
+            
+            self.database.child("spaces").observeSingleEvent(of: .value, with: { snapshot in
+                if var spacesCollection = snapshot.value as? [[String:Any]] {
+                    //append to user dictionary
+                    let newElement = [
+                        "name": space.spaceName,
+                        "spaceDistrict": space.spaceDistrict,
+                        "spaceStreetName": space.spaceStreetName,
+                        "freeWiFi": space.freeWiFi,
+                        "bookLibrary":space.booksLibrary,
+                        "coffee": space.coffee,
+                        "meetingRoom": space.meetingRoom,
+                        "aboutSpace": space.aboutSpace,
+                        "pricePerDay": space.pricePerDay,
+                        "pricePerDayMeetingRoom": space.pricePerDayMeetingRoom,
+                        "pricePerDaySmallRoom": space.pricePerDaySmallRoom,
+                        "pricePerDayGamesRoom": space.pricePerDayGamesRoom,
+                        "pricePerDaySharedSpace": space.pricePerDaySharedSpace,
+                        "facebookLink": space.facebookLink,
+                        "whatsAppNumber": space.whatsAppNumber,
+                        "contactNumber": space.contactNumber,
+                    ] as [String : Any]
+                    spacesCollection.append(newElement)
+                    self.database.child("spaces").setValue(spacesCollection, withCompletionBlock: { error, _ in
+                        guard error == nil else {
+                            return
+                        }
+                        
+                    }) 
+                }
+                else {
+                    //create the array
+                    let newCollection: [[String:Any]] = [[
+                        "name": space.spaceName,
+                        "spaceDistrict": space.spaceDistrict,
+                        "spaceStreetName": space.spaceStreetName,
+                        "freeWiFi": space.freeWiFi,
+                        "bookLibrary":space.booksLibrary,
+                        "coffee": space.coffee,
+                        "meetingRoom": space.meetingRoom,
+                        "aboutSpace": space.aboutSpace,
+                        "pricePerDay": space.pricePerDay,
+                        "pricePerDayMeetingRoom": space.pricePerDayMeetingRoom,
+                        "pricePerDaySmallRoom": space.pricePerDaySmallRoom,
+                        "pricePerDayGamesRoom": space.pricePerDayGamesRoom,
+                        "pricePerDaySharedSpace": space.pricePerDaySharedSpace,
+                        "facebookLink": space.facebookLink,
+                        "whatsAppNumber": space.whatsAppNumber,
+                        "contactNumber": space.contactNumber,
+                    ]]
+                    self.database.child("spaces").setValue(newCollection, withCompletionBlock: { error, _ in
+                        guard error == nil else {
+                            return
+                        }
+                    })
+                }
+            })
+    })
     }
-
     public func retrieveSpace(with spaceName:String,completion: @escaping ((SpaceInfo)->Void)) {
         
         database.child(spaceName).observeSingleEvent(of: .value, with: { snapshot in
@@ -69,6 +149,7 @@ extension SpacesDatabaseManager {
         })
         
     }
+    
 }
 
 
@@ -109,10 +190,6 @@ struct SpaceInfo {
     var whatsAppNumber = 0
     var contactNumber = 0
 }
-
-
-
-
 
 
 

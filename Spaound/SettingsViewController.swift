@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController {
         
         UserDatabaseManager.shared.userInfo(with:"Mahmoud-gmail-com", completion: { [weak self] user in
             self?.userNameLabel.text = "\(user.firstName) \(user.lastName)"
-            self?.mobileNumberLabel.text = "\(user.phoneNumber)"
+            self?.mobileNumberLabel.text = "+\(user.phoneNumber)"
         })
     }
     
