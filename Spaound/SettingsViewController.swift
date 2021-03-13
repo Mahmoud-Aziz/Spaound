@@ -15,35 +15,27 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+//
+//        guard let email = FirebaseAuth.Auth.auth().currentUser?.email else {
+//            print("error retrieving mail from database")
+//            return
+//        }
+//        var safeEmail = email!.replacingOccurrences(of: ".", with: "-")
+//        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+        
+        UserDatabaseManager.shared.userInfo(with:"Mahmoud-gmail-com", completion: { [weak self] user in
+            self?.userNameLabel.text = "\(user.firstName) \(user.lastName)"
+            self?.mobileNumberLabel.text = "\(user.phoneNumber)"
+        })
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
         signOutButton.layer.cornerRadius = 16.0
         profileImageView.layer.masksToBounds = true
         profileImageView.isUserInteractionEnabled = true
         profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
-        
-        
-//        Auth.auth().addStateDidChangeListener { [weak self] (auth, user) in
-//              switch user {
-//              case .none:
-//                  print("USER NOT FOUND IN CHECK AUTH STATE")
-//              case .some(let user):
-//                  print("USER FOUND WITH ID: \(user.uid)")
-//                print("display name \(user.displayName)")
-//                self?.userNameLabel.text = user.displayName
-//
-//              }
-//          }
-      
-            let user = Auth.auth().currentUser
-            if let user = user {
-                let userName = user.displayName
-                self.userNameLabel.text = userName
-            }
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfileImage))
         

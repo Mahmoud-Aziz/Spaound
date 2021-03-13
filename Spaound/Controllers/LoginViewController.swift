@@ -77,12 +77,12 @@ class LoginViewController: UIViewController {
             let user = results.user
             print("auth is \(authResult!)")
             print("logged in user with\(user)")
-            
+         
             DispatchQueue.main.async {
                 self?.spinner.dismiss()
                 
             }
-        
+            
             let vc = TabBarViewController()
             self?.navigationController?.pushViewController(vc, animated: true)
         })

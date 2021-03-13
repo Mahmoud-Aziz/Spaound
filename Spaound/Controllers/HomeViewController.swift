@@ -9,12 +9,17 @@ class HomeViewController: UIViewController {
     
     @IBOutlet weak var recommendedPlacesCollectionView: UICollectionView!
     @IBOutlet weak var popularSpacesTableView:UITableView!
+    @IBOutlet weak var hiUserLabel:UILabel! 
     
     private let recommendedDataSource = RecommendedSpacesDataSource()
     private let popularSpacesDataSource = PopularSpacesDataSource()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        UserDatabaseManager.shared.userInfo(with: "Mahmoud-gmail-com", completion: { [weak self] user in
+            self?.hiUserLabel.text = "Hi, \(user.firstName) \(user.lastName)"
+        })
         
         spacesDatabaseInsert.shared.insertSpaces()
         

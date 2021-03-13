@@ -1,6 +1,7 @@
 
 import Foundation
 import FirebaseDatabase
+import FirebaseAuth
 
 final class UserDatabaseManager {
     
@@ -28,6 +29,23 @@ extension UserDatabaseManager {
             completion(true)
         })
     }
+    public func userInfo(with email:String, completion: @escaping ((UserInfo)->Void)) {
+        
+        var safeEmail = email.replacingOccurrences(of: ".", with: "-")
+        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+        
+        database.child(safeEmail).observeSingleEvent(of: .value, with: { snapshot in
+            guard let value = snapshot.value as? [String:Any] else {
+                return
+            }
+            var user = UserInfo()
+            user.firstName = value["first_name"] as! String
+            user.lastName = value["last_name"] as! String
+            user.phoneNumber = value["phone_number"] as! Int
+            
+            completion(user)
+        })
+    }
     
     ///inserts new user to database
     public func insertUser(with user:SpaoundUser) {
@@ -38,7 +56,6 @@ extension UserDatabaseManager {
             //no need to put email because it's the child value because it's the unique one
         ])
     }
-    
 }
 
 struct SpaoundUser {
@@ -60,6 +77,11 @@ struct SpaoundUser {
     }
 }
 
+    struct UserInfo {
+        var firstName = ""
+        var lastName = ""
+        var phoneNumber = 0
+    }
 
 
 

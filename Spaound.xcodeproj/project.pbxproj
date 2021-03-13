@@ -27,6 +27,8 @@
 		624D766425F902EF00A99B79 /* popularSpacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624D766325F902EF00A99B79 /* popularSpacesDataSource.swift */; };
 		62CE8BD225FBD0E500E5ABFE /* SpacesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE8BD125FBD0E500E5ABFE /* SpacesDataManager.swift */; };
 		62E3C2F425FC32EE0013363C /* SpacesDatabaseInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3C2F325FC32EE0013363C /* SpacesDatabaseInsert.swift */; };
+		62E3C32325FCE8EB0013363C /* CustomCellDashboardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3C32125FCE8EB0013363C /* CustomCellDashboardTableView.swift */; };
+		62E3C32425FCE8EB0013363C /* CustomCellDashboardTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E3C32225FCE8EB0013363C /* CustomCellDashboardTableView.xib */; };
 		62ED7A4125F038C300EEADFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A4025F038C300EEADFD /* AppDelegate.swift */; };
 		62ED7A4325F038C300EEADFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A4225F038C300EEADFD /* SceneDelegate.swift */; };
 		62ED7A4825F038C300EEADFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A4625F038C300EEADFD /* Main.storyboard */; };
@@ -67,6 +69,8 @@
 		624D766325F902EF00A99B79 /* popularSpacesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popularSpacesDataSource.swift; sourceTree = "<group>"; };
 		62CE8BD125FBD0E500E5ABFE /* SpacesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesDataManager.swift; sourceTree = "<group>"; };
 		62E3C2F325FC32EE0013363C /* SpacesDatabaseInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesDatabaseInsert.swift; sourceTree = "<group>"; };
+		62E3C32125FCE8EB0013363C /* CustomCellDashboardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellDashboardTableView.swift; sourceTree = "<group>"; };
+		62E3C32225FCE8EB0013363C /* CustomCellDashboardTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCellDashboardTableView.xib; sourceTree = "<group>"; };
 		62ED7A3D25F038C300EEADFD /* Spaound.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Spaound.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		62ED7A4025F038C300EEADFD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		62ED7A4225F038C300EEADFD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +149,8 @@
 			children = (
 				624D75F725F279C800A99B79 /* DashboardFindViewController.swift */,
 				624D75F825F279C800A99B79 /* DashboardFindViewController.xib */,
+				62E3C32125FCE8EB0013363C /* CustomCellDashboardTableView.swift */,
+				62E3C32225FCE8EB0013363C /* CustomCellDashboardTableView.xib */,
 			);
 			name = "Dashboard Find";
 			sourceTree = "<group>";
@@ -396,6 +402,7 @@
 				62ED7A9F25F051A900EEADFD /* GoogleService-Info.plist in Resources */,
 				62ED7A4A25F038C500EEADFD /* Assets.xcassets in Resources */,
 				62ED7A7025F03A1F00EEADFD /* PhoneVerificationViewController.xib in Resources */,
+				62E3C32425FCE8EB0013363C /* CustomCellDashboardTableView.xib in Resources */,
 				624D763925F4417C00A99B79 /* SettingsViewController.xib in Resources */,
 				624D75F525F2799500A99B79 /* DetailsViewController.xib in Resources */,
 				62ED7A4825F038C300EEADFD /* Main.storyboard in Resources */,
@@ -474,6 +481,7 @@
 				62ED7A5925F039CE00EEADFD /* EntryAuthenticationViewController.swift in Sources */,
 				624D75F425F2799500A99B79 /* DetailsViewController.swift in Sources */,
 				624D764225F44A4A00A99B79 /* HomeViewController.swift in Sources */,
+				62E3C32325FCE8EB0013363C /* CustomCellDashboardTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

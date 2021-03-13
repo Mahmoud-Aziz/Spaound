@@ -11,6 +11,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DashboardFindViewController" customModule="Spaound" customModuleProvider="target">
             <connections>
+                <outlet property="dashboardFindTableView" destination="P8g-1g-ny4" id="3yz-dL-RvJ"/>
+                <outlet property="searchBar" destination="C30-80-OSf" id="Kc0-UD-rCa"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,25 +24,29 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P8g-1g-ny4">
                     <rect key="frame" x="0.0" y="88" width="428" height="755"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="wiE-Yp-yau"/>
+                        <outlet property="delegate" destination="-1" id="rb3-nu-P0M"/>
+                    </connections>
                 </tableView>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oJa-U8-yh3">
-                    <rect key="frame" x="0.0" y="799" width="428" height="44"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="44" id="7zw-oZ-hV3"/>
-                    </constraints>
-                </view>
+                <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="C30-80-OSf">
+                    <rect key="frame" x="0.0" y="88" width="428" height="56"/>
+                    <textInputTraits key="textInputTraits"/>
+                    <connections>
+                        <outlet property="delegate" destination="-1" id="px3-N0-e86"/>
+                    </connections>
+                </searchBar>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="C30-80-OSf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3vr-OL-I7T"/>
+                <constraint firstItem="C30-80-OSf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8Ne-0K-21G"/>
                 <constraint firstItem="P8g-1g-ny4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9tO-sx-fud"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="oJa-U8-yh3" secondAttribute="trailing" id="P2p-bR-n56"/>
                 <constraint firstItem="P8g-1g-ny4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RtG-a6-qRq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P8g-1g-ny4" secondAttribute="trailing" id="SGg-rl-vph"/>
-                <constraint firstItem="oJa-U8-yh3" firstAttribute="bottom" secondItem="fnl-2z-Ty3" secondAttribute="bottom" id="ejC-rz-ZKw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="P8g-1g-ny4" secondAttribute="bottom" id="jPk-3a-bmk"/>
-                <constraint firstItem="oJa-U8-yh3" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="nH3-6X-phi"/>
+                <constraint firstItem="C30-80-OSf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="y23-EF-CYC"/>
             </constraints>
             <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
