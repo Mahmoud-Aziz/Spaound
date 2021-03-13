@@ -13,24 +13,7 @@ final class SpacesDatabaseManager {
 //MARK: -Space Info Management
 
 extension SpacesDatabaseManager {
-    
-    public func sort() {
-        
-        database.child("spaound-f249d-default-rtdb").queryOrdered(byChild: "spaceOne").queryEqual(toValue: "Makram Ebeid").observeSingleEvent(of: .value, with: { snapshot in
-            var array:[SpaceInfo] = []
-            for i in snapshot.children {
-                let spaceSnap = i as! DataSnapshot
-                let spaceDic = spaceSnap.value as! [String:String]
-                var space = SpaceInfo()
-                space.spaceStreetName = spaceDic["spaceStreetName"]!
-                print("spaaace \(space.spaceName)")
-                array.append(space)
-                print(array)
-                
-                
-            }
-        })
-    }
+   
     
     public func insertSpace(with space: Space) {
         
@@ -115,8 +98,25 @@ extension SpacesDatabaseManager {
                     })
                 }
             })
-    })
+       })
+        
     }
+    
+    public func getAllSpaces(completion: @escaping (Result<[[String:Any]], Error>) -> Void) {
+        
+        database.child("spaces").observeSingleEvent(of: .value, with: { snapshot in
+            guard let value = snapshot.value as? [[String:Any]] else {
+                completion(.failure(DatabaseError.failedToFetch))
+                return
+            }
+            completion(.success(value))
+        })
+    }
+    
+    public enum DatabaseError: Error {
+        case failedToFetch
+    }
+    
     public func retrieveSpace(with spaceName:String,completion: @escaping ((SpaceInfo)->Void)) {
         
         database.child(spaceName).observeSingleEvent(of: .value, with: { snapshot in

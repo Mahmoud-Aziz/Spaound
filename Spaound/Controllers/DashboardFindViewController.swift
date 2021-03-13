@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import Firebase
+import JGProgressHUD
 
 
 class DashboardFindViewController: UIViewController {
@@ -14,67 +14,113 @@ class DashboardFindViewController: UIViewController {
     @IBOutlet private weak var dashboardFindTableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
     
-    var spacesSearchResult = [String]()
-    var searching = false
+    private let spinner = JGProgressHUD(style: .dark)
+    
+    private var spaces = [[String:Any]]()
+    private var results = [[String:Any]]()
+    private var hasFetched = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         dashboardFindTableView.delegate = self
         dashboardFindTableView.dataSource = self
+        dashboardFindTableView.isHidden = true
         searchBar.delegate = self
         
         let customCell = UINib(nibName: "CustomCellDashboardTableView", bundle: nil)
         dashboardFindTableView.register(customCell, forCellReuseIdentifier: "CustomCellDashboardTableView")
-        
-    
-
+      
     }
 }
-
 
 extension DashboardFindViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if searching {
-            return spacesSearchResult.count
-        } else {
-            return 5
-        }
+        return results.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCellDashboardTableView") as! CustomCellDashboardTableView
-        if searching {
-            cell.textLabel?.text = spacesSearchResult[indexPath.row]
-        } else {
-            cell.textLabel?.text = "no data"
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCellDashboardTableView", for: indexPath) as! CustomCellDashboardTableView
+        
+        cell.textLabel?.text = results[indexPath.row]["name"] as? String
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+//        let vc = DetailsViewController()
+//        self.navigationController?.pushViewController(vc, animated: true)
     }
    
 }
 
-extension DashboardFindViewController: UISearchBarDelegate, UISearchResultsUpdating {
+extension DashboardFindViewController: UISearchBarDelegate {
     
-    func updateSearchResults(for searchController: UISearchController) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let text = searchBar.text, !text.replacingOccurrences(of: " ", with: "").isEmpty else {
+            return
+        }
+        searchBar.resignFirstResponder()
+        results.removeAll()
+        spinner.show(in:view)
         
+        self.searchUsers(query: text)
     }
     
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchUsers(query: String) {
+        //check if array has firebase results
+        if hasFetched {
+            //if yes: filter
+            filterSpaces(with: query)
+ 
+        } else {
+        //if not, fetch then filter
+            SpacesDatabaseManager.shared.getAllSpaces(completion: { [weak self] result in
+                switch result {
+                case.success(let spacesCollection):
+                    self?.hasFetched = true
+                    self?.spaces = spacesCollection
+                    self?.filterSpaces(with: query)
+                case.failure(let error):
+                    print("Failed to get spaces: \(error)")
+                }
+            })
+        }
+    }
+    
+    func filterSpaces(with term: String) {
+        //update the UI: either show results or show no results label
+        guard hasFetched else {
+            return
+        }
         
-
-        Firebase.Database.database().reference().queryEqual(toValue: searchText)
+        self.spinner.dismiss()
         
-        SpacesDatabaseManager.shared.retrieveSpace(with: searchText, completion:{ [weak self] space in
-            self?.spacesSearchResult.append(space.spaceName)
-            self?.searching = true
-            self?.dashboardFindTableView.reloadData()
+        let results: [[String:Any]] = self.spaces.filter({
+            guard let name = $0["name"] as? String else {
+                return false
+            }
+            return name.hasPrefix(term.lowercased())
         })
+        self.results = results
+        
+    }
+    func updateUI() {
+        if results.isEmpty {
+            self.dashboardFindTableView.isHidden = true
+        }
+        else {
+            self.dashboardFindTableView.isHidden = false
+            self.dashboardFindTableView.reloadData()
+
+        }
+    }
+    
     }
     
     
     
-}
+

@@ -16,7 +16,7 @@ class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        SpacesDatabaseManager.shared.sort()
+        
         UserDatabaseManager.shared.userInfo(with: "Mahmoud-gmail-com", completion: { [weak self] user in
             self?.hiUserLabel.text = "Hi, \(user.firstName) \(user.lastName)"
         })
