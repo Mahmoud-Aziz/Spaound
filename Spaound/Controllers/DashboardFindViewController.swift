@@ -1,16 +1,11 @@
-//
-//  DashboardFindViewController.swift
-//  Spaound
-//
-//  Created by Mahmoud Aziz on 05/03/2021.
-//
+
 
 import UIKit
 import JGProgressHUD
 
 
 class DashboardFindViewController: UIViewController {
-
+    
     @IBOutlet private weak var dashboardFindTableView: UITableView!
     @IBOutlet private weak var searchBar: UISearchBar!
     
@@ -19,7 +14,7 @@ class DashboardFindViewController: UIViewController {
     private var spaces = [[String:Any]]()
     private var results = [[String:Any]]()
     private var hasFetched = false
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -30,7 +25,7 @@ class DashboardFindViewController: UIViewController {
         
         let customCell = UINib(nibName: "CustomCellDashboardTableView", bundle: nil)
         dashboardFindTableView.register(customCell, forCellReuseIdentifier: "CustomCellDashboardTableView")
-      
+        
     }
 }
 
@@ -45,16 +40,16 @@ extension DashboardFindViewController: UITableViewDelegate, UITableViewDataSourc
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCellDashboardTableView", for: indexPath) as! CustomCellDashboardTableView
         
-        cell.textLabel?.text = results[indexPath.row]["name"] as? String
+        cell.textLabel?.text = results[indexPath.row]["name"] as! String
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-//        let vc = DetailsViewController()
-//        self.navigationController?.pushViewController(vc, animated: true)
+        //        let vc = DetailsViewController()
+        //        self.navigationController?.pushViewController(vc, animated: true)
     }
-   
+    
 }
 
 extension DashboardFindViewController: UISearchBarDelegate {
@@ -63,10 +58,11 @@ extension DashboardFindViewController: UISearchBarDelegate {
         guard let text = searchBar.text, !text.replacingOccurrences(of: " ", with: "").isEmpty else {
             return
         }
-        searchBar.resignFirstResponder()
+        
         results.removeAll()
         spinner.show(in:view)
-        
+        searchBar.resignFirstResponder()
+
         self.searchUsers(query: text)
     }
     
@@ -75,9 +71,9 @@ extension DashboardFindViewController: UISearchBarDelegate {
         if hasFetched {
             //if yes: filter
             filterSpaces(with: query)
- 
+            
         } else {
-        //if not, fetch then filter
+            //if not, fetch then filter
             SpacesDatabaseManager.shared.getAllSpaces(completion: { [weak self] result in
                 switch result {
                 case.success(let spacesCollection):
@@ -100,14 +96,16 @@ extension DashboardFindViewController: UISearchBarDelegate {
         self.spinner.dismiss()
         
         let results: [[String:Any]] = self.spaces.filter({
-            guard let name = $0["name"] as? String else {
+            guard let name = $0["name"] else {
                 return false
             }
-            return name.hasPrefix(term.lowercased())
+            return (name as AnyObject).hasPrefix(term.lowercased())
         })
-        self.results = results
         
+        self.results = results
+        updateUI()
     }
+    
     func updateUI() {
         if results.isEmpty {
             self.dashboardFindTableView.isHidden = true
@@ -115,12 +113,12 @@ extension DashboardFindViewController: UISearchBarDelegate {
         else {
             self.dashboardFindTableView.isHidden = false
             self.dashboardFindTableView.reloadData()
-
+            
         }
     }
     
-    }
-    
-    
-    
+}
+
+
+
 

@@ -68,8 +68,7 @@ extension SpacesDatabaseManager {
                         guard error == nil else {
                             return
                         }
-                        
-                    }) 
+                    })
                 }
                 else {
                     //create the array
@@ -116,6 +115,7 @@ extension SpacesDatabaseManager {
     public enum DatabaseError: Error {
         case failedToFetch
     }
+    
     
     public func retrieveSpace(with spaceName:String,completion: @escaping ((SpaceInfo)->Void)) {
         
