@@ -59,7 +59,6 @@ class LoginViewController: UIViewController {
         guard let email = emailTextField.text,
               let password = passwordTextField.text,
               !email.isEmpty, !password.isEmpty, password.count >= 6 else {
-            
             alertUserLoginError()
             return
         }
@@ -70,6 +69,12 @@ class LoginViewController: UIViewController {
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] authResult,error in
             
             guard let results = authResult, error == nil else {
+                self?.alertUserLoginError(title: "Warning", message: "Please enter valid mail and password")
+                
+                DispatchQueue.main.async {
+                    self?.spinner.dismiss()
+                }
+                
                 print("failed to log user in with email: \(email)")
                 return
             }
@@ -80,7 +85,6 @@ class LoginViewController: UIViewController {
          
             DispatchQueue.main.async {
                 self?.spinner.dismiss()
-                
             }
             
             let vc = TabBarViewController()
