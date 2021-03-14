@@ -13,9 +13,7 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var userNameLabel:UILabel! 
     @IBOutlet weak var signOutButton:UIButton!
-    
-    let spaoundUser = SpaoundUser(firstName: "", lastName: "", emailAddress: "", phoneNumber: 0)
-    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,7 +36,7 @@ class SettingsViewController: UIViewController {
         signOutButton.layer.cornerRadius = 16.0
         profileImageView.layer.masksToBounds = true
         profileImageView.isUserInteractionEnabled = true
-        profileImageView.layer.cornerRadius = 140
+        profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2 
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfileImage))
         
