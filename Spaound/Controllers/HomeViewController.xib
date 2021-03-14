@@ -13,7 +13,7 @@
             <connections>
                 <outlet property="hiUserLabel" destination="umP-Hf-HZU" id="xaL-o9-bfZ"/>
                 <outlet property="popularSpacesTableView" destination="fbm-5u-XdJ" id="tua-9i-qnm"/>
-                <outlet property="recommendedPlacesCollectionView" destination="lnQ-5v-p0S" id="TAf-iz-yMH"/>
+                <outlet property="recommendedSpacesCollectionView" destination="lnQ-5v-p0S" id="TAf-iz-yMH"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>

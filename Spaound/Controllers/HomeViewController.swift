@@ -7,7 +7,7 @@ import FirebaseAuth
 class HomeViewController: UIViewController {
     
     
-    @IBOutlet private weak var recommendedPlacesCollectionView: UICollectionView!
+    @IBOutlet private weak var recommendedSpacesCollectionView: UICollectionView!
     @IBOutlet private weak var popularSpacesTableView:UITableView!
     @IBOutlet private weak var hiUserLabel:UILabel! 
     
@@ -23,11 +23,11 @@ class HomeViewController: UIViewController {
         
         spacesDatabaseInsert.shared.insertSpaces()
         
-        recommendedPlacesCollectionView.dataSource = recommendedDataSource
+        recommendedSpacesCollectionView.dataSource = recommendedDataSource
         popularSpacesTableView.dataSource = popularSpacesDataSource
         
         let customCell = UINib(nibName: "CustomCellCollectionView", bundle: nil)
-        recommendedPlacesCollectionView.register(customCell, forCellWithReuseIdentifier: "CustomCellCollectionView")
+        recommendedSpacesCollectionView.register(customCell, forCellWithReuseIdentifier: "CustomCellCollectionView")
 
         let tableViewCustomCell = UINib(nibName: "CustomCellTableView", bundle: nil)
         popularSpacesTableView.register(tableViewCustomCell, forCellReuseIdentifier: "CustomCellTableView")
