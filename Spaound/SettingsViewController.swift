@@ -4,6 +4,7 @@ import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
 import FirebaseStorage
+import Kingfisher
 
 class SettingsViewController: UIViewController {
     
@@ -15,21 +16,20 @@ class SettingsViewController: UIViewController {
     
     let spaoundUser = SpaoundUser(firstName: "", lastName: "", emailAddress: "", phoneNumber: 0)
     
-   
-  
     override func viewDidLoad() {
         super.viewDidLoad()
-
-//        guard let email = FirebaseAuth.Auth.auth().currentUser?.email else {
-//            print("error retrieving mail from database")
-//            return
-//        }
-
-        UserDatabaseManager.shared.userInfo(with:"Mahmoud-gmail-com", completion: { [weak self] user in
-            self?.userNameLabel.text = "\(user.firstName) \(user.lastName)"
-            self?.mobileNumberLabel.text = "+\(user.phoneNumber)"
-        })
-      
+        
+        let userName = "\(UserDefaults.standard.value(forKey: "first_name") as? String ?? "") \(UserDefaults.standard.value(forKey: "last_name")as? String ?? "")"
+        
+        let mobileNumber = UserDefaults.standard.value(forKey: "phone_number") as? Int
+                            
+        userNameLabel.text = userName
+        mobileNumberLabel.text = String(mobileNumber ?? 0)
+        
+        let url = UserDefaults.standard.value(forKey: "profile_picture_url")
+        let urll = URL(string: url as! String)
+        profileImageView.kf.setImage(with: urll)
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -130,7 +130,12 @@ extension SettingsViewController:UINavigationControllerDelegate,UIImagePickerCon
             return
         }
         
-        let fileName = spaoundUser.profilePicturUrl
+        let email = UserDefaults.standard.value(forKey: "email") as? String
+        var safeEmail = email?.replacingOccurrences(of: ".", with: "-")
+        safeEmail = safeEmail?.replacingOccurrences(of: "@", with: "-")
+        
+        let fileName = "\(safeEmail ?? "")_profile_picture.png"
+        
         StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
             switch result {
             case .success(let downloadUrl):

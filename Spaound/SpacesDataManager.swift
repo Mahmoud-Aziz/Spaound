@@ -41,6 +41,9 @@ extension SpacesDatabaseManager {
                 print("failed to write to database")
                 return
             }
+            UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
+            UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_address")
+            UserDefaults.standard.setValue(space.pricePerDay, forKey: "space_price_per_day")
             
             self.database.child("spaces").observeSingleEvent(of: .value, with: { snapshot in
                 if var spacesCollection = snapshot.value as? [[String:Any]] {
@@ -69,6 +72,9 @@ extension SpacesDatabaseManager {
                         guard error == nil else {
                             return
                         }
+                        UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
+                        UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_address")
+                        UserDefaults.standard.setValue(space.pricePerDay, forKey: "space_price_per_day")
                     })
                 }
                 else {
@@ -96,6 +102,9 @@ extension SpacesDatabaseManager {
                         guard error == nil else {
                             return
                         }
+                        UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
+                        UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_address")
+                        UserDefaults.standard.setValue(space.pricePerDay, forKey: "space_price_per_day")
                     })
                 }
             })
@@ -119,37 +128,37 @@ extension SpacesDatabaseManager {
     }
     
     
-    public func retrieveSpace(with spaceName:String,completion: @escaping ((SpaceInfo)->Void)) {
-        
-        database.child(spaceName).observeSingleEvent(of: .value, with: { snapshot in
-            guard let value = snapshot.value as? [String:Any] else {
-                print("error retrieving data from firebase")
-                return
-            }
-            
-            var space = SpaceInfo()
-            
-            space.spaceName = (value["name"] as? String ?? "no value")
-            space.spaceDistrict = (value["spaceDistrict"] as? String ?? "no value")
-            space.spaceStreetName = (value["spaceStreetName"] as? String ?? "no value")
-            space.freeWiFi = (value["freeWiFi"] as? Bool ?? true)
-            space.booksLibrary = (value["bookLibrary"] as? Bool ?? true)
-            space.coffee = (value["coffee"] as? Bool ?? true)
-            space.meetingRoom = (value["meetingRoom"] as? Bool ?? true)
-            space.aboutSpace = (value["aboutSpace"] as? String ?? "no value")
-            space.pricePerDay = (value["pricePerDay"] as? Int ?? 0)
-            space.pricePerDayMeetingRoom = (value["pricePerDayMeetingRoom"] as? Int ?? 0)
-            space.pricePerDaySmallRoom = (value["pricePerDaySmallRoom"] as? Int ?? 0)
-            space.pricePerDayGamesRoom = (value["pricePerDayGamesRoom"] as? Int ?? 0)
-            space.pricePerDaySharedSpace = (value["pricePerDaySharedSpace"] as? Int ?? 0)
-            space.facebookLink = (value["facebookLink"] as? String ?? "no value")
-            space.whatsAppNumber = (value["whatsAppNumber"] as? Int ?? 0)
-            space.contactNumber = (value["contactNumber"] as? Int ?? 0)
-            completion(space)
-    
-        })
-        
-    }
+//    public func retrieveSpace(with spaceName:String,completion: @escaping ((SpaceInfo)->Void)) {
+//
+//        database.child(spaceName).observeSingleEvent(of: .value, with: { snapshot in
+//            guard let value = snapshot.value as? [String:Any] else {
+//                print("error retrieving data from firebase")
+//                return
+//            }
+//
+//            var space = SpaceInfo()
+//
+//            space.spaceName = (value["name"] as? String ?? "no value")
+//            space.spaceDistrict = (value["spaceDistrict"] as? String ?? "no value")
+//            space.spaceStreetName = (value["spaceStreetName"] as? String ?? "no value")
+//            space.freeWiFi = (value["freeWiFi"] as? Bool ?? true)
+//            space.booksLibrary = (value["bookLibrary"] as? Bool ?? true)
+//            space.coffee = (value["coffee"] as? Bool ?? true)
+//            space.meetingRoom = (value["meetingRoom"] as? Bool ?? true)
+//            space.aboutSpace = (value["aboutSpace"] as? String ?? "no value")
+//            space.pricePerDay = (value["pricePerDay"] as? Int ?? 0)
+//            space.pricePerDayMeetingRoom = (value["pricePerDayMeetingRoom"] as? Int ?? 0)
+//            space.pricePerDaySmallRoom = (value["pricePerDaySmallRoom"] as? Int ?? 0)
+//            space.pricePerDayGamesRoom = (value["pricePerDayGamesRoom"] as? Int ?? 0)
+//            space.pricePerDaySharedSpace = (value["pricePerDaySharedSpace"] as? Int ?? 0)
+//            space.facebookLink = (value["facebookLink"] as? String ?? "no value")
+//            space.whatsAppNumber = (value["whatsAppNumber"] as? Int ?? 0)
+//            space.contactNumber = (value["contactNumber"] as? Int ?? 0)
+//            completion(space)
+//
+//        })
+//
+//    }
     
 }
 

@@ -15,12 +15,11 @@ class CustomCellTableView: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        spaceNameLabel.text = UserDefaults.standard.value(forKey: "space_name") as? String
+        spaceAddressLabel.text = UserDefaults.standard.value(forKey: "space_address") as? String
+        spacePriceLabel.text = UserDefaults.standard.value(forKey: "space_price_per_day") as? String
         
-        SpacesDatabaseManager.shared.retrieveSpace(with: "spaceTwo", completion: { [weak self] space in
-            self?.spaceNameLabel.text = space.spaceName
-            self?.spaceAddressLabel.text = space.spaceDistrict
-            self?.spacePriceLabel.text = (String(space.pricePerDay))
-        })
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

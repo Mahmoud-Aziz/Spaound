@@ -11,6 +11,8 @@ target 'Spaound' do
  pod 'FBSDKLoginKit'
  pod 'JGProgressHUD'
  pod 'Firebase/Storage'
+ pod 'Kingfisher', '~> 6.0'
+
 
 
 end

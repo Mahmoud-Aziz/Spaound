@@ -17,9 +17,9 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        UserDatabaseManager.shared.userInfo(with: "Mahmoud-gmail-com", completion: { [weak self] user in
-            self?.hiUserLabel.text = "Hi, \(user.firstName) \(user.lastName)"
-        })
+        let userName = "\(UserDefaults.standard.value(forKey: "first_name") as? String ?? "") \(UserDefaults.standard.value(forKey: "last_name")as? String ?? "")"
+        
+        hiUserLabel.text = userName
         
         spacesDatabaseInsert.shared.insertSpaces()
         

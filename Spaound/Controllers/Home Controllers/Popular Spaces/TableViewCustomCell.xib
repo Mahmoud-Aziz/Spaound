@@ -55,7 +55,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="kuh-i0-Erc"/>
             <connections>
-                <outlet property="spaceAddressLabel" destination="07e-Si-TVn" id="euB-T6-ahN"/>
+                <outlet property="spaceAddressLabel" destination="07e-Si-TVn" id="dEZ-7A-jfS"/>
                 <outlet property="spaceNameLabel" destination="hLC-QC-sIV" id="QuT-SY-fKT"/>
                 <outlet property="spacePriceLabel" destination="4sT-nP-Iu0" id="ZRg-XX-bDd"/>
             </connections>

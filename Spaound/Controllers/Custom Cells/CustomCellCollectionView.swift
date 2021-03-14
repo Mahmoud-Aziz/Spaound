@@ -13,10 +13,9 @@ class CustomCellCollectionView: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        SpacesDatabaseManager.shared.retrieveSpace(with: "spaceOne", completion: { [weak self] space in
-            self?.spaceNameLabel.text = space.spaceName
-            self?.priceLabel.text = "L.E \(space.pricePerDay)"
-        })
+        
+        spaceNameLabel.text = UserDefaults.standard.value(forKey: "space_name") as? String
+        priceLabel.text = UserDefaults.standard.value(forKey: "space_price_per_day") as? String
     }
 
     

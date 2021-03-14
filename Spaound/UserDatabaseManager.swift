@@ -9,8 +9,8 @@ final class UserDatabaseManager {
     private let database = Database.database().reference()
     
     public static func safeEmail(email:String) -> String {
-    var safeEmail = email.replacingOccurrences(of: ".", with: "-")
-    safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+        var safeEmail = email.replacingOccurrences(of: ".", with: "-")
+        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
         return safeEmail
     }
 }
@@ -34,23 +34,27 @@ extension UserDatabaseManager {
         })
     }
     
-    public func userInfo(with email:String, completion: @escaping ((UserInfo)->Void)) {
-        
-        var safeEmail = email.replacingOccurrences(of: ".", with: "-")
-        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
-        
-        database.child(safeEmail).observeSingleEvent(of: .value, with: { snapshot in
-            guard let value = snapshot.value as? [String:Any] else {
-                return
-            }
-            var user = UserInfo()
-            user.firstName = value["first_name"] as! String
-            user.lastName = value["last_name"] as! String
-            user.phoneNumber = value["phone_number"] as! Int
-            
-            completion(user)
-        })
-    }
+    //    public func userInfo(with email:String, completion: @escaping ((UserInfo)->Void)) {
+    //
+    //        var safeEmail = email.replacingOccurrences(of: ".", with: "-")
+    //        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+    //
+    //        database.child(safeEmail).observeSingleEvent(of: .value, with: { snapshot in
+    //            guard let value = snapshot.value as? [String:Any] else {
+    //                return
+    //            }
+    //            var user = UserInfo()
+    //            user.firstName = value["first_name"] as! String
+    //            user.lastName = value["last_name"] as! String
+    //            user.phoneNumber = value["phone_number"] as! Int
+    //
+    //            UserDefaults.standard.setValue(user.firstName, forKey: "first_name")
+    //            UserDefaults.standard.setValue(user.lastName, forKey: "last_name")
+    //            UserDefaults.standard.setValue(user.phoneNumber, forKey: "phone_number")
+    //
+    //            completion(user)
+    //        })
+    //    }
     
     ///inserts new user to database
     public func insertUser(with user:SpaoundUser) {
@@ -68,12 +72,7 @@ struct SpaoundUser {
     let lastName:String
     let emailAddress:String
     let phoneNumber:Int?
-    
-    var profilePicturUrl:String {
-        //mahmoud-gmail-com_profile_picture.png
-        return "\(safeEmail)_profile_picture.png"
-    }
-    
+
     var safeEmail:String {
         var safeEmail = emailAddress.replacingOccurrences(of: ".", with: "-")
         safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
@@ -82,11 +81,11 @@ struct SpaoundUser {
     }
 }
 
-    struct UserInfo {
-        var firstName = ""
-        var lastName = ""
-        var phoneNumber = 0
-    }
+struct UserInfo {
+    var firstName = ""
+    var lastName = ""
+    var phoneNumber = 0
+}
 
 
 

@@ -3,6 +3,7 @@ import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
 import JGProgressHUD
+import FirebaseDatabase
 
 
 class LoginViewController: UIViewController {
@@ -78,9 +79,29 @@ class LoginViewController: UIViewController {
                 return
             }
             
+            UserDefaults.standard.setValue(email, forKey: "email")
+            
             let user = results.user
-            print("auth is \(authResult!)")
             print("logged in user with\(user)")
+            
+            var safeEmail = email.replacingOccurrences(of: ".", with: "-")
+            safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+            
+            let database = Database.database().reference()
+            database.child(safeEmail).observeSingleEvent(of: .value, with: { snapshot in
+                guard let value = snapshot.value as? [String:Any] else {
+                    return
+                }
+                
+                var user = UserInfo()
+                user.firstName = value["first_name"] as! String
+                user.lastName = value["last_name"] as! String
+                user.phoneNumber = value["phone_number"] as! Int
+
+                UserDefaults.standard.setValue(user.firstName, forKey: "first_name")
+                UserDefaults.standard.setValue(user.lastName, forKey: "last_name")
+                UserDefaults.standard.setValue(user.phoneNumber, forKey: "phone_number")
+            })
             
             DispatchQueue.main.async {
                 self?.spinner.dismiss()
@@ -152,6 +173,8 @@ extension LoginViewController:UITextFieldDelegate {
     }
 }
 
+//MARK:- Facebook login
+
 extension LoginViewController: LoginButtonDelegate {
     
     
@@ -178,7 +201,7 @@ extension LoginViewController: LoginButtonDelegate {
                   let lastName = result["last_name"] as? String,
                   let email = result["email"] as? String, let picture = result["picture"] as? [String:Any],
                   let data = picture["data"] as? [String:Any],
-                  let pictureURL = data["url"] as? String, let url = data["url"] else {
+                  let pictureURL = data["url"] as? String else {
                 print("Failed to get email and name from the result")
                 return
             }
@@ -191,7 +214,6 @@ extension LoginViewController: LoginButtonDelegate {
                     UserDatabaseManager.shared.insertUser(with: SpaoundUser(firstName: firstName, lastName: lastName, emailAddress: email, phoneNumber: nil))
                     
                     let spaoundUser = SpaoundUser(firstName: firstName , lastName: lastName, emailAddress: email, phoneNumber: 0)
-                    UserDefaults.standard.setValue(url, forKey: "url")
                     
                     guard let url = URL(string: pictureURL) else {
                         return
@@ -207,16 +229,21 @@ extension LoginViewController: LoginButtonDelegate {
                         
                         print("got data from facebook, uploading")
                         
-                        let fileName = spaoundUser.profilePicturUrl
+                        let email = UserDefaults.standard.value(forKey: "email") as? String
+                        var safeEmail = email?.replacingOccurrences(of: ".", with: "-")
+                        safeEmail = safeEmail?.replacingOccurrences(of: "@", with: "-")
+                        
+                        let fileName = "\(safeEmail ?? "")_profile_picture.png"
+                        
                         StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
                             switch result {
-                            
+
                             case .success(let downloadUrl):
                                 
                                 UserDefaults.standard.setValue(downloadUrl, forKey: "profile_picture_url")
-                                
+
                             case .failure(let error):
-                                
+
                                 print("storage manager error: \(error)")
                             }
                         })
@@ -233,8 +260,13 @@ extension LoginViewController: LoginButtonDelegate {
                     print("Facebook credential login failed, MFA may be needed")
                     return
                 }
+                
                 print("Successfully logged user in")
-            
+                
+                UserDefaults.standard.setValue(email, forKey: "email")
+                UserDefaults.standard.setValue(firstName, forKey: "first_name")
+                UserDefaults.standard.setValue(lastName, forKey: "last_name")
+                
                 let vc = TabBarViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)
                 

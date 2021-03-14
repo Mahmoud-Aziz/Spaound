@@ -57,6 +57,11 @@ class PhoneVerificationViewController: UIViewController {
             }
             UserDatabaseManager.shared.insertUser(with: SpaoundUser(firstName: self.firstNameFromRegister, lastName:self.lastNameFromRegister, emailAddress: self.emailFromRegister, phoneNumber: self.phoneFromRegister))
             
+            
+            UserDefaults.standard.setValue(self.firstNameFromRegister, forKey: "first_name")
+            UserDefaults.standard.setValue(self.lastNameFromRegister, forKey: "last_name")
+            UserDefaults.standard.setValue(self.phoneFromRegister, forKey: "phone_number")
+            
             DispatchQueue.main.async {
                 self.spinner.dismiss()
             }
