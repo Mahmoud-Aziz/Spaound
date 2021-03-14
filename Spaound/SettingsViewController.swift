@@ -3,6 +3,7 @@
 import UIKit
 import FirebaseAuth
 import FBSDKLoginKit
+import FirebaseStorage
 
 class SettingsViewController: UIViewController {
     
@@ -12,21 +13,23 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var userNameLabel:UILabel! 
     @IBOutlet weak var signOutButton:UIButton!
     
+    let spaoundUser = SpaoundUser(firstName: "", lastName: "", emailAddress: "", phoneNumber: 0)
     
+   
+  
     override func viewDidLoad() {
         super.viewDidLoad()
-//
+
 //        guard let email = FirebaseAuth.Auth.auth().currentUser?.email else {
 //            print("error retrieving mail from database")
 //            return
 //        }
-//        var safeEmail = email!.replacingOccurrences(of: ".", with: "-")
-//        safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
-        
+
         UserDatabaseManager.shared.userInfo(with:"Mahmoud-gmail-com", completion: { [weak self] user in
             self?.userNameLabel.text = "\(user.firstName) \(user.lastName)"
             self?.mobileNumberLabel.text = "+\(user.phoneNumber)"
         })
+      
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -35,7 +38,7 @@ class SettingsViewController: UIViewController {
         signOutButton.layer.cornerRadius = 16.0
         profileImageView.layer.masksToBounds = true
         profileImageView.isUserInteractionEnabled = true
-        profileImageView.layer.cornerRadius = profileImageView.frame.size.width / 2
+        profileImageView.layer.cornerRadius = 140
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfileImage))
         
@@ -115,27 +118,28 @@ extension SettingsViewController:UINavigationControllerDelegate,UIImagePickerCon
         present(vc,animated: true)
     }
     
-    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        
         picker.dismiss(animated: true, completion: nil)
-//        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
-//            return
-//        }
-//        self.profileImageView.image = selectedImage
-//        
-//        let fileName = SpaoundUser
-//        StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: {
-//            result in
-//            switch result {
-//            case .success(let downloadUrl):
-//                UserDefaults.standard.set(downloadUrl, forKey: "pofile_picture_url")
-//                print(downloadUrl)
-//            case .failure(let error):
-//                print("Storage manager error: \(error)")
-//            }
-//        })
+        guard let selectedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage else {
+            return
+        }
+        
+        self.profileImageView.image = selectedImage
+        guard let image = profileImageView.image, let data = image.pngData() else {
+            return
+        }
+        
+        let fileName = spaoundUser.profilePicturUrl
+        StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
+            switch result {
+            case .success(let downloadUrl):
+                UserDefaults.standard.setValue(downloadUrl, forKey: "profile_picture_url")
+                print(downloadUrl)
+            case .failure(let error):
+                print("storage manager error: \(error)")
+            }
+        })
     }
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {

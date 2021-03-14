@@ -70,9 +70,9 @@ class RegisterViewController: UIViewController {
             guard !exists else {
                 //user already exists
                 self?.alertUserRegisterError(with: "User already exist, Try to log In instead.")
+                self?.spinner.dismiss()
                 return
             }
-            
             
          Auth.auth().languageCode = "en";
        

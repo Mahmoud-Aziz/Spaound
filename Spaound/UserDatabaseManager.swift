@@ -6,9 +6,13 @@ import FirebaseAuth
 final class UserDatabaseManager {
     
     static let shared = UserDatabaseManager()
-    
     private let database = Database.database().reference()
     
+    public static func safeEmail(email:String) -> String {
+    var safeEmail = email.replacingOccurrences(of: ".", with: "-")
+    safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
+        return safeEmail
+    }
 }
 
 //MARK: -Account Management
@@ -22,13 +26,14 @@ extension UserDatabaseManager {
         safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
         
         database.child(safeEmail).observeSingleEvent(of: .value, with: { snapshot in
-            guard snapshot.value != nil else {
+            guard snapshot.value as? String != nil else {
                 completion(false)
                 return
             }
             completion(true)
         })
     }
+    
     public func userInfo(with email:String, completion: @escaping ((UserInfo)->Void)) {
         
         var safeEmail = email.replacingOccurrences(of: ".", with: "-")

@@ -10,7 +10,7 @@ target 'Spaound' do
  pod 'Firebase/Database'
  pod 'FBSDKLoginKit'
  pod 'JGProgressHUD'
-
+ pod 'Firebase/Storage'
 
 
 end

@@ -21,7 +21,6 @@ class LoginViewController: UIViewController {
         
     }()
     
-    
     @IBOutlet private weak var emailTextField:UITextField!
     @IBOutlet private weak var passwordTextField:UITextField!
     @IBOutlet private weak var loginButton:UIButton!
@@ -78,11 +77,11 @@ class LoginViewController: UIViewController {
                 print("failed to log user in with email: \(email)")
                 return
             }
-          
+            
             let user = results.user
             print("auth is \(authResult!)")
             print("logged in user with\(user)")
-         
+            
             DispatchQueue.main.async {
                 self?.spinner.dismiss()
             }
@@ -94,7 +93,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction private func resetPasswordButtonTapped(_sender:UIButton) {
-    
+        
         guard let email = emailTextField.text, !email.isEmpty else {
             alertUserLoginError(message: "Please enter your email.")
             return
@@ -117,7 +116,7 @@ class LoginViewController: UIViewController {
         })
         
         
-
+        
     }
     
     func resetPassword(email:String, onSuccess: @escaping() -> Void, onError: @escaping(_ errorMessage: String) -> Void) {
@@ -167,7 +166,7 @@ extension LoginViewController: LoginButtonDelegate {
             return
         }
         
-        let facebookRequest = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields":"email, name"], tokenString: token, version: nil, httpMethod: .get)
+        let facebookRequest = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields":"email, first_name, last_name,picture.type(large)"], tokenString: token, version: nil, httpMethod: .get)
         
         facebookRequest.start(completionHandler: {_, result, error in
             guard let result = result as? [String:Any], error == nil else {
@@ -175,26 +174,53 @@ extension LoginViewController: LoginButtonDelegate {
                 return
             }
             
-            print("\(result)")
-            
-            guard let userName = result["name"] as? String,
-                  let email = result["email"] as? String else {
+            guard let firstName = result["first_name"] as? String,
+                  let lastName = result["last_name"] as? String,
+                  let email = result["email"] as? String, let picture = result["picture"] as? [String:Any],
+                  let data = picture["data"] as? [String:Any],
+                  let pictureURL = data["url"] as? String, let url = data["url"] else {
                 print("Failed to get email and name from the result")
                 return
             }
             
-            let nameComponents = userName.components(separatedBy: " ")
-            guard nameComponents.count == 2 else {
-                return
-            }
-            
-            let firstName = nameComponents[0]
-            let lastName = nameComponents[1]
+            print(result)
             
             UserDatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
                     
                     UserDatabaseManager.shared.insertUser(with: SpaoundUser(firstName: firstName, lastName: lastName, emailAddress: email, phoneNumber: nil))
+                    
+                    let spaoundUser = SpaoundUser(firstName: firstName , lastName: lastName, emailAddress: email, phoneNumber: 0)
+                    UserDefaults.standard.setValue(url, forKey: "url")
+                    
+                    guard let url = URL(string: pictureURL) else {
+                        return
+                    }
+                    
+                    print("downloading data from facebook image")
+                    
+                    URLSession.shared.dataTask(with: url, completionHandler: { data, _, _ in
+                        guard let data = data else {
+                            print("failed to get data from faecbook ")
+                            return
+                        }
+                        
+                        print("got data from facebook, uploading")
+                        
+                        let fileName = spaoundUser.profilePicturUrl
+                        StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
+                            switch result {
+                            
+                            case .success(let downloadUrl):
+                                
+                                UserDefaults.standard.setValue(downloadUrl, forKey: "profile_picture_url")
+                                
+                            case .failure(let error):
+                                
+                                print("storage manager error: \(error)")
+                            }
+                        })
+                    }).resume()
                 }
             })
             
@@ -208,10 +234,10 @@ extension LoginViewController: LoginButtonDelegate {
                     return
                 }
                 print("Successfully logged user in")
-                
+            
                 let vc = TabBarViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)
-            
+                
             })
         })
         
