@@ -16,6 +16,8 @@ class CustomCellCollectionView: UICollectionViewCell {
         
         spaceNameLabel.text = UserDefaults.standard.value(forKey: "space_name") as? String
         priceLabel.text = UserDefaults.standard.value(forKey: "space_price_per_day") as? String
+        
+        
     }
 
     

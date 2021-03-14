@@ -27,12 +27,12 @@
 		624D766425F902EF00A99B79 /* popularSpacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624D766325F902EF00A99B79 /* popularSpacesDataSource.swift */; };
 		628281B525FE5787002A73E7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628281B425FE5787002A73E7 /* StorageManager.swift */; };
 		628281BE25FE6506002A73E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 628281BD25FE6506002A73E7 /* GoogleService-Info.plist */; };
+		62BB7F3C25FEC07D00CBE575 /* TableViewCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E3C37D25FDA4C20013363C /* TableViewCustomCell.xib */; };
 		62CE8BD225FBD0E500E5ABFE /* SpacesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE8BD125FBD0E500E5ABFE /* SpacesDataManager.swift */; };
 		62E3C2F425FC32EE0013363C /* SpacesDatabaseInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3C2F325FC32EE0013363C /* SpacesDatabaseInsert.swift */; };
 		62E3C32325FCE8EB0013363C /* CustomCellDashboardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3C32125FCE8EB0013363C /* CustomCellDashboardTableView.swift */; };
 		62E3C32425FCE8EB0013363C /* CustomCellDashboardTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E3C32225FCE8EB0013363C /* CustomCellDashboardTableView.xib */; };
 		62E3C37E25FDA4C20013363C /* TableViewCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3C37C25FDA4C20013363C /* TableViewCustomCell.swift */; };
-		62E3C37F25FDA4C20013363C /* TableViewCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E3C37D25FDA4C20013363C /* TableViewCustomCell.xib */; };
 		62ED7A4125F038C300EEADFD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A4025F038C300EEADFD /* AppDelegate.swift */; };
 		62ED7A4325F038C300EEADFD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62ED7A4225F038C300EEADFD /* SceneDelegate.swift */; };
 		62ED7A4825F038C300EEADFD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 62ED7A4625F038C300EEADFD /* Main.storyboard */; };
@@ -424,7 +424,7 @@
 				628281BE25FE6506002A73E7 /* GoogleService-Info.plist in Resources */,
 				62ED7A4825F038C300EEADFD /* Main.storyboard in Resources */,
 				62ED7A5A25F039CE00EEADFD /* EntryAuthenticationViewController.xib in Resources */,
-				62E3C37F25FDA4C20013363C /* TableViewCustomCell.xib in Resources */,
+				62BB7F3C25FEC07D00CBE575 /* TableViewCustomCell.xib in Resources */,
 				624D75FA25F279C800A99B79 /* DashboardFindViewController.xib in Resources */,
 				624D75EF25F2798700A99B79 /* PopularSpacesViewController.xib in Resources */,
 				62ED7A6925F03A0000EEADFD /* RegisterViewController.xib in Resources */,

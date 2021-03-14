@@ -212,9 +212,7 @@ extension LoginViewController: LoginButtonDelegate {
                 if !exists {
                     
                     UserDatabaseManager.shared.insertUser(with: SpaoundUser(firstName: firstName, lastName: lastName, emailAddress: email, phoneNumber: nil))
-                    
-                    let spaoundUser = SpaoundUser(firstName: firstName , lastName: lastName, emailAddress: email, phoneNumber: 0)
-                    
+                   
                     guard let url = URL(string: pictureURL) else {
                         return
                     }
