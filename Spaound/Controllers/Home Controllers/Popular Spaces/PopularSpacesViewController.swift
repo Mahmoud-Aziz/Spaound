@@ -1,29 +1,31 @@
-//
-//  PopularSpacesViewController.swift
-//  Spaound
-//
-//  Created by Mahmoud Aziz on 05/03/2021.
-//
 
 import UIKit
 
 class PopularSpacesViewController: UIViewController {
 
+    @IBOutlet private weak var spacesTableView:UITableView!
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let customCell = UINib(nibName: "TableViewCustomCell", bundle: nil)
+        spacesTableView.register(customCell, forCellReuseIdentifier: "TableViewCustomCell")
     }
 
+}
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+extension PopularSpacesViewController: UITableViewDataSource{
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
     }
-    */
-
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCustomCell", for: indexPath)
+        return cell 
+    }
+    
+    
+    
 }

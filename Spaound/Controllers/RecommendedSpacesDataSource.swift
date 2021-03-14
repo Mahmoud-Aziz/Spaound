@@ -15,6 +15,7 @@ class RecommendedSpacesDataSource: NSObject, UICollectionViewDataSource {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCellCollectionView", for: indexPath) as! CustomCellCollectionView
         
+        
 
         return cell
     }

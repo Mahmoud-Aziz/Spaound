@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -11,21 +11,46 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PopularSpacesViewController" customModule="Spaound" customModuleProvider="target">
             <connections>
+                <outlet property="spacesTableView" destination="V8t-wm-Oto" id="Yf4-HN-8nQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V8t-wm-Oto">
+                    <rect key="frame" x="0.0" y="161" width="428" height="731"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="MOx-YA-Tmo"/>
+                        <outlet property="delegate" destination="-1" id="AQp-w7-ZK0"/>
+                    </connections>
+                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Spaces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Vq-9c-Cij">
+                    <rect key="frame" x="24" y="84" width="303" height="58"/>
+                    <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="42"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemIndigoColor"/>
+            <color key="backgroundColor" red="0.94901960780000005" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="3Vq-9c-Cij" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Ets-HG-o8l"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V8t-wm-Oto" secondAttribute="trailing" id="HqL-cY-Krp"/>
+                <constraint firstItem="V8t-wm-Oto" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X8e-t5-gCn"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="V8t-wm-Oto" secondAttribute="bottom" id="m5q-Hj-otd"/>
+                <constraint firstItem="V8t-wm-Oto" firstAttribute="top" secondItem="3Vq-9c-Cij" secondAttribute="bottom" constant="19" id="tVm-si-Leo"/>
+                <constraint firstItem="3Vq-9c-Cij" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="yNP-Q8-Spq"/>
+            </constraints>
             <point key="canvasLocation" x="28" y="103"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>

@@ -40,7 +40,7 @@ extension DashboardFindViewController: UITableViewDelegate, UITableViewDataSourc
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCellDashboardTableView", for: indexPath) as! CustomCellDashboardTableView
         
-        cell.textLabel?.text = results[indexPath.row]["name"] as! String
+        cell.textLabel?.text = results[indexPath.row]["name"] as? String
         return cell
     }
     
@@ -103,6 +103,7 @@ extension DashboardFindViewController: UISearchBarDelegate {
         })
         
         self.results = results
+        print(self.results)
         updateUI()
     }
     

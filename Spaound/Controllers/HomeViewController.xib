@@ -62,7 +62,7 @@
                                 <constraint firstAttribute="height" constant="22" id="Wiq-Zq-cOR"/>
                             </constraints>
                         </imageView>
-                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fbm-5u-XdJ">
+                        <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fbm-5u-XdJ">
                             <rect key="frame" x="22" y="494" width="370" height="339"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             <constraints>

@@ -62,6 +62,7 @@ extension SpacesDatabaseManager {
                         "facebookLink": space.facebookLink,
                         "whatsAppNumber": space.whatsAppNumber,
                         "contactNumber": space.contactNumber,
+
                     ] as [String : Any]
                     spacesCollection.append(newElement)
                     self.database.child("spaces").setValue(spacesCollection, withCompletionBlock: { error, _ in
@@ -89,6 +90,7 @@ extension SpacesDatabaseManager {
                         "facebookLink": space.facebookLink,
                         "whatsAppNumber": space.whatsAppNumber,
                         "contactNumber": space.contactNumber,
+
                     ]]
                     self.database.child("spaces").setValue(newCollection, withCompletionBlock: { error, _ in
                         guard error == nil else {
@@ -143,7 +145,6 @@ extension SpacesDatabaseManager {
             space.facebookLink = (value["facebookLink"] as? String ?? "no value")
             space.whatsAppNumber = (value["whatsAppNumber"] as? Int ?? 0)
             space.contactNumber = (value["contactNumber"] as? Int ?? 0)
-            
             completion(space)
     
         })

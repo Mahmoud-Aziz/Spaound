@@ -7,9 +7,9 @@ import FirebaseAuth
 class HomeViewController: UIViewController {
     
     
-    @IBOutlet weak var recommendedPlacesCollectionView: UICollectionView!
-    @IBOutlet weak var popularSpacesTableView:UITableView!
-    @IBOutlet weak var hiUserLabel:UILabel! 
+    @IBOutlet private weak var recommendedPlacesCollectionView: UICollectionView!
+    @IBOutlet private weak var popularSpacesTableView:UITableView!
+    @IBOutlet private weak var hiUserLabel:UILabel! 
     
     private let recommendedDataSource = RecommendedSpacesDataSource()
     private let popularSpacesDataSource = PopularSpacesDataSource()
