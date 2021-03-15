@@ -39,6 +39,7 @@
                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                             </collectionViewFlowLayout>
                             <connections>
+                                <outlet property="dataSource" destination="-1" id="O3f-am-3dB"/>
                                 <outlet property="delegate" destination="-1" id="y3p-eo-adH"/>
                             </connections>
                         </collectionView>
@@ -69,6 +70,10 @@
                                 <constraint firstAttribute="height" constant="339" id="3xn-c8-Sgd"/>
                                 <constraint firstAttribute="width" constant="370" id="eKC-J2-GEW"/>
                             </constraints>
+                            <connections>
+                                <outlet property="dataSource" destination="-1" id="Hzi-4k-ns7"/>
+                                <outlet property="delegate" destination="-1" id="qel-8s-WFp"/>
+                            </connections>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cnb-SE-VOm">
                             <rect key="frame" x="322" y="454" width="50" height="34"/>

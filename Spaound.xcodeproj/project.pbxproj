@@ -21,10 +21,8 @@
 		624D764825F4505100A99B79 /* CustomCellCollectionView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D764625F4505100A99B79 /* CustomCellCollectionView.xib */; };
 		624D764C25F453A300A99B79 /* CustomCellTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624D764A25F453A300A99B79 /* CustomCellTableView.swift */; };
 		624D764D25F453A300A99B79 /* CustomCellTableView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D764B25F453A300A99B79 /* CustomCellTableView.xib */; };
-		624D765725F6640B00A99B79 /* RecommendedSpacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624D765625F6640B00A99B79 /* RecommendedSpacesDataSource.swift */; };
 		624D765E25F80CB900A99B79 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624D765C25F80CB900A99B79 /* TabBarViewController.swift */; };
 		624D765F25F80CB900A99B79 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D765D25F80CB900A99B79 /* TabBarViewController.xib */; };
-		624D766425F902EF00A99B79 /* popularSpacesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624D766325F902EF00A99B79 /* popularSpacesDataSource.swift */; };
 		628281B525FE5787002A73E7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628281B425FE5787002A73E7 /* StorageManager.swift */; };
 		628281BE25FE6506002A73E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 628281BD25FE6506002A73E7 /* GoogleService-Info.plist */; };
 		62BB7F3C25FEC07D00CBE575 /* TableViewCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E3C37D25FDA4C20013363C /* TableViewCustomCell.xib */; };
@@ -66,10 +64,8 @@
 		624D764625F4505100A99B79 /* CustomCellCollectionView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCellCollectionView.xib; sourceTree = "<group>"; };
 		624D764A25F453A300A99B79 /* CustomCellTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellTableView.swift; sourceTree = "<group>"; };
 		624D764B25F453A300A99B79 /* CustomCellTableView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomCellTableView.xib; sourceTree = "<group>"; };
-		624D765625F6640B00A99B79 /* RecommendedSpacesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendedSpacesDataSource.swift; sourceTree = "<group>"; };
 		624D765C25F80CB900A99B79 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
 		624D765D25F80CB900A99B79 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
-		624D766325F902EF00A99B79 /* popularSpacesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = popularSpacesDataSource.swift; sourceTree = "<group>"; };
 		628281B425FE5787002A73E7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		628281BD25FE6506002A73E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../.Trash/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62CE8BD125FBD0E500E5ABFE /* SpacesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesDataManager.swift; sourceTree = "<group>"; };
@@ -171,15 +167,6 @@
 			);
 			name = Settings;
 			path = ..;
-			sourceTree = "<group>";
-		};
-		624D766725F903D100A99B79 /* Data Sources */ = {
-			isa = PBXGroup;
-			children = (
-				624D765625F6640B00A99B79 /* RecommendedSpacesDataSource.swift */,
-				624D766325F902EF00A99B79 /* popularSpacesDataSource.swift */,
-			);
-			name = "Data Sources";
 			sourceTree = "<group>";
 		};
 		624D766825F903F300A99B79 /* Custom Cells */ = {
@@ -297,7 +284,6 @@
 				624D764025F44A4A00A99B79 /* HomeViewController.swift */,
 				624D764125F44A4A00A99B79 /* HomeViewController.xib */,
 				624D766825F903F300A99B79 /* Custom Cells */,
-				624D766725F903D100A99B79 /* Data Sources */,
 				624D765C25F80CB900A99B79 /* TabBarViewController.swift */,
 				624D765D25F80CB900A99B79 /* TabBarViewController.xib */,
 			);
@@ -489,13 +475,11 @@
 				62E3C37E25FDA4C20013363C /* TableViewCustomCell.swift in Sources */,
 				62E3C2F425FC32EE0013363C /* SpacesDatabaseInsert.swift in Sources */,
 				624D75F925F279C800A99B79 /* DashboardFindViewController.swift in Sources */,
-				624D766425F902EF00A99B79 /* popularSpacesDataSource.swift in Sources */,
 				624D764725F4505100A99B79 /* CustomCellCollectionView.swift in Sources */,
 				624D765E25F80CB900A99B79 /* TabBarViewController.swift in Sources */,
 				62CE8BD225FBD0E500E5ABFE /* SpacesDataManager.swift in Sources */,
 				628281B525FE5787002A73E7 /* StorageManager.swift in Sources */,
 				62ED7A4325F038C300EEADFD /* SceneDelegate.swift in Sources */,
-				624D765725F6640B00A99B79 /* RecommendedSpacesDataSource.swift in Sources */,
 				624D763825F4417C00A99B79 /* SettingsViewController.swift in Sources */,
 				62ED7A6F25F03A1F00EEADFD /* PhoneVerificationViewController.swift in Sources */,
 				62ED7A5925F039CE00EEADFD /* EntryAuthenticationViewController.swift in Sources */,

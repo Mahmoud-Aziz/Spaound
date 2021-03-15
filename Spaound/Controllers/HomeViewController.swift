@@ -11,9 +11,6 @@ class HomeViewController: UIViewController {
     @IBOutlet private weak var popularSpacesTableView:UITableView!
     @IBOutlet private weak var hiUserLabel:UILabel! 
     
-    private let recommendedDataSource = RecommendedSpacesDataSource()
-    private let popularSpacesDataSource = PopularSpacesDataSource()
-
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -23,8 +20,8 @@ class HomeViewController: UIViewController {
         
         spacesDatabaseInsert.shared.insertSpaces()
         
-        recommendedSpacesCollectionView.dataSource = recommendedDataSource
-        popularSpacesTableView.dataSource = popularSpacesDataSource
+        recommendedSpacesCollectionView.dataSource = self
+        popularSpacesTableView.dataSource = self
         
         let customCell = UINib(nibName: "CustomCellCollectionView", bundle: nil)
         recommendedSpacesCollectionView.register(customCell, forCellWithReuseIdentifier: "CustomCellCollectionView")
@@ -62,3 +59,42 @@ class HomeViewController: UIViewController {
 }
 
 
+//MARK:- Collection View Data Source and Delegate Methods:
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    
+        return 5
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCellTableView", for: indexPath) as! CustomCellTableView
+        return cell
+    }
+    
+}
+
+//MARK:- Table View Data Source and Delegate Methods:
+
+extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCellCollectionView", for: indexPath) as! CustomCellCollectionView
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = DetailsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+}
