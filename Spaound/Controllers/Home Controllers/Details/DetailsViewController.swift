@@ -10,12 +10,6 @@ class DetailsViewController: UIViewController {
 
     }
     
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        
-        priceView.layer.cornerRadius = 16.0
-    }
-
 
 
 

@@ -35,6 +35,11 @@
                     <state key="normal" title="Sign Out">
                         <color key="titleColor" red="0.078431372549019607" green="0.21176470588235294" blue="0.63921568627450975" alpha="1" colorSpace="calibratedRGB"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="signOutButtonPressed:" destination="-1" eventType="touchUpInside" id="Ykt-9f-sfh"/>
                     </connections>

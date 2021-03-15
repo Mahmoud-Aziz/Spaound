@@ -27,18 +27,7 @@ class RegisterViewController: UIViewController {
         
 
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        firstNameTextField.layer.cornerRadius = 16.0
-        lastNameTextField.layer.cornerRadius = 16.0
-        emailTextField.layer.cornerRadius = 16.0
-        phoneNumberTextField.layer.cornerRadius = 16.0
-        passwordTextField.layer.cornerRadius = 16.0
-        continueButton.layer.cornerRadius = 16.0
-    }
-    
+ 
     //MARK:- Continue to phone verfication
     
     @IBAction private func continueButtonTapped(_ sender:UIButton) {

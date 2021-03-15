@@ -33,7 +33,6 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        signOutButton.layer.cornerRadius = 16.0
         profileImageView.layer.masksToBounds = true
         profileImageView.isUserInteractionEnabled = true
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2 

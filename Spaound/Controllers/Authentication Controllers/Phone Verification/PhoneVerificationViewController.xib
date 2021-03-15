@@ -43,6 +43,11 @@
                     <state key="normal" title="Create your account">
                         <color key="titleColor" red="0.91517548309999996" green="0.91839227349999997" blue="0.92804264479999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <action selector="createYourAccountButtonTapped:" destination="-1" eventType="touchUpInside" id="VFj-Ym-qZh"/>
                     </connections>
