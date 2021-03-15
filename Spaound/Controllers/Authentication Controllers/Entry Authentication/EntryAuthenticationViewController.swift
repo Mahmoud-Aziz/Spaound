@@ -11,18 +11,33 @@ class EntryAuthenticationViewController: UIViewController {
       
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+
+        if !UserDefaults.standard.bool(forKey: "didSee") {
+            
+            UserDefaults.standard.set(true, forKey: "didSee")
+            let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+            let vc = storyboard.instantiateViewController(identifier: "OnboardingViewController") as? OnboardingViewController
+            self.navigationController?.pushViewController(vc!, animated: false)
+        }
+    }
+    
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
         loginButton.layer.cornerRadius = 16.0
 
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
         
-        self.navigationItem.setHidesBackButton(true, animated: true)
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
 
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: animated)
     }
     
     @IBAction private func loginButtonTapped(_ sender:UIButton) {
@@ -37,6 +52,5 @@ class EntryAuthenticationViewController: UIViewController {
         self.navigationController?.pushViewController(vc, animated: true)
         
     }
-
-
 }
+

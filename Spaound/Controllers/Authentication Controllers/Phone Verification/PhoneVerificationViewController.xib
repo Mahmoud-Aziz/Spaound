@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PhoneVerificationViewController" customModule="Spaound" customModuleProvider="target">
             <connections>
+                <outlet property="createYourAccountButton" destination="HUk-2K-e7Z" id="xeu-Cs-XnN"/>
                 <outlet property="sentCodeTextField" destination="eWm-Vd-zYs" id="G5c-St-4ot"/>
                 <outlet property="view" destination="zp2-su-DFH" id="my7-BA-QvU"/>
             </connections>

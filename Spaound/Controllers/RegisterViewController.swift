@@ -39,6 +39,8 @@ class RegisterViewController: UIViewController {
         continueButton.layer.cornerRadius = 16.0
     }
     
+    //MARK:- Continue to phone verfication
+    
     @IBAction private func continueButtonTapped(_ sender:UIButton) {
         
         emailTextField.resignFirstResponder()
@@ -140,14 +142,13 @@ extension RegisterViewController:UITextFieldDelegate {
         return true
     }
     
-//
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        if (phoneNumberTextField.text?.rangeOfCharacter(from: NSCharacterSet.decimalDigits)) != nil {
-//            return true
-//        } else {
-//            return false
-//        }
-//    }
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if (passwordTextField.text?.rangeOfCharacter(from: NSCharacterSet.decimalDigits)) != nil {
+            return true
+        } else {
+            return false
+        }
+    }
     
 }
 

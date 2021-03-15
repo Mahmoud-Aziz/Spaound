@@ -50,6 +50,7 @@ class LoginViewController: UIViewController {
         
     }
     
+    //MARK:- Login
     
     @IBAction private func loginButtonTapped(_ sender:UIButton) {
         
@@ -112,6 +113,8 @@ class LoginViewController: UIViewController {
         })
         
     }
+    
+    //MARK:- Reset Password
     
     @IBAction private func resetPasswordButtonTapped(_sender:UIButton) {
         

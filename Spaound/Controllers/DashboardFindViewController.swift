@@ -29,6 +29,8 @@ class DashboardFindViewController: UIViewController {
     }
 }
 
+//MARK:- Table View delegate and datasource methods
+
 extension DashboardFindViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -51,6 +53,8 @@ extension DashboardFindViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
 }
+
+//MARK:- Search Bar methods 
 
 extension DashboardFindViewController: UISearchBarDelegate {
     

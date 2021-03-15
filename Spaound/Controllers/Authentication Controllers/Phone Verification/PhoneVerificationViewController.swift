@@ -6,6 +6,8 @@ import JGProgressHUD
 class PhoneVerificationViewController: UIViewController {
     
     @IBOutlet private weak var sentCodeTextField:UITextField!
+    @IBOutlet private weak var createYourAccountButton:UIButton!
+
     
     
     var emailFromRegister = ""
@@ -39,6 +41,8 @@ class PhoneVerificationViewController: UIViewController {
         alert.addAction(action)
         present(alert, animated: true, completion: nil)
     }
+    
+    //MARK:- Create new account 
     
     @IBAction private func createYourAccountButtonTapped(_ sender:UIButton) {
         
@@ -74,6 +78,13 @@ class PhoneVerificationViewController: UIViewController {
 }
 
 extension PhoneVerificationViewController:UITextFieldDelegate {
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        if textField == sentCodeTextField {
+            createYourAccountButtonTapped(createYourAccountButton)
+        }
+        return true 
+    }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         if (sentCodeTextField.text?.rangeOfCharacter(from: NSCharacterSet.decimalDigits)) != nil {
