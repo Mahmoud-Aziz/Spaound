@@ -15,7 +15,6 @@ class EntryAuthenticationViewController: UIViewController {
         super.viewWillLayoutSubviews()
 
         if !UserDefaults.standard.bool(forKey: "didSee") {
-            
             UserDefaults.standard.set(true, forKey: "didSee")
             let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
             let vc = storyboard.instantiateViewController(identifier: "OnboardingViewController") as? OnboardingViewController

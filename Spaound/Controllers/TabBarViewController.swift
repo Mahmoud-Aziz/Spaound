@@ -18,6 +18,8 @@ class TabBarViewController: UITabBarController {
         let findTab = DashboardFindViewController()
         let settingsTab = SettingsViewController()
         
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+
         let tabBar = UITabBarController(nibName: "UITabBarController", bundle: nil)
         tabBar.modalPresentationStyle = .fullScreen
         
@@ -38,11 +40,10 @@ class TabBarViewController: UITabBarController {
         
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        self.navigationItem.setHidesBackButton(true, animated: true)
-        
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
     }
     
 //    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {

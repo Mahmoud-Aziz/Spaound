@@ -58,8 +58,8 @@ coming releases. Also there will be a lot of settings.</string>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+20 01002303356" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYX-6G-Dbj">
-                    <rect key="frame" x="133.5" y="327" width="147.5" height="25"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+20 01000000" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rYX-6G-Dbj">
+                    <rect key="frame" x="148.5" y="327" width="117.5" height="25"/>
                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -72,13 +72,21 @@ coming releases. Also there will be a lot of settings.</string>
                         <constraint firstAttribute="height" constant="150" id="esf-Zs-0Tc"/>
                     </constraints>
                 </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cfs-C2-IKC">
+                    <rect key="frame" x="142" y="327" width="12" height="25"/>
+                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="18"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="5oF-59-CfA" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="3ce-2n-5bC"/>
+                <constraint firstItem="cfs-C2-IKC" firstAttribute="top" secondItem="JGU-il-sU5" secondAttribute="bottom" constant="8" symbolic="YES" id="4P5-6d-4Kw"/>
                 <constraint firstItem="ixb-Bi-lTx" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="133" id="D97-Dr-1dv"/>
                 <constraint firstItem="rYX-6G-Dbj" firstAttribute="top" secondItem="JGU-il-sU5" secondAttribute="bottom" constant="8" symbolic="YES" id="F5E-vH-buI"/>
+                <constraint firstItem="cfs-C2-IKC" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="142" id="GfZ-IU-1Ny"/>
                 <constraint firstItem="5oF-59-CfA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="680" id="HEw-Yp-Z6Z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="JGU-il-sU5" secondAttribute="trailing" constant="58" id="Kk1-ka-MmQ"/>
                 <constraint firstItem="JGU-il-sU5" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="231" id="Qvm-JD-dkc"/>

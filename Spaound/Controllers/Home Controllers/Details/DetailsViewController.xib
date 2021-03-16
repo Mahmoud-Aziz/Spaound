@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DetailsViewController" customModule="Spaound" customModuleProvider="target">
             <connections>
-                <outlet property="priceView" destination="Qi0-Ez-92T" id="Fzq-j1-zNx"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -20,16 +19,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" bounces="NO" alwaysBounceHorizontal="YES" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-RQ-svQ">
-                    <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFill" bounces="NO" showsHorizontalScrollIndicator="NO" bouncesZoom="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WRk-RQ-svQ">
+                    <rect key="frame" x="0.0" y="44" width="414" height="852"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOS-7q-ykF">
-                            <rect key="frame" x="0.0" y="0.0" width="418" height="1600"/>
+                            <rect key="frame" x="0.0" y="50" width="418" height="1600"/>
                             <subviews>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taohub6" translatesAutoresizingMaskIntoConstraints="NO" id="XYp-df-Jme">
-                                    <rect key="frame" x="0.0" y="0.0" width="420" height="300"/>
+                                    <rect key="frame" x="-2" y="0.0" width="420" height="300"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="420" id="5DW-8q-XGw"/>
                                         <constraint firstAttribute="height" constant="300" id="bsa-R1-Ju8"/>
                                     </constraints>
                                 </imageView>
@@ -128,11 +126,11 @@
                                     </constraints>
                                 </imageView>
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Meeting free vector icons designed by Maxim Basinski Premium" translatesAutoresizingMaskIntoConstraints="NO" id="LQl-4W-kUq">
-                                    <rect key="frame" x="253" y="490" width="23" height="23"/>
+                                    <rect key="frame" x="256" y="490" width="20" height="23"/>
                                     <color key="tintColor" red="0.5568627451" green="0.57254901960000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="23" id="sd0-nt-7OA"/>
-                                        <constraint firstAttribute="width" constant="23" id="vbU-q3-qPZ"/>
+                                        <constraint firstAttribute="width" constant="20" id="vbU-q3-qPZ"/>
                                     </constraints>
                                 </imageView>
                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JKd-k4-905" userLabel="Line break ">
@@ -486,6 +484,7 @@ different companies share an office space.</string>
                                 <constraint firstItem="hHu-2K-k6n" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="8e8-Qi-w8m"/>
                                 <constraint firstItem="qzg-Uq-kra" firstAttribute="top" secondItem="hHu-2K-k6n" secondAttribute="bottom" constant="8" symbolic="YES" id="8n8-1d-Ma5"/>
                                 <constraint firstItem="lYy-kW-vTl" firstAttribute="top" secondItem="XYp-df-Jme" secondAttribute="bottom" constant="8" symbolic="YES" id="99t-TR-v2g"/>
+                                <constraint firstAttribute="trailing" secondItem="XYp-df-Jme" secondAttribute="trailing" id="9H3-aU-zbc"/>
                                 <constraint firstItem="Ezc-yN-nF7" firstAttribute="trailing" secondItem="JFT-19-dTX" secondAttribute="trailing" id="9ZG-7e-hdu"/>
                                 <constraint firstItem="buz-EY-osN" firstAttribute="top" secondItem="4fN-z9-Lmb" secondAttribute="bottom" constant="8" id="9pK-mz-wjT"/>
                                 <constraint firstItem="Drz-Pt-C1e" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="ACt-ut-bbY"/>
@@ -506,6 +505,7 @@ different companies share an office space.</string>
                                 <constraint firstItem="9eO-3H-dyi" firstAttribute="leading" secondItem="4fN-z9-Lmb" secondAttribute="trailing" constant="4" id="Jl8-IY-DN2"/>
                                 <constraint firstItem="7kt-Bf-DSX" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="13" id="Jvs-Ei-SHz"/>
                                 <constraint firstItem="XB5-Qe-Wni" firstAttribute="leading" secondItem="uev-8a-f19" secondAttribute="trailing" constant="3" id="Kw7-cg-eI9"/>
+                                <constraint firstItem="XYp-df-Jme" firstAttribute="width" secondItem="IOS-7q-ykF" secondAttribute="width" multiplier="1.00478" id="LEM-zd-nbx"/>
                                 <constraint firstItem="buz-EY-osN" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="LOr-ml-1X0"/>
                                 <constraint firstItem="Hxa-aE-x22" firstAttribute="leading" secondItem="c1h-sC-dR2" secondAttribute="leading" id="Ley-fS-Xc5"/>
                                 <constraint firstItem="OJZ-54-cRb" firstAttribute="leading" secondItem="uRq-G8-aj3" secondAttribute="trailing" constant="3" id="Ljj-WC-dzN"/>
@@ -522,7 +522,6 @@ different companies share an office space.</string>
                                 <constraint firstItem="akE-Sy-JMR" firstAttribute="top" secondItem="Fe8-9v-XIF" secondAttribute="bottom" constant="8" symbolic="YES" id="SYT-Tc-4I6"/>
                                 <constraint firstItem="vVM-Gi-TgJ" firstAttribute="top" secondItem="OgR-rf-gjE" secondAttribute="top" id="SfA-iQ-R8y"/>
                                 <constraint firstItem="HaI-sO-kjx" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="TzH-yx-7tb"/>
-                                <constraint firstItem="XYp-df-Jme" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" id="U0z-ep-VYf"/>
                                 <constraint firstItem="AzC-SD-6E6" firstAttribute="top" secondItem="wF3-3A-8ta" secondAttribute="top" id="UdD-rG-cZc"/>
                                 <constraint firstAttribute="trailing" secondItem="dZt-jk-lQb" secondAttribute="trailing" constant="22" id="Upf-n8-Jgu"/>
                                 <constraint firstItem="YBV-TO-cLd" firstAttribute="top" secondItem="am0-SV-5RI" secondAttribute="bottom" constant="8" symbolic="YES" id="VI2-Cj-sy1"/>
@@ -585,12 +584,42 @@ different companies share an office space.</string>
                                 <constraint firstItem="4fN-z9-Lmb" firstAttribute="top" secondItem="53s-rQ-Wpb" secondAttribute="bottom" constant="8" id="xv4-j0-KFP"/>
                             </constraints>
                         </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nDj-iH-cWT">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3UC-83-fNA">
+                                    <rect key="frame" x="25" y="10" width="61" height="22"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="22" id="1uD-xw-ILn"/>
+                                        <constraint firstAttribute="width" constant="61" id="gEs-Nn-rEb"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-1"/>
+                                    <state key="normal" title="Back" image="arrow.left" catalog="system">
+                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="WQM-sA-e22"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstItem="3UC-83-fNA" firstAttribute="top" secondItem="nDj-iH-cWT" secondAttribute="top" constant="10" id="S3s-nC-QJr"/>
+                                <constraint firstItem="3UC-83-fNA" firstAttribute="leading" secondItem="nDj-iH-cWT" secondAttribute="leading" constant="25" id="myu-uO-d4t"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <constraints>
-                        <constraint firstItem="IOS-7q-ykF" firstAttribute="top" secondItem="WRk-RQ-svQ" secondAttribute="top" id="5LX-uA-BOE"/>
-                        <constraint firstAttribute="trailing" secondItem="IOS-7q-ykF" secondAttribute="trailing" id="5X8-V0-N8V"/>
+                        <constraint firstItem="IOS-7q-ykF" firstAttribute="top" secondItem="WRk-RQ-svQ" secondAttribute="top" constant="50" id="5LX-uA-BOE"/>
+                        <constraint firstAttribute="trailing" secondItem="IOS-7q-ykF" secondAttribute="trailing" constant="-10" id="5X8-V0-N8V"/>
                         <constraint firstAttribute="bottom" secondItem="IOS-7q-ykF" secondAttribute="bottom" id="Bub-bi-P7H"/>
+                        <constraint firstItem="nDj-iH-cWT" firstAttribute="leading" secondItem="WRk-RQ-svQ" secondAttribute="leading" id="MEV-Hw-C4E"/>
+                        <constraint firstItem="IOS-7q-ykF" firstAttribute="top" secondItem="nDj-iH-cWT" secondAttribute="bottom" id="cFg-5C-1Vv"/>
                         <constraint firstItem="IOS-7q-ykF" firstAttribute="leading" secondItem="WRk-RQ-svQ" secondAttribute="leading" id="kue-4Y-jzJ"/>
+                        <constraint firstItem="nDj-iH-cWT" firstAttribute="top" secondItem="WRk-RQ-svQ" secondAttribute="top" id="sHn-6f-Wds"/>
+                        <constraint firstAttribute="trailing" secondItem="nDj-iH-cWT" secondAttribute="trailing" constant="-6" id="uuG-uo-GRQ"/>
                     </constraints>
                 </scrollView>
             </subviews>
@@ -599,11 +628,10 @@ different companies share an office space.</string>
             <constraints>
                 <constraint firstItem="WRk-RQ-svQ" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="CQD-V9-L6I"/>
                 <constraint firstItem="WRk-RQ-svQ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="WXK-CC-2hL"/>
-                <constraint firstAttribute="bottom" secondItem="WRk-RQ-svQ" secondAttribute="bottom" id="Weo-bf-UlN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="WRk-RQ-svQ" secondAttribute="bottom" constant="-34" id="Weo-bf-UlN"/>
                 <constraint firstItem="IOS-7q-ykF" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="1.00966" id="eOy-X2-vwV"/>
                 <constraint firstItem="WRk-RQ-svQ" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gnC-v7-M4x"/>
             </constraints>
-            <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
             <nil key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="-194.20289855072465" y="111.83035714285714"/>
         </view>
@@ -611,6 +639,7 @@ different companies share an office space.</string>
     <resources>
         <image name="Coffee free vector icons designed by Freepik" width="512" height="512"/>
         <image name="Meeting free vector icons designed by Maxim Basinski Premium" width="512" height="512"/>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="book" catalog="system" width="128" height="102"/>
         <image name="facebook" width="512" height="512"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>

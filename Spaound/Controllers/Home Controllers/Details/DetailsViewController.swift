@@ -3,11 +3,15 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
-    @IBOutlet private weak var priceView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+    }
+    
+    @IBAction private func backButtonPressed( _ sender: UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
     }
     
 

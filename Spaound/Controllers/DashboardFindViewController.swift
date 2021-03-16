@@ -6,14 +6,17 @@ import JGProgressHUD
 
 class DashboardFindViewController: UIViewController {
     
-    @IBOutlet private weak var dashboardFindTableView: UITableView!
-    @IBOutlet private weak var searchBar: UISearchBar!
+    @IBOutlet weak var dashboardFindTableView: UITableView!
+    @IBOutlet weak var searchBar: UISearchBar!
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var searchTextLabel: UILabel!
     
     private let spinner = JGProgressHUD(style: .dark)
     
     private var spaces = [[String:Any]]()
     private var results = [[String:Any]]()
     private var hasFetched = false
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,11 +25,23 @@ class DashboardFindViewController: UIViewController {
         dashboardFindTableView.dataSource = self
         dashboardFindTableView.isHidden = true
         searchBar.delegate = self
-        
+        self.navigationItem.setHidesBackButton(false, animated: true)
+
         let customCell = UINib(nibName: "CustomCellDashboardTableView", bundle: nil)
         dashboardFindTableView.register(customCell, forCellReuseIdentifier: "CustomCellDashboardTableView")
         
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
 }
 
 //MARK:- Table View delegate and datasource methods
@@ -48,8 +63,8 @@ extension DashboardFindViewController: UITableViewDelegate, UITableViewDataSourc
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        //        let vc = DetailsViewController()
-        //        self.navigationController?.pushViewController(vc, animated: true)
+        let vc = DetailsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
 }
@@ -60,6 +75,8 @@ extension DashboardFindViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.replacingOccurrences(of: " ", with: "").isEmpty else {
+            self.dashboardFindTableView.isHidden = true
+            searchBar.resignFirstResponder()
             return
         }
         
@@ -98,16 +115,17 @@ extension DashboardFindViewController: UISearchBarDelegate {
         }
         
         self.spinner.dismiss()
-        
+        //error: only present when search with keyword space 
         let results: [[String:Any]] = self.spaces.filter({
             guard let name = $0["name"] else {
+                print("error searching")
                 return false
             }
             return (name as AnyObject).hasPrefix(term.lowercased())
         })
         
         self.results = results
-        print(self.results)
+//        print(self.results)
         updateUI()
     }
     
@@ -117,13 +135,13 @@ extension DashboardFindViewController: UISearchBarDelegate {
         }
         else {
             self.dashboardFindTableView.isHidden = false
+            self.backgroundImage.isHidden = true
+            self.searchTextLabel.isHidden = true
             self.dashboardFindTableView.reloadData()
             
         }
     }
     
 }
-
-
 
 

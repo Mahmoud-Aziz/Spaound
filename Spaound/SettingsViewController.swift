@@ -33,6 +33,8 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+        
         profileImageView.layer.masksToBounds = true
         profileImageView.isUserInteractionEnabled = true
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2 
@@ -42,11 +44,16 @@ class SettingsViewController: UIViewController {
         profileImageView.addGestureRecognizer(gesture)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     @objc private func didTapChangeProfileImage() {
         presentPhotoActionSheet()
         
     }
-    
+        
     @IBAction private func signOutButtonPressed(_ sender:UIButton) {
         
         

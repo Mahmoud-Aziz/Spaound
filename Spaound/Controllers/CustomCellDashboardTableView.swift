@@ -8,10 +8,12 @@
 import UIKit
 
 class CustomCellDashboardTableView: UITableViewCell {
-
+    
+    @IBOutlet weak var spaceNameLabel:UILabel! 
+    static let shared = CustomCellDashboardTableView()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

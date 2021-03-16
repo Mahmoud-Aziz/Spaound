@@ -1,9 +1,4 @@
-//
-//  TableViewCustomCell.swift
-//  Spaound
-//
-//  Created by Mahmoud Aziz on 14/03/2021.
-//
+
 
 import UIKit
 
@@ -26,7 +21,7 @@ class TableViewCustomCell: UITableViewCell {
         spacePriceLabel.text = String(spacePrice ?? 0)
 
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
