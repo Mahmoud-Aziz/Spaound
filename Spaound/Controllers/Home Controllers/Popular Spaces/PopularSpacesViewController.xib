@@ -34,12 +34,30 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gnj-o8-bhU">
+                    <rect key="frame" x="25" y="50" width="61" height="22"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="61" id="XH9-Ci-Fze"/>
+                        <constraint firstAttribute="height" constant="22" id="fer-gL-CIS"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="contentEdgeInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-1"/>
+                    <state key="normal" title="Back" image="arrow.left" catalog="system">
+                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <connections>
+                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="R6Q-GJ-kW6"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" red="0.94901960780000005" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
+                <constraint firstItem="Gnj-o8-bhU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="1JS-VQ-Vc6"/>
                 <constraint firstItem="3Vq-9c-Cij" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Ets-HG-o8l"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V8t-wm-Oto" secondAttribute="trailing" id="HqL-cY-Krp"/>
+                <constraint firstItem="Gnj-o8-bhU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="R9B-KU-4qU"/>
                 <constraint firstItem="V8t-wm-Oto" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X8e-t5-gCn"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="V8t-wm-Oto" secondAttribute="bottom" id="m5q-Hj-otd"/>
                 <constraint firstItem="V8t-wm-Oto" firstAttribute="top" secondItem="3Vq-9c-Cij" secondAttribute="bottom" constant="19" id="tVm-si-Leo"/>
@@ -49,6 +67,7 @@
         </view>
     </objects>
     <resources>
+        <image name="arrow.left" catalog="system" width="128" height="98"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

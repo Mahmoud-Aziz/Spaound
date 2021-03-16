@@ -60,7 +60,6 @@ class HomeViewController: UIViewController {
   
 }
 
-
 //MARK:- Collection View Data Source and Delegate Methods:
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {

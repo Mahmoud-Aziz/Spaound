@@ -12,10 +12,15 @@ class PopularSpacesViewController: UIViewController {
         let customCell = UINib(nibName: "TableViewCustomCell", bundle: nil)
         spacesTableView.register(customCell, forCellReuseIdentifier: "TableViewCustomCell")
     }
+    
+    @IBAction private func backButtonPressed( _ sender:UIButton) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
 
 }
 
-extension PopularSpacesViewController: UITableViewDataSource{
+extension PopularSpacesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         5
@@ -26,6 +31,11 @@ extension PopularSpacesViewController: UITableViewDataSource{
         return cell 
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let vc = DetailsViewController()
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
     
 }

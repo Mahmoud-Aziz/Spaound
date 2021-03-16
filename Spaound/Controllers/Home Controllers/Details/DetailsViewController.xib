@@ -466,6 +466,23 @@ different companies share an office space.</string>
                                     <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HYf-Rs-chf">
+                                    <rect key="frame" x="44" y="1522" width="330" height="50"/>
+                                    <color key="backgroundColor" systemColor="systemPinkColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="330" id="hXm-FE-BBA"/>
+                                        <constraint firstAttribute="height" constant="50" id="jmX-gR-flL"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="32"/>
+                                    <state key="normal" title="Book Now">
+                                        <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="16"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
@@ -559,6 +576,7 @@ different companies share an office space.</string>
                                 <constraint firstItem="Fe8-9v-XIF" firstAttribute="leading" secondItem="Hxa-aE-x22" secondAttribute="leading" id="gvc-Ka-oO6"/>
                                 <constraint firstAttribute="height" constant="1600" id="hgt-Y5-68A"/>
                                 <constraint firstItem="Ij8-Ds-TyG" firstAttribute="bottom" secondItem="buz-EY-osN" secondAttribute="bottom" id="huU-hh-nCX"/>
+                                <constraint firstAttribute="bottom" secondItem="HYf-Rs-chf" secondAttribute="bottom" constant="28" id="hx8-kp-LLV"/>
                                 <constraint firstItem="lmP-IT-jnx" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="ir5-od-iba"/>
                                 <constraint firstItem="VEh-hT-zr1" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="jrH-cs-QwF"/>
                                 <constraint firstItem="jAe-3t-9mi" firstAttribute="trailing" secondItem="sMJ-0N-5GO" secondAttribute="trailing" id="ktn-Wj-fX9"/>
@@ -577,6 +595,7 @@ different companies share an office space.</string>
                                 <constraint firstItem="Ezc-yN-nF7" firstAttribute="top" secondItem="JFT-19-dTX" secondAttribute="bottom" constant="8" symbolic="YES" id="uSK-2O-ibD"/>
                                 <constraint firstItem="am0-SV-5RI" firstAttribute="top" secondItem="HaI-sO-kjx" secondAttribute="bottom" constant="8" symbolic="YES" id="ueU-ex-HbW"/>
                                 <constraint firstItem="4fN-z9-Lmb" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="ug2-A0-iQU"/>
+                                <constraint firstItem="HYf-Rs-chf" firstAttribute="centerX" secondItem="IOS-7q-ykF" secondAttribute="centerX" id="uqo-8t-Z8c"/>
                                 <constraint firstItem="Nnx-aW-A3W" firstAttribute="leading" secondItem="YBV-TO-cLd" secondAttribute="trailing" constant="8" id="vWA-9v-vCe"/>
                                 <constraint firstAttribute="trailing" secondItem="Qi0-Ez-92T" secondAttribute="trailing" constant="22" id="vmf-vd-Rgz"/>
                                 <constraint firstItem="lTP-jj-jWe" firstAttribute="top" secondItem="uRq-G8-aj3" secondAttribute="bottom" constant="8" symbolic="YES" id="wUO-ds-HnF"/>
