@@ -24,7 +24,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P8g-1g-ny4">
-                    <rect key="frame" x="0.0" y="44" width="428" height="799"/>
+                    <rect key="frame" x="0.0" y="94" width="428" height="749"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="wiE-Yp-yau"/>
@@ -60,7 +60,7 @@ by name and we’ll help you find them.</string>
                 <constraint firstItem="C30-80-OSf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3vr-OL-I7T"/>
                 <constraint firstItem="kne-Ha-WeH" firstAttribute="top" secondItem="C30-80-OSf" secondAttribute="bottom" constant="255" id="4AF-ck-oz7"/>
                 <constraint firstItem="C30-80-OSf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8Ne-0K-21G"/>
-                <constraint firstItem="P8g-1g-ny4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="9tO-sx-fud"/>
+                <constraint firstItem="P8g-1g-ny4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="9tO-sx-fud"/>
                 <constraint firstItem="kne-Ha-WeH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="131" id="Bhl-fV-MDa"/>
                 <constraint firstItem="P8g-1g-ny4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RtG-a6-qRq"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P8g-1g-ny4" secondAttribute="trailing" id="SGg-rl-vph"/>

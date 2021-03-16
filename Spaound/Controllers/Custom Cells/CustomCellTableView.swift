@@ -19,7 +19,7 @@ class CustomCellTableView: UITableViewCell {
         spaceNameLabel.text = UserDefaults.standard.value(forKey: "space_name") as? String
         spaceAddressLabel.text = UserDefaults.standard.value(forKey: "space_address") as? String
         spacePriceLabel.text = UserDefaults.standard.value(forKey: "space_price_per_day") as? String
-        
+      
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

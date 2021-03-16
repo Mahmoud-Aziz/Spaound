@@ -25,8 +25,7 @@ class DashboardFindViewController: UIViewController {
         dashboardFindTableView.dataSource = self
         dashboardFindTableView.isHidden = true
         searchBar.delegate = self
-        self.navigationItem.setHidesBackButton(false, animated: true)
-
+        
         let customCell = UINib(nibName: "CustomCellDashboardTableView", bundle: nil)
         dashboardFindTableView.register(customCell, forCellReuseIdentifier: "CustomCellDashboardTableView")
         
@@ -36,7 +35,7 @@ class DashboardFindViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
     }
-
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         navigationController?.setNavigationBarHidden(true, animated: animated)
@@ -75,22 +74,30 @@ extension DashboardFindViewController: UISearchBarDelegate {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let text = searchBar.text, !text.replacingOccurrences(of: " ", with: "").isEmpty else {
-            self.dashboardFindTableView.isHidden = true
-            searchBar.resignFirstResponder()
+            dashboardFindTableView.isHidden = true
+            backgroundImage.isHidden = false
+            searchTextLabel.isHidden = false
             return
         }
         
         results.removeAll()
-        spinner.show(in:view)
+        spinner.show(in: view)
         searchBar.resignFirstResponder()
-
-        self.searchUsers(query: text)
+        
+        
+        self.searchSpaces(query: text)
     }
     
-    func searchUsers(query: String) {
-        //check if array has firebase results
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        self.dashboardFindTableView.isHidden = true
+    }
+    
+    
+    func searchSpaces(query:String) {
+        
+        //check if array have firebase results
         if hasFetched {
-            //if yes: filter
+            //if it does: filter
             filterSpaces(with: query)
             
         } else {
@@ -102,46 +109,50 @@ extension DashboardFindViewController: UISearchBarDelegate {
                     self?.spaces = spacesCollection
                     self?.filterSpaces(with: query)
                 case.failure(let error):
-                    print("Failed to get spaces: \(error)")
+                    print("failed to get spaces: \(error)")
                 }
             })
         }
+        
     }
     
-    func filterSpaces(with term: String) {
-        //update the UI: either show results or show no results label
+    func filterSpaces(with term:String) {
+        //update the ui: either show results or show no results label
+        
         guard hasFetched else {
             return
         }
         
         self.spinner.dismiss()
-        //error: only present when search with keyword space 
-        let results: [[String:Any]] = self.spaces.filter({
+        
+        let results : [[String:Any]] = self.spaces.filter({
             guard let name = $0["name"] else {
-                print("error searching")
                 return false
             }
-            return (name as AnyObject).hasPrefix(term.lowercased())
+            return (name as AnyObject).hasPrefix(term)
         })
         
         self.results = results
-//        print(self.results)
+        
         updateUI()
     }
     
     func updateUI() {
         if results.isEmpty {
+            
             self.dashboardFindTableView.isHidden = true
+            self.backgroundImage.isHidden = false
+            searchTextLabel.isHidden = false
+            
         }
         else {
+            
             self.dashboardFindTableView.isHidden = false
-            self.backgroundImage.isHidden = true
-            self.searchTextLabel.isHidden = true
             self.dashboardFindTableView.reloadData()
+            self.backgroundImage.isHidden = true
+            searchTextLabel.isHidden = true
             
         }
     }
-    
 }
-
 

@@ -14,103 +14,108 @@ final class SpacesDatabaseManager {
 
 extension SpacesDatabaseManager {
    
-    
-    public func insertSpace(with space: Space) {
-        
-        database.child(space.spaceName).setValue([
-            
-            "name": space.spaceName,
-            "spaceDistrict": space.spaceDistrict,
-            "spaceStreetName": space.spaceStreetName,
-            "freeWiFi": space.freeWiFi,
-            "bookLibrary":space.booksLibrary,
-            "coffee": space.coffee,
-            "meetingRoom": space.meetingRoom,
-            "aboutSpace": space.aboutSpace,
-            "pricePerDay": space.pricePerDay,
-            "pricePerDayMeetingRoom": space.pricePerDayMeetingRoom,
-            "pricePerDaySmallRoom": space.pricePerDaySmallRoom,
-            "pricePerDayGamesRoom": space.pricePerDayGamesRoom,
-            "pricePerDaySharedSpace": space.pricePerDaySharedSpace,
-            "facebookLink": space.facebookLink,
-            "whatsAppNumber": space.whatsAppNumber,
-            "contactNumber": space.contactNumber,
-            
-        ], withCompletionBlock: { error, _ in
-            guard error == nil else {
-                print("failed to write to database")
-                return
-            }
-            UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
-            UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_address")
-            UserDefaults.standard.setValue(space.pricePerDay, forKey: "space_price_per_day")
-            
-            self.database.child("spaces").observeSingleEvent(of: .value, with: { snapshot in
-                if var spacesCollection = snapshot.value as? [[String:Any]] {
-                    //append to user dictionary
-                    let newElement = [
-                        "name": space.spaceName,
-                        "spaceDistrict": space.spaceDistrict,
-                        "spaceStreetName": space.spaceStreetName,
-                        "freeWiFi": space.freeWiFi,
-                        "bookLibrary":space.booksLibrary,
-                        "coffee": space.coffee,
-                        "meetingRoom": space.meetingRoom,
-                        "aboutSpace": space.aboutSpace,
-                        "pricePerDay": space.pricePerDay,
-                        "pricePerDayMeetingRoom": space.pricePerDayMeetingRoom,
-                        "pricePerDaySmallRoom": space.pricePerDaySmallRoom,
-                        "pricePerDayGamesRoom": space.pricePerDayGamesRoom,
-                        "pricePerDaySharedSpace": space.pricePerDaySharedSpace,
-                        "facebookLink": space.facebookLink,
-                        "whatsAppNumber": space.whatsAppNumber,
-                        "contactNumber": space.contactNumber,
-
-                    ] as [String : Any]
-                    spacesCollection.append(newElement)
-                    self.database.child("spaces").setValue(spacesCollection, withCompletionBlock: { error, _ in
-                        guard error == nil else {
-                            return
-                        }
-                        UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
-                        UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_address")
-                        UserDefaults.standard.setValue(space.pricePerDay, forKey: "space_price_per_day")
-                    })
-                }
-                else {
-                    //create the array
-                    let newCollection: [[String:Any]] = [[
-                        "name": space.spaceName,
-                        "spaceDistrict": space.spaceDistrict,
-                        "spaceStreetName": space.spaceStreetName,
-                        "freeWiFi": space.freeWiFi,
-                        "bookLibrary":space.booksLibrary,
-                        "coffee": space.coffee,
-                        "meetingRoom": space.meetingRoom,
-                        "aboutSpace": space.aboutSpace,
-                        "pricePerDay": space.pricePerDay,
-                        "pricePerDayMeetingRoom": space.pricePerDayMeetingRoom,
-                        "pricePerDaySmallRoom": space.pricePerDaySmallRoom,
-                        "pricePerDayGamesRoom": space.pricePerDayGamesRoom,
-                        "pricePerDaySharedSpace": space.pricePerDaySharedSpace,
-                        "facebookLink": space.facebookLink,
-                        "whatsAppNumber": space.whatsAppNumber,
-                        "contactNumber": space.contactNumber,
-
-                    ]]
-                    self.database.child("spaces").setValue(newCollection, withCompletionBlock: { error, _ in
-                        guard error == nil else {
-                            return
-                        }
-                        UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
-                        UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_address")
-                        UserDefaults.standard.setValue(space.pricePerDay, forKey: "space_price_per_day")
-                    })
-                }
-            })
-       })
-        
-    }
+//    
+//    public func insertSpace(with space: Space) {
+//
+//        database.child(space.spaceName).setValue([
+//
+//            "name": space.spaceName,
+//            "spaceDistrict": space.spaceDistrict,
+//            "spaceStreetName": space.spaceStreetName,
+//            "freeWiFi": space.freeWiFi,
+//            "bookLibrary":space.booksLibrary,
+//            "coffee": space.coffee,
+//            "meetingRoom": space.meetingRoom,
+//            "aboutSpace": space.aboutSpace,
+//            "pricePerDay": space.pricePerDay,
+//            "pricePerDayMeetingRoom": space.pricePerDayMeetingRoom,
+//            "pricePerDaySmallRoom": space.pricePerDaySmallRoom,
+//            "pricePerDayGamesRoom": space.pricePerDayGamesRoom,
+//            "pricePerDaySharedSpace": space.pricePerDaySharedSpace,
+//            "facebookLink": space.facebookLink,
+//            "whatsAppNumber": space.whatsAppNumber,
+//            "contactNumber": space.contactNumber,
+//
+//        ], withCompletionBlock: { error, _ in
+//            guard error == nil else {
+//                print("failed to write to database")
+//                return
+//            }
+//
+//            self.database.child("spaces").observeSingleEvent(of: .value, with: { snapshot in
+//
+//                if var spacesCollection = snapshot.value as? [[String:Any]] {
+//                    //append to user dictionary
+//                    let newElement = [
+//                        "name": space.spaceName,
+//                        "spaceDistrict": space.spaceDistrict,
+//                        "spaceStreetName": space.spaceStreetName,
+//                        "freeWiFi": space.freeWiFi,
+//                        "bookLibrary":space.booksLibrary,
+//                        "coffee": space.coffee,
+//                        "meetingRoom": space.meetingRoom,
+//                        "aboutSpace": space.aboutSpace,
+//                        "pricePerDay": space.pricePerDay,
+//                        "pricePerDayMeetingRoom": space.pricePerDayMeetingRoom,
+//                        "pricePerDaySmallRoom": space.pricePerDaySmallRoom,
+//                        "pricePerDayGamesRoom": space.pricePerDayGamesRoom,
+//                        "pricePerDaySharedSpace": space.pricePerDaySharedSpace,
+//                        "facebookLink": space.facebookLink,
+//                        "whatsAppNumber": space.whatsAppNumber,
+//                        "contactNumber": space.contactNumber,
+//
+//                    ] as [String : Any]
+//
+//                    self.database.child(space.spaceName).observeSingleEvent(of: .value, with: { snapshot in
+//
+//                    })
+//                    spacesCollection.append(newElement)
+//
+//                    self.database.child("spaces").setValue(spacesCollection, withCompletionBlock: { error, _ in
+//                        guard error == nil else {
+//                            return
+//                        }
+//                        UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
+//                        UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_address")
+//                        UserDefaults.standard.setValue(space.pricePerDay, forKey: "space_price_per_day")
+//                    })
+//                }
+//                else {
+//                    //create the array
+//                    let newCollection: [[String:Any]] = [[
+//                        "name": space.spaceName,
+//                        "spaceDistrict": space.spaceDistrict,
+//                        "spaceStreetName": space.spaceStreetName,
+//                        "freeWiFi": space.freeWiFi,
+//                        "bookLibrary":space.booksLibrary,
+//                        "coffee": space.coffee,
+//                        "meetingRoom": space.meetingRoom,
+//                        "aboutSpace": space.aboutSpace,
+//                        "pricePerDay": space.pricePerDay,
+//                        "pricePerDayMeetingRoom": space.pricePerDayMeetingRoom,
+//                        "pricePerDaySmallRoom": space.pricePerDaySmallRoom,
+//                        "pricePerDayGamesRoom": space.pricePerDayGamesRoom,
+//                        "pricePerDaySharedSpace": space.pricePerDaySharedSpace,
+//                        "facebookLink": space.facebookLink,
+//                        "whatsAppNumber": space.whatsAppNumber,
+//                        "contactNumber": space.contactNumber,
+//
+//                    ]]
+//
+//                    self.database.child("spaces").setValue(newCollection, withCompletionBlock: { error, _ in
+//                        guard error == nil else {
+//                            return
+//                        }
+//                        UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
+//                        UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_address")
+//                        UserDefaults.standard.setValue(space.pricePerDay, forKey: "space_price_per_day")
+//                    })
+//                }
+//            })
+//
+//        })
+//    }
+//    
     
     public func getAllSpaces(completion: @escaping (Result<[[String:Any]], Error>) -> Void) {
         
