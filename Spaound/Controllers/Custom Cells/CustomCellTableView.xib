@@ -33,16 +33,14 @@
                         <color key="textColor" red="0.57647058823529407" green="0.64313725490196072" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" red="0.57647058823529407" green="0.64313725490196072" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJQ-WH-lLm">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MJQ-WH-lLm">
                         <rect key="frame" x="129" y="114" width="25" height="14"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="10"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXZ-xt-3PQ">
-                        <rect key="frame" x="154" y="108" width="42" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KXZ-xt-3PQ">
+                        <rect key="frame" x="156" y="107" width="42" height="24"/>
                         <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                         <color key="textColor" red="0.078431372550000003" green="0.21176470589999999" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
@@ -51,11 +49,15 @@
                 <constraints>
                     <constraint firstItem="gsK-wF-w0Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2J7-Mj-w6V"/>
                     <constraint firstAttribute="bottom" secondItem="gsK-wF-w0Q" secondAttribute="bottom" constant="4" id="3QM-fb-NcQ"/>
+                    <constraint firstAttribute="bottom" secondItem="KXZ-xt-3PQ" secondAttribute="bottom" constant="9" id="4qy-z5-6QV"/>
+                    <constraint firstItem="MJQ-WH-lLm" firstAttribute="leading" secondItem="gsK-wF-w0Q" secondAttribute="trailing" constant="23" id="5R3-q3-No4"/>
+                    <constraint firstItem="KXZ-xt-3PQ" firstAttribute="leading" secondItem="MJQ-WH-lLm" secondAttribute="trailing" constant="2" id="D4a-s8-zAh"/>
                     <constraint firstAttribute="trailing" secondItem="gsK-wF-w0Q" secondAttribute="trailing" constant="264" id="JbY-bR-7Zt"/>
                     <constraint firstItem="CMn-SE-XAC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="JpY-7Z-MeD"/>
                     <constraint firstItem="5fv-Tt-awa" firstAttribute="leading" secondItem="CMn-SE-XAC" secondAttribute="leading" id="Oie-nd-jMq"/>
                     <constraint firstItem="CMn-SE-XAC" firstAttribute="leading" secondItem="gsK-wF-w0Q" secondAttribute="trailing" constant="20" id="bKb-yA-ctF"/>
                     <constraint firstItem="5fv-Tt-awa" firstAttribute="top" secondItem="CMn-SE-XAC" secondAttribute="bottom" constant="-2" id="pt3-oQ-Afi"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="MJQ-WH-lLm" secondAttribute="bottom" constant="1" id="r4S-GN-J9L"/>
                     <constraint firstItem="gsK-wF-w0Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="zhv-Tz-43b"/>
                 </constraints>
             </tableViewCellContentView>

@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Spaound/Pods-Spaound-frameworks.sh
+${BUILT_PRODUCTS_DIR}/ExpandableLabel/ExpandableLabel.framework
 ${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework
 ${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework
 ${BUILT_PRODUCTS_DIR}/FirebaseAuth/FirebaseAuth.framework

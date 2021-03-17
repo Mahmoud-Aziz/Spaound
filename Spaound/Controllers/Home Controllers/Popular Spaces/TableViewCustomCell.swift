@@ -14,7 +14,7 @@ class TableViewCustomCell: UITableViewCell {
         
         let spaceName = UserDefaults.standard.value(forKey: "space_name") as? String
         let spaceAddress = UserDefaults.standard.value(forKey: "space_address") as? String
-        let spacePrice = UserDefaults.standard.value(forKey: "space_price_per_day") as? Int
+        let spacePrice = UserDefaults.standard.value(forKey: "price_per_day") as? Int
         
         spaceNameLabel.text = spaceName
         spaceAddressLabel.text = spaceAddress

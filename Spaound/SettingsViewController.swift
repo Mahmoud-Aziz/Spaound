@@ -13,6 +13,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var infoLabel: UILabel!
     @IBOutlet weak var userNameLabel:UILabel! 
     @IBOutlet weak var signOutButton:UIButton!
+    
+    static let shared = SettingsViewController()
         
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +27,8 @@ class SettingsViewController: UIViewController {
         mobileNumberLabel.text = String(mobileNumber ?? 0)
         
         let url = UserDefaults.standard.value(forKey: "profile_picture_url")
-        let urll = URL(string: url as! String)
-        profileImageView.kf.setImage(with: urll)
+        let imageURL = URL(string: url as? String ?? "")
+        profileImageView.kf.setImage(with: imageURL)
         
     }
     
@@ -37,7 +39,7 @@ class SettingsViewController: UIViewController {
         
         profileImageView.layer.masksToBounds = true
         profileImageView.isUserInteractionEnabled = true
-        profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2 
+        profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
         
         let gesture = UITapGestureRecognizer(target: self, action: #selector(didTapChangeProfileImage))
         
@@ -129,8 +131,8 @@ extension SettingsViewController:UINavigationControllerDelegate,UIImagePickerCon
             return
         }
         
-        self.profileImageView.image = selectedImage
-        guard let image = profileImageView.image, let data = image.pngData() else {
+        self.profileImageView?.image = selectedImage
+        guard let image = profileImageView?.image, let data = image.pngData() else {
             return
         }
         
@@ -144,6 +146,7 @@ extension SettingsViewController:UINavigationControllerDelegate,UIImagePickerCon
             switch result {
             case .success(let downloadUrl):
                 UserDefaults.standard.setValue(downloadUrl, forKey: "profile_picture_url")
+               print("image uploaded")
                 print(downloadUrl)
             case .failure(let error):
                 print("storage manager error: \(error)")

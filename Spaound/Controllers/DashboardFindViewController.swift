@@ -17,7 +17,6 @@ class DashboardFindViewController: UIViewController {
     private var results = [[String:Any]]()
     private var hasFetched = false
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

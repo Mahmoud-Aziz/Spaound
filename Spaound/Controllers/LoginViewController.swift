@@ -4,7 +4,7 @@ import FirebaseAuth
 import FBSDKLoginKit
 import JGProgressHUD
 import FirebaseDatabase
-
+import Kingfisher
 
 class LoginViewController: UIViewController {
     
@@ -85,6 +85,28 @@ class LoginViewController: UIViewController {
             let user = results.user
             print("logged in user with\(user)")
             
+            SpacesDatabaseManager.shared.retrieveSpace(completion: { space in
+                
+                UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
+                UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_district")
+                UserDefaults.standard.setValue(space.spaceStreetName, forKey: "space_street")
+                UserDefaults.standard.setValue(space.freeWiFi, forKey: "free_wifi")
+                UserDefaults.standard.setValue(space.booksLibrary, forKey: "books_library")
+                UserDefaults.standard.setValue(space.coffee, forKey: "coffee")
+                UserDefaults.standard.setValue(space.meetingRoom, forKey: "meeting_room")
+                UserDefaults.standard.setValue(space.gamingRoom, forKey: "gamingRoom")
+                UserDefaults.standard.setValue(space.aboutSpace, forKey: "about_space")
+                UserDefaults.standard.setValue(space.pricePerDay, forKey: "price_per_day")
+                UserDefaults.standard.setValue(space.pricePerDayMeetingRoom, forKey: "price_meeting")
+                UserDefaults.standard.setValue(space.pricePerDaySmallRoom, forKey: "price_small")
+                UserDefaults.standard.setValue(space.pricePerDayGamesRoom, forKey: "price_games")
+                UserDefaults.standard.setValue(space.pricePerDaySharedSpace, forKey: "price_shared")
+                UserDefaults.standard.setValue(space.facebookLink, forKey: "facebook")
+                UserDefaults.standard.setValue(space.whatsAppNumber, forKey: "whatsapp")
+                UserDefaults.standard.setValue(space.contactNumber, forKey: "contact_number")
+
+            })
+            
             var safeEmail = email.replacingOccurrences(of: ".", with: "-")
             safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
             
@@ -98,7 +120,7 @@ class LoginViewController: UIViewController {
                 user.firstName = value["first_name"] as! String
                 user.lastName = value["last_name"] as! String
                 user.phoneNumber = value["phone_number"] as! Int
-
+                
                 UserDefaults.standard.setValue(user.firstName, forKey: "first_name")
                 UserDefaults.standard.setValue(user.lastName, forKey: "last_name")
                 UserDefaults.standard.setValue(user.phoneNumber, forKey: "phone_number")
@@ -215,7 +237,7 @@ extension LoginViewController: LoginButtonDelegate {
                 if !exists {
                     
                     UserDatabaseManager.shared.insertUser(with: SpaoundUser(firstName: firstName, lastName: lastName, emailAddress: email, phoneNumber: nil))
-                   
+                    
                     guard let url = URL(string: pictureURL) else {
                         return
                     }
@@ -238,13 +260,13 @@ extension LoginViewController: LoginButtonDelegate {
                         
                         StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
                             switch result {
-
+                            
                             case .success(let downloadUrl):
                                 
                                 UserDefaults.standard.setValue(downloadUrl, forKey: "profile_picture_url")
-
+                                
                             case .failure(let error):
-
+                                
                                 print("storage manager error: \(error)")
                             }
                         })
@@ -264,9 +286,32 @@ extension LoginViewController: LoginButtonDelegate {
                 
                 print("Successfully logged user in")
                 
+                SpacesDatabaseManager.shared.retrieveSpace(completion: { space in
+                    
+                    UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
+                    UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_district")
+                    UserDefaults.standard.setValue(space.spaceStreetName, forKey: "space_street")
+                    UserDefaults.standard.setValue(space.freeWiFi, forKey: "free_wifi")
+                    UserDefaults.standard.setValue(space.booksLibrary, forKey: "books_library")
+                    UserDefaults.standard.setValue(space.coffee, forKey: "coffee")
+                    UserDefaults.standard.setValue(space.meetingRoom, forKey: "meeting_room")
+                    UserDefaults.standard.setValue(space.gamingRoom, forKey: "gamingRoom")
+                    UserDefaults.standard.setValue(space.aboutSpace, forKey: "about_space")
+                    UserDefaults.standard.setValue(space.pricePerDay, forKey: "price_per_day")
+                    UserDefaults.standard.setValue(space.pricePerDayMeetingRoom, forKey: "price_meeting")
+                    UserDefaults.standard.setValue(space.pricePerDaySmallRoom, forKey: "price_small")
+                    UserDefaults.standard.setValue(space.pricePerDayGamesRoom, forKey: "price_games")
+                    UserDefaults.standard.setValue(space.pricePerDaySharedSpace, forKey: "price_shared")
+                    UserDefaults.standard.setValue(space.facebookLink, forKey: "facebook")
+                    UserDefaults.standard.setValue(space.whatsAppNumber, forKey: "whatsapp")
+                    UserDefaults.standard.setValue(space.contactNumber, forKey: "contact_number")
+
+                })
+                
                 UserDefaults.standard.setValue(email, forKey: "email")
                 UserDefaults.standard.setValue(firstName, forKey: "first_name")
                 UserDefaults.standard.setValue(lastName, forKey: "last_name")
+                UserDefaults.standard.setValue(true, forKey: "fb_signed")
                 
                 let vc = TabBarViewController()
                 self?.navigationController?.pushViewController(vc, animated: true)

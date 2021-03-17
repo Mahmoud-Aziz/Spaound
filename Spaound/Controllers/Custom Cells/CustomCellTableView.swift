@@ -15,10 +15,14 @@ class CustomCellTableView: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
-        spaceNameLabel.text = UserDefaults.standard.value(forKey: "space_name") as? String
-        spaceAddressLabel.text = UserDefaults.standard.value(forKey: "space_address") as? String
-        spacePriceLabel.text = UserDefaults.standard.value(forKey: "space_price_per_day") as? String
+        
+        let spaceName = UserDefaults.standard.value(forKey: "space_name") as? String
+        let spaceAddress = UserDefaults.standard.value(forKey: "space_address") as? String
+        let spacePrice = UserDefaults.standard.value(forKey: "price_per_day") as? Int
+        
+        spaceNameLabel.text = spaceName
+        spaceAddressLabel.text = spaceAddress
+        spacePriceLabel.text = String(spacePrice ?? 0)
       
     }
 

@@ -12,6 +12,8 @@ target 'Spaound' do
  pod 'JGProgressHUD'
  pod 'Firebase/Storage'
  pod 'Kingfisher', '~> 6.0'
+ pod "ExpandableLabel"
+
 
 
 
