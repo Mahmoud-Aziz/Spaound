@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
@@ -15,31 +15,34 @@
             <objects>
                 <viewController storyboardIdentifier="OnboardingViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="MM2-38-UAe" customClass="OnboardingViewController" customModule="Spaound" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="flu-OE-pgQ">
-                        <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" pagingEnabled="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" bouncesZoom="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="AU2-Nt-uFq">
-                                <rect key="frame" x="0.0" y="44" width="428" height="692.66666666666663"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="662.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sKp-vX-MUg">
-                                    <size key="itemSize" width="429" height="673.33333333333326"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="sKp-vX-MUg">
+                                    <size key="itemSize" width="413" height="662.5"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OnboardingViewControllerCell" id="4ml-lZ-4Ra" customClass="OnboardingViewControllerCell" customModule="Spaound" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="9.6666666666666661" width="429" height="673.33333333333326"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="662.5"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gvS-b3-ef5">
-                                            <rect key="frame" x="0.0" y="0.0" width="429" height="673.33333333333326"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="662.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uGJ-Jk-zgu">
+                                                    <rect key="frame" x="42" y="78" width="330" height="300"/>
+                                                </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="ggh-Lx-qez">
-                                                    <rect key="frame" x="16" y="428.99999999999994" width="397" height="194.33333333333331"/>
+                                                    <rect key="frame" x="16" y="456" width="382" height="134"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="headTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0iw-bZ-tkh" userLabel="TitleLabel">
-                                                            <rect key="frame" x="82.000000000000014" y="0.0" width="233.33333333333337" height="148"/>
+                                                            <rect key="frame" x="74.5" y="0.0" width="233.5" height="87.5"/>
                                                             <attributedString key="attributedText">
                                                                 <fragment>
                                                                     <string key="content">You can find any
@@ -53,7 +56,7 @@ place here</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Y8-Gr-fmb" userLabel="DescriptionLabel">
-                                                            <rect key="frame" x="87.666666666666686" y="156" width="222" height="38.333333333333343"/>
+                                                            <rect key="frame" x="6" y="95.5" width="370" height="38.5"/>
                                                             <string key="text">Good mood good place, let's go!
 Happy day with your favorite mood.</string>
                                                             <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
@@ -61,27 +64,25 @@ Happy day with your favorite mood.</string>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                </stackView>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uGJ-Jk-zgu">
-                                                    <rect key="frame" x="29" y="79" width="371" height="300"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="300" id="bXQ-kg-T8F"/>
-                                                        <constraint firstAttribute="width" constant="360" id="byT-wI-MVY"/>
+                                                        <constraint firstItem="2Y8-Gr-fmb" firstAttribute="leading" secondItem="ggh-Lx-qez" secondAttribute="leading" constant="6" id="0xj-nq-suH"/>
+                                                        <constraint firstAttribute="bottom" secondItem="2Y8-Gr-fmb" secondAttribute="bottom" id="Hq9-aD-ze2"/>
                                                     </constraints>
-                                                </imageView>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="ggh-Lx-qez" secondAttribute="bottom" constant="50" id="29T-Sj-B3I"/>
-                                                <constraint firstItem="ggh-Lx-qez" firstAttribute="leading" secondItem="gvS-b3-ef5" secondAttribute="leading" constant="16" id="5Sq-9u-yhx"/>
-                                                <constraint firstItem="ggh-Lx-qez" firstAttribute="top" secondItem="uGJ-Jk-zgu" secondAttribute="bottom" constant="50" id="Sxb-KK-rT7"/>
-                                                <constraint firstItem="uGJ-Jk-zgu" firstAttribute="centerX" secondItem="gvS-b3-ef5" secondAttribute="centerX" id="XnW-VV-iM0"/>
-                                                <constraint firstItem="uGJ-Jk-zgu" firstAttribute="top" secondItem="gvS-b3-ef5" secondAttribute="top" constant="79" id="f2u-59-982"/>
-                                                <constraint firstItem="uGJ-Jk-zgu" firstAttribute="leading" secondItem="gvS-b3-ef5" secondAttribute="leading" constant="29" id="sGs-eK-ghw"/>
-                                                <constraint firstAttribute="trailing" secondItem="ggh-Lx-qez" secondAttribute="trailing" constant="16" id="vlA-M6-WOI"/>
+                                                <constraint firstItem="uGJ-Jk-zgu" firstAttribute="leading" secondItem="gvS-b3-ef5" secondAttribute="leading" constant="42" id="4uX-9L-MBn"/>
+                                                <constraint firstAttribute="trailing" secondItem="ggh-Lx-qez" secondAttribute="trailing" constant="16" id="F7Z-S0-89S"/>
+                                                <constraint firstItem="uGJ-Jk-zgu" firstAttribute="centerX" secondItem="gvS-b3-ef5" secondAttribute="centerX" id="Vrl-zv-Dhg"/>
+                                                <constraint firstAttribute="bottom" secondItem="ggh-Lx-qez" secondAttribute="bottom" constant="72.5" id="hBC-aE-xqx"/>
+                                                <constraint firstItem="uGJ-Jk-zgu" firstAttribute="top" secondItem="gvS-b3-ef5" secondAttribute="top" constant="78" id="k9z-qc-hQE"/>
+                                                <constraint firstItem="ggh-Lx-qez" firstAttribute="leading" secondItem="gvS-b3-ef5" secondAttribute="leading" constant="16" id="m9y-5m-Oe6"/>
+                                                <constraint firstItem="ggh-Lx-qez" firstAttribute="top" secondItem="uGJ-Jk-zgu" secondAttribute="bottom" constant="78" id="tBy-VW-0pt"/>
+                                                <constraint firstAttribute="trailing" secondItem="uGJ-Jk-zgu" secondAttribute="trailing" constant="42" id="vlm-FF-5pp"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <edgeInsets key="layoutMargins" top="8" left="0.0" bottom="8" right="0.0"/>
-                                        <size key="customSize" width="429" height="673.33333333333326"/>
+                                        <size key="customSize" width="414" height="662.5"/>
                                         <connections>
                                             <outlet property="slideDescriptionLabel" destination="2Y8-Gr-fmb" id="j1K-f1-Lgj"/>
                                             <outlet property="slideImageView" destination="uGJ-Jk-zgu" id="iZx-uu-jGD"/>
@@ -91,26 +92,20 @@ Happy day with your favorite mood.</string>
                                 </cells>
                             </collectionView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Iz-bN-TZv">
-                                <rect key="frame" x="194.66666666666666" y="814" width="39" height="25"/>
+                                <rect key="frame" x="187.5" y="784" width="39" height="36"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="ef0-v2-wrQ"/>
-                                    <constraint firstAttribute="width" constant="40" id="rws-T0-weq"/>
+                                    <constraint firstAttribute="height" constant="36" id="3km-Qv-f9u"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
                                 <state key="normal" title="Next">
                                     <color key="titleColor" red="0.078431372550000003" green="0.21176470589999999" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="rws-T0-weq"/>
-                                    </mask>
-                                </variation>
                                 <connections>
                                     <action selector="nextButtonPressedWith_sender:" destination="MM2-38-UAe" eventType="touchUpInside" id="WrE-pb-VG2"/>
                                 </connections>
                             </button>
                             <pageControl opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="20k-Df-bk2">
-                                <rect key="frame" x="153.33333333333334" y="736.66666666666663" width="121.33333333333334" height="27.333333333333371"/>
+                                <rect key="frame" x="146" y="706.5" width="122.5" height="27.5"/>
                                 <color key="pageIndicatorTintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="currentPageIndicatorTintColor" red="0.078431372550000003" green="0.21176470589999999" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                             </pageControl>
@@ -118,14 +113,14 @@ Happy day with your favorite mood.</string>
                         <viewLayoutGuide key="safeArea" id="qHV-D1-6bL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="20k-Df-bk2" firstAttribute="centerX" secondItem="flu-OE-pgQ" secondAttribute="centerX" id="2C2-Za-TGi"/>
-                            <constraint firstItem="4Iz-bN-TZv" firstAttribute="centerX" secondItem="flu-OE-pgQ" secondAttribute="centerX" id="SzK-p6-JFI"/>
-                            <constraint firstItem="AU2-Nt-uFq" firstAttribute="leading" secondItem="qHV-D1-6bL" secondAttribute="leading" id="U4Q-kX-hdi"/>
-                            <constraint firstItem="4Iz-bN-TZv" firstAttribute="top" secondItem="20k-Df-bk2" secondAttribute="bottom" constant="50" id="UuY-Fr-9O9"/>
-                            <constraint firstItem="AU2-Nt-uFq" firstAttribute="trailing" secondItem="qHV-D1-6bL" secondAttribute="trailing" id="gMB-W5-he6"/>
-                            <constraint firstItem="20k-Df-bk2" firstAttribute="top" secondItem="AU2-Nt-uFq" secondAttribute="bottom" id="lwN-Pi-Wyl"/>
-                            <constraint firstItem="qHV-D1-6bL" firstAttribute="bottom" secondItem="4Iz-bN-TZv" secondAttribute="bottom" constant="53" id="m5d-k4-mRf"/>
-                            <constraint firstItem="AU2-Nt-uFq" firstAttribute="top" secondItem="qHV-D1-6bL" secondAttribute="top" id="oXB-bj-1iX"/>
+                            <constraint firstItem="qHV-D1-6bL" firstAttribute="bottom" secondItem="4Iz-bN-TZv" secondAttribute="bottom" constant="42" id="6aK-Ti-u9N"/>
+                            <constraint firstItem="AU2-Nt-uFq" firstAttribute="leading" secondItem="qHV-D1-6bL" secondAttribute="leading" id="AYe-IY-hkc"/>
+                            <constraint firstItem="AU2-Nt-uFq" firstAttribute="trailing" secondItem="qHV-D1-6bL" secondAttribute="trailing" id="UME-UN-K8D"/>
+                            <constraint firstItem="4Iz-bN-TZv" firstAttribute="centerX" secondItem="qHV-D1-6bL" secondAttribute="centerX" id="btT-uX-Aqm"/>
+                            <constraint firstItem="4Iz-bN-TZv" firstAttribute="top" secondItem="20k-Df-bk2" secondAttribute="bottom" constant="50" id="d0t-JC-DRI"/>
+                            <constraint firstItem="AU2-Nt-uFq" firstAttribute="top" secondItem="qHV-D1-6bL" secondAttribute="top" id="dYe-cz-q57"/>
+                            <constraint firstItem="20k-Df-bk2" firstAttribute="top" secondItem="AU2-Nt-uFq" secondAttribute="bottom" id="ftm-ph-hBZ"/>
+                            <constraint firstItem="20k-Df-bk2" firstAttribute="centerX" secondItem="qHV-D1-6bL" secondAttribute="centerX" id="pPN-ub-tR8"/>
                         </constraints>
                     </view>
                     <connections>
@@ -136,7 +131,7 @@ Happy day with your favorite mood.</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SC1-pL-2UI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="162.61682242990653" y="115.98272138228943"/>
+            <point key="canvasLocation" x="162.31884057971016" y="115.17857142857142"/>
         </scene>
     </scenes>
     <resources>

@@ -30,7 +30,7 @@ class OnboardingViewController: UIViewController {
             
             OnboardingSlide(title: "Find a place you can study", description: "It’ hard to find a quiet place to study Around allow you to see place reviews.", image: UIImage(named: "Onboarding2")!),
             
-            OnboardingSlide(title: "Save money when book with us", description: "Save more money was never easy Around will make you a lot of offers.", image: UIImage(named: "Onboarding3")!)
+            OnboardingSlide(title: "Save money when book with us", description: "Save more money was never easy.", image: UIImage(named: "Onboarding3")!)
         ]
     }
     

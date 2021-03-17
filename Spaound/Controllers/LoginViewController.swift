@@ -43,10 +43,7 @@ class LoginViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        emailTextField.layer.cornerRadius = 16.0
-        passwordTextField.layer.cornerRadius = 16.0
-        loginButton.layer.cornerRadius = 16.0
-        facebookLoginButton.frame = CGRect(x: 32, y: 740, width:360 , height: 55)
+        facebookLoginButton.frame = CGRect(x: 32, y: 700, width:350 , height: 55)
         
     }
     

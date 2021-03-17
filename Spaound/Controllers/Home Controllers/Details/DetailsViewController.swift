@@ -1,6 +1,5 @@
 
 import UIKit
-import ExpandableLabel
 
 class DetailsViewController: UIViewController {
 
@@ -28,8 +27,6 @@ class DetailsViewController: UIViewController {
     @IBOutlet weak var whatsappImage:UIImageView!
 
 
- 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         

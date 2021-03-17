@@ -47,7 +47,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IOS-7q-ykF">
                             <rect key="frame" x="0.0" y="50" width="418" height="1600"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="taohub6" translatesAutoresizingMaskIntoConstraints="NO" id="XYp-df-Jme">
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Space" translatesAutoresizingMaskIntoConstraints="NO" id="XYp-df-Jme">
                                     <rect key="frame" x="-2" y="0.0" width="420" height="300"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="300" id="bsa-R1-Ju8"/>
@@ -60,7 +60,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nasr City, Cairo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b17-AM-UDV">
-                                    <rect key="frame" x="13" y="344" width="110" height="22"/>
+                                    <rect key="frame" x="9" y="344" width="110" height="22"/>
                                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="16"/>
                                     <color key="textColor" red="0.5568627451" green="0.57254901960000004" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
@@ -102,7 +102,7 @@
                                     </userDefinedRuntimeAttributes>
                                 </view>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Amenities" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7kt-Bf-DSX">
-                                    <rect key="frame" x="13" y="426" width="82" height="25"/>
+                                    <rect key="frame" x="22" y="426" width="82" height="25"/>
                                     <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="18"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -187,37 +187,37 @@ different companies share an</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wF3-3A-8ta">
-                                    <rect key="frame" x="60" y="714" width="20" height="21"/>
+                                    <rect key="frame" x="45" y="714" width="20" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OgR-rf-gjE">
-                                    <rect key="frame" x="60" y="743" width="20" height="21"/>
+                                    <rect key="frame" x="45" y="743" width="20" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRq-G8-aj3">
-                                    <rect key="frame" x="60" y="772" width="20" height="21"/>
+                                    <rect key="frame" x="45" y="772" width="20" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lTP-jj-jWe">
-                                    <rect key="frame" x="60" y="801" width="20" height="21"/>
+                                    <rect key="frame" x="45" y="801" width="20" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="25" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uev-8a-f19">
-                                    <rect key="frame" x="60" y="830" width="20" height="21"/>
+                                    <rect key="frame" x="45" y="830" width="20" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AzC-SD-6E6">
-                                    <rect key="frame" x="83" y="714" width="118" height="22"/>
+                                    <rect key="frame" x="68" y="714" width="118" height="22"/>
                                     <attributedString key="attributedText">
                                         <fragment content="/ 1 Day (8 Hours)">
                                             <attributes>
@@ -229,7 +229,7 @@ different companies share an</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vVM-Gi-TgJ">
-                                    <rect key="frame" x="83" y="743" width="225" height="22"/>
+                                    <rect key="frame" x="68" y="743" width="225" height="22"/>
                                     <attributedString key="attributedText">
                                         <fragment content="/ 1 Day (8 Hours)">
                                             <attributes>
@@ -247,7 +247,7 @@ different companies share an</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OJZ-54-cRb">
-                                    <rect key="frame" x="83" y="772" width="206.5" height="22"/>
+                                    <rect key="frame" x="68" y="772" width="206.5" height="22"/>
                                     <attributedString key="attributedText">
                                         <fragment content="/ 1 Day (8 Hours) ">
                                             <attributes>
@@ -265,7 +265,7 @@ different companies share an</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ue-oO-q2S">
-                                    <rect key="frame" x="83" y="801" width="217" height="22"/>
+                                    <rect key="frame" x="68" y="801" width="217" height="22"/>
                                     <attributedString key="attributedText">
                                         <fragment content="/ 1 Day (8 Hours) ">
                                             <attributes>
@@ -283,7 +283,7 @@ different companies share an</string>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XB5-Qe-Wni">
-                                    <rect key="frame" x="83" y="830" width="216.5" height="22"/>
+                                    <rect key="frame" x="68" y="830" width="216.5" height="22"/>
                                     <attributedString key="attributedText">
                                         <fragment content="/ 1 Day (8 Hours) ">
                                             <attributes>
@@ -501,31 +501,31 @@ different companies share an</string>
                                     </userDefinedRuntimeAttributes>
                                 </button>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kgm-Yx-pgR">
-                                    <rect key="frame" x="38" y="714" width="19" height="21"/>
+                                    <rect key="frame" x="22" y="714" width="19" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ebg-sK-JtB">
-                                    <rect key="frame" x="38" y="743" width="19" height="21"/>
+                                    <rect key="frame" x="22" y="743" width="19" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kQQ-bL-Liz">
-                                    <rect key="frame" x="38" y="772" width="19" height="21"/>
+                                    <rect key="frame" x="22" y="772" width="19" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ed0-4U-SdH">
-                                    <rect key="frame" x="38" y="801" width="19" height="21"/>
+                                    <rect key="frame" x="22" y="801" width="19" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gda-bE-HJJ">
-                                    <rect key="frame" x="38" y="831" width="19" height="21"/>
+                                    <rect key="frame" x="22" y="831" width="19" height="21"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -572,6 +572,7 @@ different companies share an</string>
                                 <constraint firstItem="uev-8a-f19" firstAttribute="top" secondItem="lTP-jj-jWe" secondAttribute="bottom" constant="8" symbolic="YES" id="CSI-jz-1ya"/>
                                 <constraint firstItem="jAe-3t-9mi" firstAttribute="top" secondItem="sMJ-0N-5GO" secondAttribute="bottom" constant="8" symbolic="YES" id="CwC-cu-EcF"/>
                                 <constraint firstItem="6Ue-oO-q2S" firstAttribute="leading" secondItem="lTP-jj-jWe" secondAttribute="trailing" constant="3" id="E0e-dN-Zv6"/>
+                                <constraint firstItem="HYf-Rs-chf" firstAttribute="top" secondItem="yoI-Hi-v8a" secondAttribute="bottom" constant="34" id="Ej4-5f-IW6"/>
                                 <constraint firstItem="p7G-Vd-sdJ" firstAttribute="leading" secondItem="53s-rQ-Wpb" secondAttribute="trailing" constant="6" id="FT3-hl-9ep"/>
                                 <constraint firstItem="kgm-Yx-pgR" firstAttribute="top" secondItem="lmP-IT-jnx" secondAttribute="bottom" constant="7.5" id="HHM-tH-jQo"/>
                                 <constraint firstItem="Nnx-aW-A3W" firstAttribute="top" secondItem="am0-SV-5RI" secondAttribute="bottom" constant="8" symbolic="YES" id="Hm0-Ra-d3h"/>
@@ -579,7 +580,7 @@ different companies share an</string>
                                 <constraint firstItem="qzg-Uq-kra" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="IxH-yj-Ihi"/>
                                 <constraint firstItem="Gky-mT-SAO" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="J8n-7o-X7n"/>
                                 <constraint firstItem="9eO-3H-dyi" firstAttribute="leading" secondItem="4fN-z9-Lmb" secondAttribute="trailing" constant="6" id="Jsv-b0-YPL"/>
-                                <constraint firstItem="7kt-Bf-DSX" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="13" id="Jvs-Ei-SHz"/>
+                                <constraint firstItem="7kt-Bf-DSX" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="Jvs-Ei-SHz"/>
                                 <constraint firstItem="XB5-Qe-Wni" firstAttribute="leading" secondItem="uev-8a-f19" secondAttribute="trailing" constant="3" id="Kw7-cg-eI9"/>
                                 <constraint firstItem="XYp-df-Jme" firstAttribute="width" secondItem="IOS-7q-ykF" secondAttribute="width" multiplier="1.00478" id="LEM-zd-nbx"/>
                                 <constraint firstItem="Hxa-aE-x22" firstAttribute="leading" secondItem="c1h-sC-dR2" secondAttribute="leading" id="Ley-fS-Xc5"/>
@@ -616,7 +617,7 @@ different companies share an</string>
                                 <constraint firstAttribute="trailing" secondItem="j0h-0P-cr5" secondAttribute="trailing" constant="33" id="ZkC-yM-Mce"/>
                                 <constraint firstItem="0t7-Lz-wBO" firstAttribute="top" secondItem="ckb-Gf-n8A" secondAttribute="bottom" constant="8" symbolic="YES" id="aYi-8C-nwn"/>
                                 <constraint firstItem="0t7-Lz-wBO" firstAttribute="leading" secondItem="ckb-Gf-n8A" secondAttribute="leading" id="b0l-QZ-1uD"/>
-                                <constraint firstItem="b17-AM-UDV" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="13" id="bCD-WU-Weu"/>
+                                <constraint firstItem="b17-AM-UDV" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="9" id="bCD-WU-Weu"/>
                                 <constraint firstItem="JFT-19-dTX" firstAttribute="top" secondItem="dZt-jk-lQb" secondAttribute="bottom" constant="8" symbolic="YES" id="bD7-aZ-eNy"/>
                                 <constraint firstItem="uRq-G8-aj3" firstAttribute="top" secondItem="OgR-rf-gjE" secondAttribute="bottom" constant="8" symbolic="YES" id="bTQ-2T-V1e"/>
                                 <constraint firstItem="SSJ-LU-UNB" firstAttribute="top" secondItem="XB5-Qe-Wni" secondAttribute="bottom" constant="15" id="bew-up-rGS"/>
@@ -630,7 +631,7 @@ different companies share an</string>
                                 <constraint firstItem="OgR-rf-gjE" firstAttribute="leading" secondItem="wF3-3A-8ta" secondAttribute="leading" id="eBI-JA-x52"/>
                                 <constraint firstItem="ZiN-op-aJw" firstAttribute="top" secondItem="jAe-3t-9mi" secondAttribute="bottom" constant="8" symbolic="YES" id="eIy-ae-hVB"/>
                                 <constraint firstItem="uev-8a-f19" firstAttribute="leading" secondItem="lTP-jj-jWe" secondAttribute="leading" id="eMb-x4-KAh"/>
-                                <constraint firstItem="wF3-3A-8ta" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="60" id="ecp-wm-3je"/>
+                                <constraint firstItem="wF3-3A-8ta" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="45" id="ecp-wm-3je"/>
                                 <constraint firstItem="Gky-mT-SAO" firstAttribute="top" secondItem="am0-SV-5RI" secondAttribute="bottom" constant="8" id="ego-kh-2gH"/>
                                 <constraint firstItem="IWV-qu-ZLc" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="gjV-TO-nRs"/>
                                 <constraint firstItem="Fe8-9v-XIF" firstAttribute="leading" secondItem="Hxa-aE-x22" secondAttribute="leading" id="gvc-Ka-oO6"/>
@@ -651,7 +652,7 @@ different companies share an</string>
                                 <constraint firstItem="Ed0-4U-SdH" firstAttribute="leading" secondItem="kQQ-bL-Liz" secondAttribute="leading" id="oOi-aO-Jno"/>
                                 <constraint firstItem="hHu-2K-k6n" firstAttribute="top" secondItem="JKd-k4-905" secondAttribute="bottom" constant="15" id="oZC-Xr-wEe"/>
                                 <constraint firstItem="Th0-ds-DAa" firstAttribute="leading" secondItem="RBD-av-ib0" secondAttribute="trailing" constant="2" id="osx-fO-nFH"/>
-                                <constraint firstItem="kgm-Yx-pgR" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="38" id="p1L-rT-ddo"/>
+                                <constraint firstItem="kgm-Yx-pgR" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="p1L-rT-ddo"/>
                                 <constraint firstItem="JKd-k4-905" firstAttribute="leading" secondItem="IOS-7q-ykF" secondAttribute="leading" constant="22" id="qT0-V4-YA3"/>
                                 <constraint firstItem="9eO-3H-dyi" firstAttribute="bottom" secondItem="4fN-z9-Lmb" secondAttribute="bottom" id="sD3-8u-9eY"/>
                                 <constraint firstItem="JKd-k4-905" firstAttribute="top" secondItem="Ij8-Ds-TyG" secondAttribute="bottom" constant="17" id="sEj-1g-rHf"/>
@@ -724,11 +725,11 @@ different companies share an</string>
     <resources>
         <image name="Coffee" width="512" height="512"/>
         <image name="Meeting" width="512" height="512"/>
+        <image name="Space" width="1000" height="666"/>
         <image name="arrow.left" catalog="system" width="128" height="98"/>
         <image name="book" catalog="system" width="128" height="102"/>
         <image name="facebook" width="512" height="512"/>
         <image name="gamecontroller" catalog="system" width="128" height="80"/>
-        <image name="taohub6" width="1000" height="666"/>
         <image name="telephone" width="512" height="512"/>
         <image name="whatsapp" width="512" height="512"/>
         <image name="wifi" catalog="system" width="128" height="91"/>
