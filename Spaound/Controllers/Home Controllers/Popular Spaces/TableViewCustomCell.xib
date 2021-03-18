@@ -52,8 +52,18 @@
                     <constraint firstItem="ueP-JY-sfV" firstAttribute="leading" secondItem="Hr5-mp-jYT" secondAttribute="leading" id="mrT-5O-6pt"/>
                     <constraint firstItem="ueP-JY-sfV" firstAttribute="top" secondItem="Hr5-mp-jYT" secondAttribute="top" constant="4" id="u09-LV-3oU"/>
                 </constraints>
+                <userDefinedRuntimeAttributes>
+                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                        <real key="value" value="16"/>
+                    </userDefinedRuntimeAttribute>
+                </userDefinedRuntimeAttributes>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="kuh-i0-Erc"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="16"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="spaceAddressLabel" destination="07e-Si-TVn" id="5qN-kv-1ce"/>
                 <outlet property="spaceNameLabel" destination="hLC-QC-sIV" id="e01-QR-gyF"/>

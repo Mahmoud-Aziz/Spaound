@@ -17,7 +17,7 @@ class CustomCellTableView: UITableViewCell {
         super.awakeFromNib()
         
         let spaceName = UserDefaults.standard.value(forKey: "space_name") as? String
-        let spaceAddress = UserDefaults.standard.value(forKey: "space_address") as? String
+        let spaceAddress = UserDefaults.standard.value(forKey: "space_district") as? String
         let spacePrice = UserDefaults.standard.value(forKey: "price_per_day") as? Int
         
         spaceNameLabel.text = spaceName
@@ -29,7 +29,6 @@ class CustomCellTableView: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
     }
     
 }

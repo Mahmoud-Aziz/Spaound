@@ -2,13 +2,14 @@
 import UIKit
 import FirebaseAuth
 import JGProgressHUD
+import PhoneNumberKit
 
 class RegisterViewController: UIViewController {
 
     @IBOutlet private weak var firstNameTextField:UITextField!
     @IBOutlet private weak var lastNameTextField:UITextField!
     @IBOutlet private weak var emailTextField:UITextField!
-    @IBOutlet private weak var phoneNumberTextField:UITextField!
+    @IBOutlet private weak var phoneNumberTextField:PhoneNumberTextField!
     @IBOutlet private weak var passwordTextField:UITextField!
     @IBOutlet private weak var continueButton:UIButton! 
     
@@ -19,14 +20,26 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dismissKeyboard()
         emailTextField.delegate = self
         passwordTextField.delegate = self
         firstNameTextField.delegate = self
         lastNameTextField.delegate = self
         phoneNumberTextField.delegate = self
+        phoneNumberTextField.withFlag = true
+        phoneNumberTextField.withPrefix = true
+        phoneNumberTextField.withExamplePlaceholder = true
+        phoneNumberTextField.attributedPlaceholder = NSAttributedString(string: "+20 100 230 33 56")
+      
+        phoneNumberTextField.text = PartialFormatter(phoneNumberKit: PhoneNumberKit(), defaultRegion: "EG", withPrefix: true, maxDigits: 13).formatPartial("+20")
         
+        phoneNumberTextField.withDefaultPickerUI = true
 
     }
+    
+   
+
+
  
     //MARK:- Continue to phone verfication
     
@@ -131,13 +144,18 @@ extension RegisterViewController:UITextFieldDelegate {
         return true
     }
     
-//    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-//        if (passwordTextField.text?.rangeOfCharacter(from: NSCharacterSet.decimalDigits)) != nil {
-//            return true
-//        } else {
-//            return false
-//        }
-//    }
-    
+   
 }
+
+class MyGBTextField: PhoneNumberTextField {
+    override var defaultRegion: String {
+        get {
+            return "EG"
+        }
+        set {}
+    }
+
+}
+
+  let ref = MyGBTextField()
 

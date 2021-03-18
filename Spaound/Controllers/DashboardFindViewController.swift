@@ -20,6 +20,7 @@ class DashboardFindViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.dismissKeyboard()
         dashboardFindTableView.delegate = self
         dashboardFindTableView.dataSource = self
         dashboardFindTableView.isHidden = true

@@ -25,6 +25,8 @@
 		624D765F25F80CB900A99B79 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D765D25F80CB900A99B79 /* TabBarViewController.xib */; };
 		62561E1425FFD8190014224A /* OnboardingViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62561E1325FFD8190014224A /* OnboardingViewControllerCell.swift */; };
 		6277E5D32600008100208DF9 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6277E5D22600008100208DF9 /* CornerRadius.swift */; };
+		6277E61826025FDC00208DF9 /* SecondCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6277E61626025FDB00208DF9 /* SecondCustomTableViewCell.swift */; };
+		6277E61926025FDC00208DF9 /* SecondCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6277E61726025FDB00208DF9 /* SecondCustomTableViewCell.xib */; };
 		628281B525FE5787002A73E7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628281B425FE5787002A73E7 /* StorageManager.swift */; };
 		628281BE25FE6506002A73E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 628281BD25FE6506002A73E7 /* GoogleService-Info.plist */; };
 		62BB7F3C25FEC07D00CBE575 /* TableViewCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E3C37D25FDA4C20013363C /* TableViewCustomCell.xib */; };
@@ -72,6 +74,8 @@
 		624D765D25F80CB900A99B79 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		62561E1325FFD8190014224A /* OnboardingViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewControllerCell.swift; sourceTree = "<group>"; };
 		6277E5D22600008100208DF9 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
+		6277E61626025FDB00208DF9 /* SecondCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCustomTableViewCell.swift; sourceTree = "<group>"; };
+		6277E61726025FDB00208DF9 /* SecondCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondCustomTableViewCell.xib; sourceTree = "<group>"; };
 		628281B425FE5787002A73E7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		628281BD25FE6506002A73E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../.Trash/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62BB7FAD25FFC29C00CBE575 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -184,6 +188,8 @@
 				624D764625F4505100A99B79 /* CustomCellCollectionView.xib */,
 				624D764A25F453A300A99B79 /* CustomCellTableView.swift */,
 				624D764B25F453A300A99B79 /* CustomCellTableView.xib */,
+				6277E61626025FDB00208DF9 /* SecondCustomTableViewCell.swift */,
+				6277E61726025FDB00208DF9 /* SecondCustomTableViewCell.xib */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -440,6 +446,7 @@
 				62ED7A5A25F039CE00EEADFD /* EntryAuthenticationViewController.xib in Resources */,
 				62BB7F3C25FEC07D00CBE575 /* TableViewCustomCell.xib in Resources */,
 				624D75FA25F279C800A99B79 /* DashboardFindViewController.xib in Resources */,
+				6277E61926025FDC00208DF9 /* SecondCustomTableViewCell.xib in Resources */,
 				624D75EF25F2798700A99B79 /* PopularSpacesViewController.xib in Resources */,
 				62ED7A6925F03A0000EEADFD /* RegisterViewController.xib in Resources */,
 			);
@@ -499,6 +506,7 @@
 				62ED7A6125F039EC00EEADFD /* LoginViewController.swift in Sources */,
 				62ED7A6825F03A0000EEADFD /* RegisterViewController.swift in Sources */,
 				62BB7FAE25FFC29C00CBE575 /* OnboardingViewController.swift in Sources */,
+				6277E61826025FDC00208DF9 /* SecondCustomTableViewCell.swift in Sources */,
 				62ED7A4125F038C300EEADFD /* AppDelegate.swift in Sources */,
 				62561E1425FFD8190014224A /* OnboardingViewControllerCell.swift in Sources */,
 				624D75EE25F2798700A99B79 /* PopularSpacesViewController.swift in Sources */,

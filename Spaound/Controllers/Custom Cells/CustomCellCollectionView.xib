@@ -29,18 +29,14 @@
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZf-pn-woh">
                                 <rect key="frame" x="41" y="158" width="22" height="25"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pno-C7-L5O">
-                                <rect key="frame" x="63" y="163.5" width="27.5" height="19.5"/>
-                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
-                                <color key="textColor" red="0.94901960780000005" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="1"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volume.slash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rJE-du-xzD">
                                 <rect key="frame" x="212" y="159.5" width="25" height="23"/>
@@ -58,21 +54,29 @@
                                     <constraint firstAttribute="width" constant="25" id="y2Y-ZU-Z9v"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pno-C7-L5O">
+                                <rect key="frame" x="66" y="161" width="27.5" height="19.5"/>
+                                <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
+                                <color key="textColor" red="0.94901960780000005" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="pno-C7-L5O" firstAttribute="bottom" secondItem="EZf-pn-woh" secondAttribute="bottom" id="1Pi-U5-sJ8"/>
+                            <constraint firstAttribute="bottom" secondItem="hCs-IV-308" secondAttribute="bottom" constant="23" id="17i-Ew-Vfh"/>
                             <constraint firstItem="EZf-pn-woh" firstAttribute="leading" secondItem="hCs-IV-308" secondAttribute="trailing" constant="3" id="5oD-Lr-ML7"/>
                             <constraint firstAttribute="bottom" secondItem="PMK-T4-WiQ" secondAttribute="bottom" constant="23" id="Mck-Db-Uxs"/>
                             <constraint firstItem="zL9-Zp-N6j" firstAttribute="top" secondItem="yKd-h6-Vn6" secondAttribute="top" id="Mfq-Ob-SAs"/>
                             <constraint firstAttribute="trailing" secondItem="rJE-du-xzD" secondAttribute="trailing" constant="153" id="S1c-ta-rD6"/>
                             <constraint firstItem="EZf-pn-woh" firstAttribute="bottom" secondItem="hCs-IV-308" secondAttribute="bottom" id="bQ2-Dt-bZY"/>
                             <constraint firstAttribute="bottom" secondItem="rJE-du-xzD" secondAttribute="bottom" constant="23" id="dqj-WJ-04y"/>
+                            <constraint firstItem="PMK-T4-WiQ" firstAttribute="leading" secondItem="pno-C7-L5O" secondAttribute="trailing" constant="58.5" id="fkG-na-Vm9"/>
                             <constraint firstItem="zL9-Zp-N6j" firstAttribute="leading" secondItem="yKd-h6-Vn6" secondAttribute="leading" id="gHh-Ba-Slf"/>
                             <constraint firstAttribute="bottom" secondItem="zL9-Zp-N6j" secondAttribute="bottom" id="hcB-dl-Zf4"/>
                             <constraint firstAttribute="trailing" secondItem="zL9-Zp-N6j" secondAttribute="trailing" id="iez-aU-RBX"/>
                             <constraint firstItem="PMK-T4-WiQ" firstAttribute="leading" secondItem="yKd-h6-Vn6" secondAttribute="leading" constant="152" id="og6-oG-ptg"/>
-                            <constraint firstItem="pno-C7-L5O" firstAttribute="leading" secondItem="EZf-pn-woh" secondAttribute="trailing" id="pZE-xF-IUh"/>
+                            <constraint firstAttribute="bottom" secondItem="pno-C7-L5O" secondAttribute="bottom" constant="25.5" id="zCx-V7-BOI"/>
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Space Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNj-9B-7Vz">

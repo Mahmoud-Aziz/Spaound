@@ -13,6 +13,8 @@ target 'Spaound' do
  pod 'Firebase/Storage'
  pod 'Kingfisher', '~> 6.0'
  pod "ExpandableLabel"
+ pod 'PhoneNumberKit', '~> 3.3'
+
 
 
 

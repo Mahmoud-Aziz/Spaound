@@ -20,14 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="428" height="926"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V8t-wm-Oto">
-                    <rect key="frame" x="0.0" y="161" width="428" height="731"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <connections>
-                        <outlet property="dataSource" destination="-1" id="MOx-YA-Tmo"/>
-                        <outlet property="delegate" destination="-1" id="AQp-w7-ZK0"/>
-                    </connections>
-                </tableView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popular Spaces" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Vq-9c-Cij">
                     <rect key="frame" x="24" y="84" width="303" height="58"/>
                     <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="42"/>
@@ -50,17 +42,30 @@
                         <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="R6Q-GJ-kW6"/>
                     </connections>
                 </button>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="140" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="V8t-wm-Oto">
+                    <rect key="frame" x="29" y="160" width="370" height="638"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="MOx-YA-Tmo"/>
+                        <outlet property="delegate" destination="-1" id="AQp-w7-ZK0"/>
+                    </connections>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" red="0.94901960780000005" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Gnj-o8-bhU" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="50" id="1JS-VQ-Vc6"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V8t-wm-Oto" secondAttribute="trailing" constant="29" id="6JQ-a6-tMb"/>
                 <constraint firstItem="3Vq-9c-Cij" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="24" id="Ets-HG-o8l"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="V8t-wm-Oto" secondAttribute="trailing" id="HqL-cY-Krp"/>
                 <constraint firstItem="Gnj-o8-bhU" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="R9B-KU-4qU"/>
-                <constraint firstItem="V8t-wm-Oto" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="X8e-t5-gCn"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="V8t-wm-Oto" secondAttribute="bottom" id="m5q-Hj-otd"/>
-                <constraint firstItem="V8t-wm-Oto" firstAttribute="top" secondItem="3Vq-9c-Cij" secondAttribute="bottom" constant="19" id="tVm-si-Leo"/>
+                <constraint firstItem="V8t-wm-Oto" firstAttribute="top" secondItem="3Vq-9c-Cij" secondAttribute="bottom" constant="18" id="Vr1-oy-dud"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="V8t-wm-Oto" secondAttribute="bottom" constant="94" id="fQy-SY-j05"/>
+                <constraint firstItem="V8t-wm-Oto" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="29" id="gUl-2p-lP3"/>
                 <constraint firstItem="3Vq-9c-Cij" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="yNP-Q8-Spq"/>
             </constraints>
             <point key="canvasLocation" x="28" y="103"/>

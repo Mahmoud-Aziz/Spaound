@@ -25,7 +25,8 @@ class PhoneVerificationViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.dismissKeyboard()
+
         
     }
     

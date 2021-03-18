@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
         emailTextField.delegate = self
         passwordTextField.delegate = self
         facebookLoginButton.delegate = self
-        
+        self.dismissKeyboard()
         view.addSubview(facebookLoginButton)
         
     }
@@ -43,7 +43,7 @@ class LoginViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        facebookLoginButton.frame = CGRect(x: 32, y: 700, width:350 , height: 55)
+        facebookLoginButton.frame = CGRect(x: 32, y: 700, width: loginButton.frame.width , height: loginButton.frame.height)
         
     }
     

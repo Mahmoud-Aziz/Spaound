@@ -60,13 +60,13 @@ class HomeViewController: UIViewController {
   
 }
 
-//MARK:- Collection View Data Source and Delegate Methods:
+//MARK:- Table View Data Source and Delegate Methods:
 
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        return 5
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,7 +83,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-//MARK:- Table View Data Source and Delegate Methods:
+//MARK:- Collection View Data Source and Delegate Methods:
 
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     

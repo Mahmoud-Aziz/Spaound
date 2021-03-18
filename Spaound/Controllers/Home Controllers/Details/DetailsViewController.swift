@@ -1,7 +1,7 @@
 
 import UIKit
 
-class DetailsViewController: UIViewController {
+class DetailsViewController: UIViewController, UIGestureRecognizerDelegate {
 
     @IBOutlet weak var spaceNameLabel:UILabel!
     @IBOutlet weak var pricePadgeLabel:UILabel! 
@@ -30,6 +30,12 @@ class DetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
+       
+        func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+            return true
+        }
+
         let spaceName = UserDefaults.standard.value(forKey: "space_name") as? String
         let spaceDistrict = UserDefaults.standard.value(forKey: "space_district") as? String
         let spaceStreet = UserDefaults.standard.value(forKey: "space_street") as? String

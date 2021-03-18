@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -24,29 +23,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="P8g-1g-ny4">
-                    <rect key="frame" x="0.0" y="94" width="428" height="749"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <rect key="frame" x="29" y="143" width="370" height="640"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="wiE-Yp-yau"/>
                         <outlet property="delegate" destination="-1" id="rb3-nu-P0M"/>
                     </connections>
                 </tableView>
                 <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="C30-80-OSf">
-                    <rect key="frame" x="0.0" y="44" width="428" height="56"/>
+                    <rect key="frame" x="0.0" y="52" width="428" height="56"/>
                     <textInputTraits key="textInputTraits"/>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                     <connections>
                         <outlet property="delegate" destination="-1" id="px3-N0-e86"/>
                     </connections>
                 </searchBar>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Group 955" translatesAutoresizingMaskIntoConstraints="NO" id="kne-Ha-WeH">
-                    <rect key="frame" x="131" y="355" width="167" height="128"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="128" id="9rk-A2-Smi"/>
-                        <constraint firstAttribute="width" constant="167" id="fAw-Y9-rzk"/>
-                    </constraints>
+                    <rect key="frame" x="130.66666666666666" y="399.66666666666669" width="166.99999999999997" height="127.00000000000006"/>
                 </imageView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hL-HI-hf8">
-                    <rect key="frame" x="82" y="491" width="264.66666666666669" height="38.333333333333371"/>
+                    <rect key="frame" x="82" y="533.66666666666663" width="264.66666666666669" height="38.333333333333371"/>
                     <string key="text">Search for your favorite Co-Working Space
 by name and we’ll help you find them.</string>
                     <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
@@ -55,19 +59,19 @@ by name and we’ll help you find them.</string>
                 </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="C30-80-OSf" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="3vr-OL-I7T"/>
-                <constraint firstItem="kne-Ha-WeH" firstAttribute="top" secondItem="C30-80-OSf" secondAttribute="bottom" constant="255" id="4AF-ck-oz7"/>
-                <constraint firstItem="C30-80-OSf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="8Ne-0K-21G"/>
-                <constraint firstItem="P8g-1g-ny4" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="50" id="9tO-sx-fud"/>
-                <constraint firstItem="kne-Ha-WeH" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="131" id="Bhl-fV-MDa"/>
-                <constraint firstItem="P8g-1g-ny4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="RtG-a6-qRq"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P8g-1g-ny4" secondAttribute="trailing" id="SGg-rl-vph"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="P8g-1g-ny4" secondAttribute="bottom" id="jPk-3a-bmk"/>
-                <constraint firstItem="5hL-HI-hf8" firstAttribute="top" secondItem="kne-Ha-WeH" secondAttribute="bottom" constant="8" symbolic="YES" id="ktL-dH-WHN"/>
-                <constraint firstItem="5hL-HI-hf8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="82" id="tju-ZX-Xbv"/>
-                <constraint firstItem="C30-80-OSf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="y23-EF-CYC"/>
+                <constraint firstItem="P8g-1g-ny4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="29" id="CQl-ck-eg5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="C30-80-OSf" secondAttribute="trailing" id="G77-ee-UT7"/>
+                <constraint firstItem="5hL-HI-hf8" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="82" id="Hv2-Ib-U0v"/>
+                <constraint firstItem="5hL-HI-hf8" firstAttribute="top" secondItem="kne-Ha-WeH" secondAttribute="bottom" constant="7.3300000000000001" id="I4H-Eh-OYW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="P8g-1g-ny4" secondAttribute="trailing" constant="29" id="K0Q-G2-mrr"/>
+                <constraint firstItem="P8g-1g-ny4" firstAttribute="top" secondItem="C30-80-OSf" secondAttribute="bottom" constant="35" id="Z81-jp-hdc"/>
+                <constraint firstItem="kne-Ha-WeH" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="iZx-ac-4mN"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="P8g-1g-ny4" secondAttribute="bottom" constant="60" id="nGK-gu-DQB"/>
+                <constraint firstItem="kne-Ha-WeH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="q7a-dm-wp6"/>
+                <constraint firstItem="C30-80-OSf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="8" id="sDB-OE-gBA"/>
+                <constraint firstItem="C30-80-OSf" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="wBR-7w-lXK"/>
             </constraints>
             <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
             <point key="canvasLocation" x="71.495327102803728" y="122.46220302375811"/>
@@ -75,8 +79,5 @@ by name and we’ll help you find them.</string>
     </objects>
     <resources>
         <image name="Group 955" width="167" height="127"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
     </resources>
 </document>
