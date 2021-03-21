@@ -32,6 +32,7 @@
 		62BB7F3C25FEC07D00CBE575 /* TableViewCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E3C37D25FDA4C20013363C /* TableViewCustomCell.xib */; };
 		62BB7FAE25FFC29C00CBE575 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB7FAD25FFC29C00CBE575 /* OnboardingViewController.swift */; };
 		62BB7FB225FFC63400CBE575 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB7FB125FFC63400CBE575 /* OnboardingSlide.swift */; };
+		62C9F56526080A840077760C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62C9F56426080A840077760C /* .gitignore */; };
 		62CE8BD225FBD0E500E5ABFE /* SpacesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE8BD125FBD0E500E5ABFE /* SpacesDataManager.swift */; };
 		62E3C2F425FC32EE0013363C /* SpacesDatabaseInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3C2F325FC32EE0013363C /* SpacesDatabaseInsert.swift */; };
 		62E3C32325FCE8EB0013363C /* CustomCellDashboardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3C32125FCE8EB0013363C /* CustomCellDashboardTableView.swift */; };
@@ -80,6 +81,7 @@
 		628281BD25FE6506002A73E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../.Trash/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		62BB7FAD25FFC29C00CBE575 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		62BB7FB125FFC63400CBE575 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
+		62C9F56426080A840077760C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		62CE8BD125FBD0E500E5ABFE /* SpacesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesDataManager.swift; sourceTree = "<group>"; };
 		62E3C2F325FC32EE0013363C /* SpacesDatabaseInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesDatabaseInsert.swift; sourceTree = "<group>"; };
 		62E3C32125FCE8EB0013363C /* CustomCellDashboardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellDashboardTableView.swift; sourceTree = "<group>"; };
@@ -233,6 +235,7 @@
 		62ED7A3425F038C300EEADFD = {
 			isa = PBXGroup;
 			children = (
+				62C9F56426080A840077760C /* .gitignore */,
 				62ED7A3F25F038C300EEADFD /* Spaound */,
 				62ED7A3E25F038C300EEADFD /* Products */,
 				6EE27C141908F25080284E99 /* Pods */,
@@ -430,6 +433,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				62C9F56526080A840077760C /* .gitignore in Resources */,
 				62ED7A6225F039EC00EEADFD /* LoginViewController.xib in Resources */,
 				62ED7A4D25F038C500EEADFD /* LaunchScreen.storyboard in Resources */,
 				624D764325F44A4A00A99B79 /* HomeViewController.xib in Resources */,
