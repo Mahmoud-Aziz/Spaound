@@ -62,6 +62,7 @@ class LoginViewController: UIViewController {
         }
         
         spinner.show(in: view)
+        spinner.textLabel.text = "Loading"
         
         //firebase login
         FirebaseAuth.Auth.auth().signIn(withEmail: email, password: password, completion: {[weak self] authResult,error in
@@ -260,7 +261,8 @@ extension LoginViewController: LoginButtonDelegate {
                             
                             case .success(let downloadUrl):
                                 
-                                UserDefaults.standard.setValue(downloadUrl, forKey: "profile_picture_url")
+                                UserDefaults.standard.removeObject(forKey: "profile_picture_url")
+                                UserDefaults.standard.setValue(downloadUrl, forKey:"profile_picture_url")
                                 
                             case .failure(let error):
                                 

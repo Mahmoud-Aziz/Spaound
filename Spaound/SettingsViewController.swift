@@ -145,6 +145,7 @@ extension SettingsViewController:UINavigationControllerDelegate,UIImagePickerCon
         StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
             switch result {
             case .success(let downloadUrl):
+                UserDefaults.standard.removeObject(forKey: "profile_picture_url")
                 UserDefaults.standard.setValue(downloadUrl, forKey: "profile_picture_url")
                print("image uploaded")
                 print(downloadUrl)

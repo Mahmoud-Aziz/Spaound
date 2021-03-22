@@ -11,6 +11,11 @@ class TableViewCustomCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+
+
+    }
+    
+    func configureCell() {
         
         let spaceName = UserDefaults.standard.value(forKey: "space_name") as? String
         let spaceAddress = UserDefaults.standard.value(forKey: "space_district") as? String
@@ -19,9 +24,8 @@ class TableViewCustomCell: UITableViewCell {
         spaceNameLabel.text = spaceName
         spaceAddressLabel.text = spaceAddress
         spacePriceLabel.text = String(spacePrice ?? 0)
-
+        
     }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

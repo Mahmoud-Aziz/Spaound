@@ -54,6 +54,7 @@ class PhoneVerificationViewController: UIViewController {
             return
         }
         spinner.show(in: view)
+        spinner.textLabel.text = "Loading"
 
         FirebaseAuth.Auth.auth().createUser(withEmail: emailFromRegister, password: passwordFromRegister, completion: { authResult,error in
             guard authResult != nil, error == nil else {
