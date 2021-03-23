@@ -84,7 +84,6 @@ class LoginViewController: UIViewController {
             print("logged in user with\(user)")
             
             SpacesDatabaseManager.shared.retrieveSpace(completion: { space in
-                
                 UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
                 UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_district")
                 UserDefaults.standard.setValue(space.spaceStreetName, forKey: "space_street")
@@ -297,7 +296,7 @@ extension LoginViewController: LoginButtonDelegate {
                     UserDefaults.standard.setValue(space.gamingRoom, forKey: "gamingRoom")
                     UserDefaults.standard.setValue(space.aboutSpace, forKey: "about_space")
                     UserDefaults.standard.setValue(space.pricePerDay, forKey: "price_per_day")
-                    UserDefaults.standard.setValue(space.pricePerDayMeetingRoom, forKey: "price_meeting")
+                    UserDefaults.standard.setValue(space.pricePerDayMeetingRoom, forKey:"price_meeting")
                     UserDefaults.standard.setValue(space.pricePerDaySmallRoom, forKey: "price_small")
                     UserDefaults.standard.setValue(space.pricePerDayGamesRoom, forKey: "price_games")
                     UserDefaults.standard.setValue(space.pricePerDaySharedSpace, forKey: "price_shared")

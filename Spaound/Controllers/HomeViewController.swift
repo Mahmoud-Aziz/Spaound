@@ -9,11 +9,13 @@ class HomeViewController: UIViewController {
     
     @IBOutlet private weak var recommendedSpacesCollectionView: UICollectionView!
     @IBOutlet private weak var popularSpacesTableView:UITableView!
-    @IBOutlet private weak var hiUserLabel:UILabel! 
+    @IBOutlet private weak var hiUserLabel:UILabel!
+    var spaces = [[String:Any]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.spaces = UserDefaults.standard.value(forKey: "spaces") as? [[String:Any]] ?? [[:]]
         let userName = "\(UserDefaults.standard.value(forKey: "first_name") as? String ?? "") \(UserDefaults.standard.value(forKey: "last_name")as? String ?? "")"
         
         hiUserLabel.text = userName
@@ -66,15 +68,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
     
-        return 5
+        return spaces.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomCellTableView", for: indexPath) as! CustomCellTableView
 
-        cell.configureCell()
-        
+        cell.configureCell(indexpath: indexPath)
+       
         return cell
     }
     
@@ -90,13 +92,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 extension HomeViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        
+        return spaces.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CustomCellCollectionView", for: indexPath) as! CustomCellCollectionView
-        cell.configureCell()
+        
+        cell.configureCell(indexpath: indexPath)
         return cell
     }
         

@@ -5,8 +5,12 @@ import FirebaseDatabase
 
 final class SpacesDatabaseManager {
     
+    var spaces = [[String:Any]]()
+
     static let shared = SpacesDatabaseManager()
     private let database = Database.database().reference()
+    
+   
     
 }
 
@@ -34,12 +38,13 @@ extension SpacesDatabaseManager {
     
     public func retrieveSpace(completion: @escaping ((SpaceInfo)->Void)) {
         
-        database.child("spaces").observeSingleEvent(of: .value, with: { snapshot in
+        database.child("spaces").observeSingleEvent(of: .value, with: { [weak self] snapshot in
             guard let value = snapshot.value as? [[String:Any]] else {
                 print("error retrieving data from firebase")
                 return
             }
-            
+            self?.spaces = value
+            UserDefaults.standard.setValue(self?.spaces, forKey: "spaces")
             var space = SpaceInfo()
             
             let index = Int.random(in: 0...1)
@@ -68,55 +73,8 @@ extension SpacesDatabaseManager {
         })
         
     }
+}
     
-}
-
-
-struct Space {
-    let spaceName:String
-    let spaceDistrict:String
-    let spaceStreetName:String
-    let freeWiFi:Bool
-    let booksLibrary:Bool
-    let coffee:Bool
-    let meetingRoom:Bool
-    let aboutSpace:String
-    let pricePerDay:Int
-    let pricePerDayMeetingRoom:Int
-    let pricePerDaySmallRoom:Int
-    let pricePerDayGamesRoom:Int
-    let pricePerDaySharedSpace:Int
-    let facebookLink:String
-    let whatsAppNumber:Int
-    let contactNumber:Int
-}
-
-struct SpaceInfo {
-    var spaceName = ""
-    var spaceDistrict = ""
-    var spaceStreetName = ""
-    var freeWiFi = true
-    var booksLibrary = true
-    var coffee = true
-    var meetingRoom = true
-    var gamingRoom = true
-    var aboutSpace = ""
-    var pricePerDay = 0
-    var pricePerDayMeetingRoom = 0
-    var pricePerDaySmallRoom = 0
-    var pricePerDayGamesRoom = 0
-    var pricePerDaySharedSpace = 0
-    var facebookLink = ""
-    var whatsAppNumber = 0
-    var contactNumber = 0
-}
-
-
-
-
-
-
-//
 //    public func insertSpace(with space: Space) {
 //
 //        database.child(space.spaceName).setValue([
@@ -128,6 +86,7 @@ struct SpaceInfo {
 //            "bookLibrary":space.booksLibrary,
 //            "coffee": space.coffee,
 //            "meetingRoom": space.meetingRoom,
+//            "gamingRoom":space.gamingRoom,
 //            "aboutSpace": space.aboutSpace,
 //            "pricePerDay": space.pricePerDay,
 //            "pricePerDayMeetingRoom": space.pricePerDayMeetingRoom,
@@ -156,6 +115,7 @@ struct SpaceInfo {
 //                        "bookLibrary":space.booksLibrary,
 //                        "coffee": space.coffee,
 //                        "meetingRoom": space.meetingRoom,
+//                        "gamingRoom":space.gamingRoom,
 //                        "aboutSpace": space.aboutSpace,
 //                        "pricePerDay": space.pricePerDay,
 //                        "pricePerDayMeetingRoom": space.pricePerDayMeetingRoom,
@@ -177,9 +137,7 @@ struct SpaceInfo {
 //                        guard error == nil else {
 //                            return
 //                        }
-//                        UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
-//                        UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_address")
-//                        UserDefaults.standard.setValue(space.pricePerDay, forKey: "space_price_per_day")
+//
 //                    })
 //                }
 //                else {
@@ -192,6 +150,7 @@ struct SpaceInfo {
 //                        "bookLibrary":space.booksLibrary,
 //                        "coffee": space.coffee,
 //                        "meetingRoom": space.meetingRoom,
+//                        "gamingRoom":space.gamingRoom,
 //                        "aboutSpace": space.aboutSpace,
 //                        "pricePerDay": space.pricePerDay,
 //                        "pricePerDayMeetingRoom": space.pricePerDayMeetingRoom,
@@ -208,9 +167,6 @@ struct SpaceInfo {
 //                        guard error == nil else {
 //                            return
 //                        }
-//                        UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
-//                        UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_address")
-//                        UserDefaults.standard.setValue(space.pricePerDay, forKey: "space_price_per_day")
 //                    })
 //                }
 //            })
@@ -218,7 +174,58 @@ struct SpaceInfo {
 //        })
 //    }
 //
+//
+//
+//}
+//
+//
+//struct Space {
+//    let spaceName:String
+//    let spaceDistrict:String
+//    let spaceStreetName:String
+//    let freeWiFi:Bool
+//    let booksLibrary:Bool
+//    let coffee:Bool
+//    let meetingRoom:Bool
+//    let gamingRoom: Bool
+//    let aboutSpace:String
+//    let pricePerDay:Int
+//    let pricePerDayMeetingRoom:Int
+//    let pricePerDaySmallRoom:Int
+//    let pricePerDayGamesRoom:Int
+//    let pricePerDaySharedSpace:Int
+//    let facebookLink:String
+//    let whatsAppNumber:Int
+//    let contactNumber:Int
+//}
 
+struct SpaceInfo {
+    var spaceName = ""
+    var spaceDistrict = ""
+    var spaceStreetName = ""
+    var freeWiFi = true
+    var booksLibrary = true
+    var coffee = true
+    var meetingRoom = true
+    var gamingRoom = true
+    var aboutSpace = ""
+    var pricePerDay = 0
+    var pricePerDayMeetingRoom = 0
+    var pricePerDaySmallRoom = 0
+    var pricePerDayGamesRoom = 0
+    var pricePerDaySharedSpace = 0
+    var facebookLink = ""
+    var whatsAppNumber = 0
+    var contactNumber = 0
+}
+
+
+
+
+
+
+
+   
 
 //    public func getSpaces(completion: @escaping (Result<[String:Any], Error>) -> Void) {
 //
