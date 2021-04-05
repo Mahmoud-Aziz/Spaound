@@ -20,14 +20,9 @@ class DashboardFindViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        registerCell()
+        assignDelegateDataSource() 
         self.dismissKeyboard()
-        dashboardFindTableView.delegate = self
-        dashboardFindTableView.dataSource = self
-        dashboardFindTableView.isHidden = true
-        searchBar.delegate = self
-        
-        let customCell = UINib(nibName: "CustomCellDashboardTableView", bundle: nil)
-        dashboardFindTableView.register(customCell, forCellReuseIdentifier: "CustomCellDashboardTableView")
         
     }
     
@@ -138,21 +133,35 @@ extension DashboardFindViewController: UISearchBarDelegate {
     }
     
     func updateUI() {
-        if results.isEmpty {
-            
-            self.dashboardFindTableView.isHidden = true
-            self.backgroundImage.isHidden = false
-            searchTextLabel.isHidden = false
-            
-        }
-        else {
+        
+        guard results.isEmpty else {
             
             self.dashboardFindTableView.isHidden = false
             self.dashboardFindTableView.reloadData()
             self.backgroundImage.isHidden = true
             searchTextLabel.isHidden = true
-            
+           return
         }
+        
+        self.dashboardFindTableView.isHidden = true
+        self.backgroundImage.isHidden = false
+        searchTextLabel.isHidden = false
     }
 }
 
+extension DashboardFindViewController {
+    
+    func registerCell() {
+        
+        let customCell = UINib(nibName: "CustomCellDashboardTableView", bundle: nil)
+        dashboardFindTableView.register(customCell, forCellReuseIdentifier: "CustomCellDashboardTableView")
+    }
+    
+    func assignDelegateDataSource() {
+        
+        dashboardFindTableView.delegate = self
+        dashboardFindTableView.dataSource = self
+        dashboardFindTableView.isHidden = true
+        searchBar.delegate = self
+    }
+}

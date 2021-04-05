@@ -25,40 +25,70 @@ class DetailsViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var facebookImage:UIImageView! 
     @IBOutlet weak var contactImage:UIImageView!
     @IBOutlet weak var whatsappImage:UIImageView!
+    
+    
+    let spaceName = UserDefaults.standard.value(forKey: "space_name") as? String
+    let spaceDistrict = UserDefaults.standard.value(forKey: "space_district") as? String
+    let spaceStreet = UserDefaults.standard.value(forKey: "space_street") as? String
+    let aboutSpace = UserDefaults.standard.value(forKey: "about_space") as? String
+    let spacePriceDay = UserDefaults.standard.value(forKey: "price_per_day") as? Int
+    let spacePriceMeeting = UserDefaults.standard.value(forKey: "price_meeting") as? Int
+    let spacePriceSmall = UserDefaults.standard.value(forKey: "price_small") as? Int
+    let spacePriceGames = UserDefaults.standard.value(forKey: "price_games") as? Int
+    let spacePriceShared = UserDefaults.standard.value(forKey: "price_shared") as? Int
+    let spaceFacebook = UserDefaults.standard.value(forKey: "facebook") as? String ?? "no value"
+    let spaceWhatsApp = UserDefaults.standard.value(forKey: "whatsapp") as? Int
+    let spaceContact = UserDefaults.standard.value(forKey: "contact_number") as? Int
 
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-        self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
-       
-        func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-            return true
-        }
-
-        let spaceName = UserDefaults.standard.value(forKey: "space_name") as? String
-        let spaceDistrict = UserDefaults.standard.value(forKey: "space_district") as? String
-        let spaceStreet = UserDefaults.standard.value(forKey: "space_street") as? String
-        let aboutSpace = UserDefaults.standard.value(forKey: "about_space") as? String
-        let spacePriceDay = UserDefaults.standard.value(forKey: "price_per_day") as? Int
-        let spacePriceMeeting = UserDefaults.standard.value(forKey: "price_meeting") as? Int
-        let spacePriceSmall = UserDefaults.standard.value(forKey: "price_small") as? Int
-        let spacePriceGames = UserDefaults.standard.value(forKey: "price_games") as? Int
-        let spacePriceShared = UserDefaults.standard.value(forKey: "price_shared") as? Int
+        interactivePopGestureDelegate()
+        assignOutlets()
+        assignGestureRecognizer()
+        switchImageMethod()
+     
+    }
+    
+    @IBAction private func backButtonPressed( _ sender: UIButton) {
         
+        self.navigationController?.popViewController(animated: true)
+    }
     
-        spaceNameLabel.text = spaceName
-        spaceAddressLabel.text = ("\(spaceDistrict ?? "no value") \(spaceStreet ?? "no value")")
-        aboutSpaceLabel.text = aboutSpace
-        pricePadgeLabel.text = String(spacePriceDay ?? 0)
-        priceDayLabel.text = String(spacePriceDay ?? 0)
-        priceMeetingLabel.text = String(spacePriceMeeting ?? 0)
-        priceSmallLabel.text = String(spacePriceSmall ?? 0)
-        priceGamesLabel.text = String(spacePriceGames ?? 0)
-        priceSharedLabel.text = String(spacePriceShared ?? 0)
-    
+}
 
+extension DetailsViewController {
+    
+    func interactivePopGestureDelegate() {
+        self.navigationController?.interactivePopGestureRecognizer?.delegate = self;
+    }
+    
+    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldBeRequiredToFailBy otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    func assignOutlets() {
+        
+            spaceNameLabel.text = spaceName
+            spaceAddressLabel.text = ("\(spaceDistrict ?? "no value") \(spaceStreet ?? "no value")")
+            aboutSpaceLabel.text = aboutSpace
+            pricePadgeLabel.text = String(spacePriceDay ?? 0)
+            priceDayLabel.text = String(spacePriceDay ?? 0)
+            priceMeetingLabel.text = String(spacePriceMeeting ?? 0)
+            priceSmallLabel.text = String(spacePriceSmall ?? 0)
+            priceGamesLabel.text = String(spacePriceGames ?? 0)
+            priceSharedLabel.text = String(spacePriceShared ?? 0)
+    }
+}
+
+
+//MARK:- Contacts Gesture Recognizer Methods:
+
+extension DetailsViewController {
+    
+    func assignGestureRecognizer() {
+        
         let gestureFacebook = UITapGestureRecognizer(target: self, action: #selector(facebookLink))
         facebookImage.addGestureRecognizer(gestureFacebook)
         facebookImage.isUserInteractionEnabled = true
@@ -70,7 +100,41 @@ class DetailsViewController: UIViewController, UIGestureRecognizerDelegate {
         let gestureWhatsApp = UITapGestureRecognizer(target: self, action: #selector(WhatsAppNumber))
         whatsappImage.addGestureRecognizer(gestureWhatsApp)
         whatsappImage.isUserInteractionEnabled = true
+    }
+    
+    @objc func facebookLink() {
+        if let url = URL(string: spaceFacebook) {
+            
+            UIApplication.shared.open(url)
+        }
+    }
+    
+    @objc func ConatctNumber() {
         
+        if let phoneCallURL = URL(string: "tel://\(spaceContact ?? 000)") {
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(phoneCallURL)) {
+                application.open(phoneCallURL, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
+    @objc func WhatsAppNumber() {
+        
+        if let whatsAppURL = URL(string: "tel://\(spaceWhatsApp ?? 000)") {
+            let application:UIApplication = UIApplication.shared
+            if (application.canOpenURL(whatsAppURL)) {
+                application.open(whatsAppURL, options: [:], completionHandler: nil)
+            }
+        }
+    }
+    
+}
+
+//MARK:- Swich image Methods:
+
+extension DetailsViewController {
+    func switchImageMethod() {
         
         switch  UserDefaults.standard.bool(forKey: "free_wifi") {
         case true:
@@ -110,45 +174,4 @@ class DetailsViewController: UIViewController, UIGestureRecognizerDelegate {
         }
 
     }
-    
-    let spaceFacebook = UserDefaults.standard.value(forKey: "facebook") as? String ?? "no value"
-    let spaceWhatsApp = UserDefaults.standard.value(forKey: "whatsapp") as? Int
-    let spaceContact = UserDefaults.standard.value(forKey: "contact_number") as? Int
-    
-    @objc func facebookLink() {
-        if let url = URL(string: spaceFacebook) {
-            
-            UIApplication.shared.open(url)
-        }
-    }
-    
-    @objc func ConatctNumber() {
-        
-        if let phoneCallURL = URL(string: "tel://\(spaceContact ?? 000)") {
-           let application:UIApplication = UIApplication.shared
-           if (application.canOpenURL(phoneCallURL)) {
-               application.open(phoneCallURL, options: [:], completionHandler: nil)
-           }
-         }
-    }
-    
-    @objc func WhatsAppNumber() {
-        
-        if let whatsAppURL = URL(string: "tel://\(spaceWhatsApp ?? 000)") {
-           let application:UIApplication = UIApplication.shared
-           if (application.canOpenURL(whatsAppURL)) {
-               application.open(whatsAppURL, options: [:], completionHandler: nil)
-           }
-         }
-        
-    }
-    
-    @IBAction private func backButtonPressed( _ sender: UIButton) {
-        
-        self.navigationController?.popViewController(animated: true)
-    }
-    
-    
-    
-    
 }

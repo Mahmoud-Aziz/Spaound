@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		62040A03261B2BC700498D6B /* SpaceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62040A02261B2BC700498D6B /* SpaceInfo.swift */; };
+		62040A06261B2F7A00498D6B /* UserInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62040A05261B2F7A00498D6B /* UserInfo.swift */; };
 		624D75EE25F2798700A99B79 /* PopularSpacesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624D75EC25F2798700A99B79 /* PopularSpacesViewController.swift */; };
 		624D75EF25F2798700A99B79 /* PopularSpacesViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D75ED25F2798700A99B79 /* PopularSpacesViewController.xib */; };
 		624D75F425F2799500A99B79 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624D75F225F2799500A99B79 /* DetailsViewController.swift */; };
@@ -57,6 +59,8 @@
 
 /* Begin PBXFileReference section */
 		1DC93737D3E9B9BE20A88067 /* Pods-Spaound.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Spaound.debug.xcconfig"; path = "Target Support Files/Pods-Spaound/Pods-Spaound.debug.xcconfig"; sourceTree = "<group>"; };
+		62040A02261B2BC700498D6B /* SpaceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceInfo.swift; sourceTree = "<group>"; };
+		62040A05261B2F7A00498D6B /* UserInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInfo.swift; sourceTree = "<group>"; };
 		624D75EC25F2798700A99B79 /* PopularSpacesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularSpacesViewController.swift; sourceTree = "<group>"; };
 		624D75ED25F2798700A99B79 /* PopularSpacesViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PopularSpacesViewController.xib; sourceTree = "<group>"; };
 		624D75F225F2799500A99B79 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
@@ -228,6 +232,8 @@
 				62ED7AB525F05B5100EEADFD /* UserDatabaseManager.swift */,
 				62CE8BD125FBD0E500E5ABFE /* SpacesDataManager.swift */,
 				62E3C2F325FC32EE0013363C /* SpacesDatabaseInsert.swift */,
+				62040A02261B2BC700498D6B /* SpaceInfo.swift */,
+				62040A05261B2F7A00498D6B /* UserInfo.swift */,
 			);
 			name = "Database Management ";
 			sourceTree = "<group>";
@@ -523,12 +529,14 @@
 				62CE8BD225FBD0E500E5ABFE /* SpacesDataManager.swift in Sources */,
 				6277E5D32600008100208DF9 /* CornerRadius.swift in Sources */,
 				628281B525FE5787002A73E7 /* StorageManager.swift in Sources */,
+				62040A03261B2BC700498D6B /* SpaceInfo.swift in Sources */,
 				62ED7A4325F038C300EEADFD /* SceneDelegate.swift in Sources */,
 				624D763825F4417C00A99B79 /* SettingsViewController.swift in Sources */,
 				62ED7A6F25F03A1F00EEADFD /* PhoneVerificationViewController.swift in Sources */,
 				62ED7A5925F039CE00EEADFD /* EntryAuthenticationViewController.swift in Sources */,
 				624D75F425F2799500A99B79 /* DetailsViewController.swift in Sources */,
 				624D764225F44A4A00A99B79 /* HomeViewController.swift in Sources */,
+				62040A06261B2F7A00498D6B /* UserInfo.swift in Sources */,
 				62E3C32325FCE8EB0013363C /* CustomCellDashboardTableView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

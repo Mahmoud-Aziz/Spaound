@@ -20,17 +20,17 @@ class CustomCellTableView: UITableViewCell {
       
     }
     
-    let spaces = UserDefaults.standard.value(forKey: "spaces") as? [[String:Any]] ?? [[:]]
+    let spaces = UserDefaults.standard.value(forKey:"spaces") as? [[String:Any]] ?? [[:]]
     
     func configureCell(indexpath:IndexPath) {
         
-        let spaceName = spaces[indexpath.row]["name"] as! String
-        let spaceAddress = spaces[indexpath.row]["spaceDistrict"] as! String
-        let spacePrice = spaces[indexpath.row]["pricePerDay"] as! Int
+        let spaceName = spaces[indexpath.row]["name"] as? String
+        let spaceAddress = spaces[indexpath.row]["spaceDistrict"] as? String
+        let spacePrice = spaces[indexpath.row]["pricePerDay"] as? Int
 
         spaceNameLabel.text = spaceName
         spaceAddressLabel.text = spaceAddress
-        spacePriceLabel.text = String(spacePrice)
+        spacePriceLabel.text = String(spacePrice ?? 0)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {

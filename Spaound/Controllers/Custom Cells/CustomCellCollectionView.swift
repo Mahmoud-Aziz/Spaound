@@ -13,15 +13,15 @@ class CustomCellCollectionView: UICollectionViewCell {
         
     }
 
-    let spaces = UserDefaults.standard.value(forKey: "spaces") as! [[String:Any]]
+    let spaces = UserDefaults.standard.value(forKey: "spaces") as? [[String:Any]]
     
     func configureCell(indexpath:IndexPath) {
         
-        let spaceName = spaces[indexpath.row]["name"] as! String
-        let spacePrice = spaces[indexpath.row]["pricePerDay"] as! Int
+        let spaceName = spaces?[indexpath.row]["name"] as? String
+        let spacePrice = spaces?[indexpath.row]["pricePerDay"] as? Int
 
         spaceNameLabel.text = spaceName
-        priceLabel.text = String(spacePrice)
+        priceLabel.text = String(spacePrice ?? 0)
     }
 
     
