@@ -28,6 +28,7 @@ class SettingsViewController: UIViewController {
         
         let url = UserDefaults.standard.value(forKey: "profile_picture_url")
         let imageURL = URL(string: url as? String ?? "")
+        print("Image URL: \(imageURL)")
         profileImageView.kf.setImage(with: imageURL)
         
     }

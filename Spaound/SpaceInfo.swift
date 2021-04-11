@@ -1,22 +1,22 @@
 
 import Foundation
 
-struct SpaceInfo {
-    var spaceName = ""
-    var spaceDistrict = ""
-    var spaceStreetName = ""
-    var freeWiFi = true
-    var booksLibrary = true
-    var coffee = true
-    var meetingRoom = true
-    var gamingRoom = true
-    var aboutSpace = ""
-    var pricePerDay = 0
-    var pricePerDayMeetingRoom = 0
-    var pricePerDaySmallRoom = 0
-    var pricePerDayGamesRoom = 0
-    var pricePerDaySharedSpace = 0
-    var facebookLink = ""
-    var whatsAppNumber = 0
-    var contactNumber = 0
+struct SpaceInfo:Codable {
+    let spaceName:String?
+    let spaceDistrict:String?
+    let spaceStreetName:String?
+    let freeWiFi:Bool?
+    let booksLibrary:Bool?
+    let coffee:Bool?
+    let meetingRoom:Bool?
+    let gamingRoom:Bool?
+    let aboutSpace:String?
+    let pricePerDay:Int?
+    let pricePerDayMeetingRoom:Int?
+    let pricePerDaySmallRoom:Int?
+    let pricePerDayGamesRoom:Int?
+    let pricePerDaySharedSpace:Int?
+    let facebookLink:String?
+    let whatsAppNumber:String?
+    let contactNumber:String?
 }

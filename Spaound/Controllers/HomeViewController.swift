@@ -83,6 +83,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         let vc = DetailsViewController()
+//        vc.space = spaces[indexPath.row]
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

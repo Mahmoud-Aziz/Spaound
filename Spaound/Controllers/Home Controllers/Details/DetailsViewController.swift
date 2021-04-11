@@ -39,7 +39,7 @@ class DetailsViewController: UIViewController, UIGestureRecognizerDelegate {
     let spaceFacebook = UserDefaults.standard.value(forKey: "facebook") as? String ?? "no value"
     let spaceWhatsApp = UserDefaults.standard.value(forKey: "whatsapp") as? Int
     let spaceContact = UserDefaults.standard.value(forKey: "contact_number") as? Int
-
+    var space: SpaceInfo?
 
     override func viewDidLoad() {
         super.viewDidLoad()

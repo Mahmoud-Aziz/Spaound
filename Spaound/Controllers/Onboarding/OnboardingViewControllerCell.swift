@@ -1,9 +1,5 @@
 
-
-
 import UIKit
-
-
 
 class OnboardingViewControllerCell: UICollectionViewCell {
     

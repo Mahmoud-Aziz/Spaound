@@ -27,14 +27,13 @@
 		624D765F25F80CB900A99B79 /* TabBarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 624D765D25F80CB900A99B79 /* TabBarViewController.xib */; };
 		62561E1425FFD8190014224A /* OnboardingViewControllerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62561E1325FFD8190014224A /* OnboardingViewControllerCell.swift */; };
 		6277E5D32600008100208DF9 /* CornerRadius.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6277E5D22600008100208DF9 /* CornerRadius.swift */; };
-		6277E61826025FDC00208DF9 /* SecondCustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6277E61626025FDB00208DF9 /* SecondCustomTableViewCell.swift */; };
-		6277E61926025FDC00208DF9 /* SecondCustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6277E61726025FDB00208DF9 /* SecondCustomTableViewCell.xib */; };
 		628281B525FE5787002A73E7 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 628281B425FE5787002A73E7 /* StorageManager.swift */; };
 		62BB7F3C25FEC07D00CBE575 /* TableViewCustomCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 62E3C37D25FDA4C20013363C /* TableViewCustomCell.xib */; };
 		62BB7FAE25FFC29C00CBE575 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB7FAD25FFC29C00CBE575 /* OnboardingViewController.swift */; };
 		62BB7FB225FFC63400CBE575 /* OnboardingSlide.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62BB7FB125FFC63400CBE575 /* OnboardingSlide.swift */; };
 		62C9F56526080A840077760C /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 62C9F56426080A840077760C /* .gitignore */; };
-		62C9F568260901610077760C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62C9F567260901610077760C /* GoogleService-Info.plist */; };
+		62CB4FFD2622417000350AB1 /* Spaound.xcworkspace in Resources */ = {isa = PBXBuildFile; fileRef = 62CB4FFC2622417000350AB1 /* Spaound.xcworkspace */; };
+		62CB50002622418900350AB1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 62CB4FFF2622418900350AB1 /* GoogleService-Info.plist */; };
 		62CE8BD225FBD0E500E5ABFE /* SpacesDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CE8BD125FBD0E500E5ABFE /* SpacesDataManager.swift */; };
 		62E3C2F425FC32EE0013363C /* SpacesDatabaseInsert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3C2F325FC32EE0013363C /* SpacesDatabaseInsert.swift */; };
 		62E3C32325FCE8EB0013363C /* CustomCellDashboardTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E3C32125FCE8EB0013363C /* CustomCellDashboardTableView.swift */; };
@@ -79,13 +78,12 @@
 		624D765D25F80CB900A99B79 /* TabBarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TabBarViewController.xib; sourceTree = "<group>"; };
 		62561E1325FFD8190014224A /* OnboardingViewControllerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewControllerCell.swift; sourceTree = "<group>"; };
 		6277E5D22600008100208DF9 /* CornerRadius.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CornerRadius.swift; sourceTree = "<group>"; };
-		6277E61626025FDB00208DF9 /* SecondCustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondCustomTableViewCell.swift; sourceTree = "<group>"; };
-		6277E61726025FDB00208DF9 /* SecondCustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondCustomTableViewCell.xib; sourceTree = "<group>"; };
 		628281B425FE5787002A73E7 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		62BB7FAD25FFC29C00CBE575 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		62BB7FB125FFC63400CBE575 /* OnboardingSlide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingSlide.swift; sourceTree = "<group>"; };
 		62C9F56426080A840077760C /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
-		62C9F567260901610077760C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		62CB4FFC2622417000350AB1 /* Spaound.xcworkspace */ = {isa = PBXFileReference; lastKnownFileType = wrapper.workspace; path = Spaound.xcworkspace; sourceTree = SOURCE_ROOT; };
+		62CB4FFF2622418900350AB1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		62CE8BD125FBD0E500E5ABFE /* SpacesDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesDataManager.swift; sourceTree = "<group>"; };
 		62E3C2F325FC32EE0013363C /* SpacesDatabaseInsert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpacesDatabaseInsert.swift; sourceTree = "<group>"; };
 		62E3C32125FCE8EB0013363C /* CustomCellDashboardTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCellDashboardTableView.swift; sourceTree = "<group>"; };
@@ -125,6 +123,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		62040A08261B314500498D6B /* CollectionView Custom Cell */ = {
+			isa = PBXGroup;
+			children = (
+				624D764525F4505100A99B79 /* CustomCellCollectionView.swift */,
+				624D764625F4505100A99B79 /* CustomCellCollectionView.xib */,
+			);
+			path = "CollectionView Custom Cell";
+			sourceTree = "<group>";
+		};
+		62040A09261B315F00498D6B /* TableView CustomCell */ = {
+			isa = PBXGroup;
+			children = (
+				624D764A25F453A300A99B79 /* CustomCellTableView.swift */,
+				624D764B25F453A300A99B79 /* CustomCellTableView.xib */,
+			);
+			path = "TableView CustomCell";
+			sourceTree = "<group>";
+		};
+		62040A0C261B319B00498D6B /* TabBar ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				624D765C25F80CB900A99B79 /* TabBarViewController.swift */,
+				624D765D25F80CB900A99B79 /* TabBarViewController.xib */,
+			);
+			path = "TabBar ViewController";
+			sourceTree = "<group>";
+		};
 		624D75E625F2785D00A99B79 /* Popular Spaces */ = {
 			isa = PBXGroup;
 			children = (
@@ -148,6 +173,7 @@
 		624D75E825F278A200A99B79 /* Home Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				62040A0C261B319B00498D6B /* TabBar ViewController */,
 				62ED7A7325F03A2900EEADFD /* Home */,
 				624D75E625F2785D00A99B79 /* Popular Spaces */,
 				624D75E725F2786400A99B79 /* Details */,
@@ -190,12 +216,8 @@
 		624D766825F903F300A99B79 /* Custom Cells */ = {
 			isa = PBXGroup;
 			children = (
-				624D764525F4505100A99B79 /* CustomCellCollectionView.swift */,
-				624D764625F4505100A99B79 /* CustomCellCollectionView.xib */,
-				624D764A25F453A300A99B79 /* CustomCellTableView.swift */,
-				624D764B25F453A300A99B79 /* CustomCellTableView.xib */,
-				6277E61626025FDB00208DF9 /* SecondCustomTableViewCell.swift */,
-				6277E61726025FDB00208DF9 /* SecondCustomTableViewCell.xib */,
+				62040A09261B315F00498D6B /* TableView CustomCell */,
+				62040A08261B314500498D6B /* CollectionView Custom Cell */,
 			);
 			path = "Custom Cells";
 			sourceTree = "<group>";
@@ -203,6 +225,7 @@
 		6277E5D12600005300208DF9 /* Extentions */ = {
 			isa = PBXGroup;
 			children = (
+				62CB4FFC2622417000350AB1 /* Spaound.xcworkspace */,
 				6277E5D22600008100208DF9 /* CornerRadius.swift */,
 			);
 			path = Extentions;
@@ -266,7 +289,7 @@
 				62ED7A7A25F03A4700EEADFD /* Resources */,
 				6277E5D12600005300208DF9 /* Extentions */,
 				62ED7A4E25F038C500EEADFD /* Info.plist */,
-				62C9F567260901610077760C /* GoogleService-Info.plist */,
+				62CB4FFF2622418900350AB1 /* GoogleService-Info.plist */,
 			);
 			path = Spaound;
 			sourceTree = "<group>";
@@ -327,8 +350,6 @@
 				624D764025F44A4A00A99B79 /* HomeViewController.swift */,
 				624D764125F44A4A00A99B79 /* HomeViewController.xib */,
 				624D766825F903F300A99B79 /* Custom Cells */,
-				624D765C25F80CB900A99B79 /* TabBarViewController.swift */,
-				624D765D25F80CB900A99B79 /* TabBarViewController.xib */,
 			);
 			name = Home;
 			path = ..;
@@ -451,14 +472,14 @@
 				62E3C32425FCE8EB0013363C /* CustomCellDashboardTableView.xib in Resources */,
 				624D763925F4417C00A99B79 /* SettingsViewController.xib in Resources */,
 				624D75F525F2799500A99B79 /* DetailsViewController.xib in Resources */,
+				62CB4FFD2622417000350AB1 /* Spaound.xcworkspace in Resources */,
 				62ED7A4825F038C300EEADFD /* Main.storyboard in Resources */,
 				62ED7A5A25F039CE00EEADFD /* EntryAuthenticationViewController.xib in Resources */,
 				62BB7F3C25FEC07D00CBE575 /* TableViewCustomCell.xib in Resources */,
 				624D75FA25F279C800A99B79 /* DashboardFindViewController.xib in Resources */,
-				6277E61926025FDC00208DF9 /* SecondCustomTableViewCell.xib in Resources */,
+				62CB50002622418900350AB1 /* GoogleService-Info.plist in Resources */,
 				624D75EF25F2798700A99B79 /* PopularSpacesViewController.xib in Resources */,
 				62ED7A6925F03A0000EEADFD /* RegisterViewController.xib in Resources */,
-				62C9F568260901610077760C /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,7 +537,6 @@
 				62ED7A6125F039EC00EEADFD /* LoginViewController.swift in Sources */,
 				62ED7A6825F03A0000EEADFD /* RegisterViewController.swift in Sources */,
 				62BB7FAE25FFC29C00CBE575 /* OnboardingViewController.swift in Sources */,
-				6277E61826025FDC00208DF9 /* SecondCustomTableViewCell.swift in Sources */,
 				62ED7A4125F038C300EEADFD /* AppDelegate.swift in Sources */,
 				62561E1425FFD8190014224A /* OnboardingViewControllerCell.swift in Sources */,
 				624D75EE25F2798700A99B79 /* PopularSpacesViewController.swift in Sources */,
