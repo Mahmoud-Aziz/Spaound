@@ -39,7 +39,7 @@ extension UserDatabaseManager {
         database.child(user.safeEmail).setValue ([
             "first_name":user.firstName,
             "last_name":user.lastName,
-            "phone_number":user.phoneNumber ?? 0
+            "phone_number":user.phoneNumber 
             //no need to put email because it's the child value because it's the unique one
         ])
     }

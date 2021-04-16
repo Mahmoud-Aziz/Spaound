@@ -1,4 +1,5 @@
 PODS:
+  - Cosmos (23.0.0)
   - ExpandableLabel (0.5.2)
   - FBSDKCoreKit (9.0.0):
     - FBSDKCoreKit/Basics (= 9.0.0)
@@ -103,6 +104,7 @@ PODS:
   - PromisesObjC (1.2.12)
 
 DEPENDENCIES:
+  - Cosmos (~> 23.0)
   - ExpandableLabel
   - FBSDKLoginKit
   - Firebase/Auth
@@ -115,6 +117,7 @@ DEPENDENCIES:
 
 SPEC REPOS:
   trunk:
+    - Cosmos
     - ExpandableLabel
     - FBSDKCoreKit
     - FBSDKLoginKit
@@ -138,6 +141,7 @@ SPEC REPOS:
     - PromisesObjC
 
 SPEC CHECKSUMS:
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   ExpandableLabel: c2fab6d27860c572d67134b30522a5917746171d
   FBSDKCoreKit: ac6cc500b8e104bb9a4dd20b1527b5d199123c2e
   FBSDKLoginKit: e9b6542fdee322333502ab497f628b011dce7d78
@@ -160,6 +164,6 @@ SPEC CHECKSUMS:
   PhoneNumberKit: 4ce83273551c4d2ae10b7361162f4283dd02835f
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: a5e8035a39f7502f2e6e7f661a629c0126262e35
+PODFILE CHECKSUM: ce8327a1946fa8e5043601262a3abbeac62c639d
 
 COCOAPODS: 1.10.1

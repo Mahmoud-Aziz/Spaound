@@ -18,7 +18,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CMn-SE-XAC">
-                        <rect key="frame" x="126" y="24" width="61" height="33"/>
+                        <rect key="frame" x="126" y="20" width="61" height="33"/>
                         <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="24"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -28,7 +28,7 @@
                         <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5fv-Tt-awa">
-                        <rect key="frame" x="126" y="55" width="34" height="19.5"/>
+                        <rect key="frame" x="129" y="55" width="34" height="19.5"/>
                         <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                         <color key="textColor" red="0.57647058823529407" green="0.64313725490196072" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="highlightedColor" red="0.57647058823529407" green="0.64313725490196072" blue="0.72156862745098038" alpha="1" colorSpace="calibratedRGB"/>
@@ -45,24 +45,40 @@
                         <color key="textColor" red="0.078431372550000003" green="0.21176470589999999" blue="0.63921568630000003" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Q61-mL-BFF" customClass="CosmosView" customModule="Cosmos">
+                        <rect key="frame" x="127" y="78.5" width="120" height="20"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="120" id="4eM-4n-SFm"/>
+                            <constraint firstAttribute="height" constant="20" id="lfh-5w-tKa"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                <real key="value" value="0.0"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
                 </subviews>
                 <constraints>
                     <constraint firstItem="gsK-wF-w0Q" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="2J7-Mj-w6V"/>
                     <constraint firstAttribute="bottom" secondItem="gsK-wF-w0Q" secondAttribute="bottom" constant="4" id="3QM-fb-NcQ"/>
                     <constraint firstAttribute="bottom" secondItem="KXZ-xt-3PQ" secondAttribute="bottom" constant="9" id="4qy-z5-6QV"/>
                     <constraint firstItem="MJQ-WH-lLm" firstAttribute="leading" secondItem="gsK-wF-w0Q" secondAttribute="trailing" constant="23" id="5R3-q3-No4"/>
+                    <constraint firstItem="5fv-Tt-awa" firstAttribute="top" secondItem="CMn-SE-XAC" secondAttribute="bottom" constant="2" id="7Nh-Gr-T4B"/>
                     <constraint firstItem="KXZ-xt-3PQ" firstAttribute="leading" secondItem="MJQ-WH-lLm" secondAttribute="trailing" constant="2" id="D4a-s8-zAh"/>
+                    <constraint firstItem="Q61-mL-BFF" firstAttribute="top" secondItem="5fv-Tt-awa" secondAttribute="bottom" constant="4" id="DBP-2h-dKM"/>
+                    <constraint firstItem="Q61-mL-BFF" firstAttribute="leading" secondItem="gsK-wF-w0Q" secondAttribute="trailing" constant="21" id="DvM-Sb-tbl"/>
                     <constraint firstAttribute="trailing" secondItem="gsK-wF-w0Q" secondAttribute="trailing" constant="264" id="JbY-bR-7Zt"/>
-                    <constraint firstItem="CMn-SE-XAC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="24" id="JpY-7Z-MeD"/>
-                    <constraint firstItem="5fv-Tt-awa" firstAttribute="leading" secondItem="CMn-SE-XAC" secondAttribute="leading" id="Oie-nd-jMq"/>
+                    <constraint firstItem="CMn-SE-XAC" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="JpY-7Z-MeD"/>
+                    <constraint firstItem="5fv-Tt-awa" firstAttribute="leading" secondItem="gsK-wF-w0Q" secondAttribute="trailing" constant="23" id="al4-L6-N5i"/>
                     <constraint firstItem="CMn-SE-XAC" firstAttribute="leading" secondItem="gsK-wF-w0Q" secondAttribute="trailing" constant="20" id="bKb-yA-ctF"/>
-                    <constraint firstItem="5fv-Tt-awa" firstAttribute="top" secondItem="CMn-SE-XAC" secondAttribute="bottom" constant="-2" id="pt3-oQ-Afi"/>
                     <constraint firstAttribute="bottomMargin" secondItem="MJQ-WH-lLm" secondAttribute="bottom" constant="1" id="r4S-GN-J9L"/>
                     <constraint firstItem="gsK-wF-w0Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="4" id="zhv-Tz-43b"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="cosmosView" destination="Q61-mL-BFF" id="BMp-i4-im8"/>
                 <outlet property="spaceAddressLabel" destination="5fv-Tt-awa" id="MP3-MX-DtB"/>
                 <outlet property="spaceNameLabel" destination="CMn-SE-XAC" id="UIG-Z2-VLD"/>
                 <outlet property="spacePriceLabel" destination="KXZ-xt-3PQ" id="gbR-am-LPk"/>
@@ -70,6 +86,11 @@
             <point key="canvasLocation" x="131.8840579710145" y="162.05357142857142"/>
         </tableViewCell>
     </objects>
+    <designables>
+        <designable name="Q61-mL-BFF">
+            <size key="intrinsicContentSize" width="120" height="20"/>
+        </designable>
+    </designables>
     <resources>
         <image name="Rectangle Copy 9" width="89" height="130"/>
     </resources>

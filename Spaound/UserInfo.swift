@@ -6,7 +6,7 @@ struct SpaoundUser {
     let firstName:String
     let lastName:String
     let emailAddress:String
-    let phoneNumber:Int?
+    let phoneNumber:String
 
     var safeEmail:String {
         var safeEmail = emailAddress.replacingOccurrences(of: ".", with: "-")
@@ -19,6 +19,6 @@ struct SpaoundUser {
 struct UserInfo {
     var firstName = ""
     var lastName = ""
-    var phoneNumber = 0
+    var phoneNumber:String? = ""
 }
 

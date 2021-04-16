@@ -9,11 +9,18 @@ import UIKit
 
 class CustomCellDashboardTableView: UITableViewCell {
     
+    @IBOutlet weak var spaceNameLabel:UILabel!
+    @IBOutlet weak var spaceAddressLabel:UILabel!
+    @IBOutlet weak var spacePriceLabel:UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
     }
 
+   
+    
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

@@ -21,23 +21,22 @@ class SettingsViewController: UIViewController {
         
         let userName = "\(UserDefaults.standard.value(forKey: "first_name") as? String ?? "") \(UserDefaults.standard.value(forKey: "last_name")as? String ?? "")"
         
-        let mobileNumber = UserDefaults.standard.value(forKey: "phone_number") as? Int
+        let mobileNumber = UserDefaults.standard.value(forKey: "phone_number") as? String
                             
         userNameLabel.text = userName
-        mobileNumberLabel.text = String(mobileNumber ?? 0)
+        mobileNumberLabel.text = mobileNumber
         
         let url = UserDefaults.standard.value(forKey: "profile_picture_url")
         let imageURL = URL(string: url as? String ?? "")
-        print("Image URL: \(imageURL)")
-        profileImageView.kf.setImage(with: imageURL)
+        print("Image URL: \(String(describing: imageURL))")
+//        profileImageView.kf.setImage(with: imageURL)
         
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-        
+
+        self.navigationController?.setNavigationBarHidden(true, animated: false)
         profileImageView.layer.masksToBounds = true
         profileImageView.isUserInteractionEnabled = true
         profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
@@ -46,11 +45,7 @@ class SettingsViewController: UIViewController {
         
         profileImageView.addGestureRecognizer(gesture)
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
+
     
     @objc private func didTapChangeProfileImage() {
         presentPhotoActionSheet()
@@ -146,7 +141,6 @@ extension SettingsViewController:UINavigationControllerDelegate,UIImagePickerCon
         StorageManager.shared.uploadProfilePicture(with: data, fileName: fileName, completion: { result in
             switch result {
             case .success(let downloadUrl):
-                UserDefaults.standard.removeObject(forKey: "profile_picture_url")
                 UserDefaults.standard.setValue(downloadUrl, forKey: "profile_picture_url")
                print("image uploaded")
                 print(downloadUrl)

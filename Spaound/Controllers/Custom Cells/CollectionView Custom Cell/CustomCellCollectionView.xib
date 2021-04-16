@@ -23,20 +23,27 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="workspace" translatesAutoresizingMaskIntoConstraints="NO" id="zL9-Zp-N6j">
                                 <rect key="frame" x="0.0" y="0.0" width="390" height="206"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LE" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hCs-IV-308">
-                                <rect key="frame" x="17" y="158" width="21" height="25"/>
+                                <rect key="frame" x="17" y="156" width="21" height="27"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="33" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EZf-pn-woh">
-                                <rect key="frame" x="41" y="158" width="22" height="25"/>
+                                <rect key="frame" x="41" y="156" width="22" height="27"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                                 <color key="textColor" red="0.96078431369999995" green="0.95686274510000002" blue="0.94509803920000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="1"/>
+                                <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="volume.slash.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="rJE-du-xzD">
                                 <rect key="frame" x="212" y="159.5" width="25" height="23"/>
@@ -55,11 +62,12 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="/day" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pno-C7-L5O">
-                                <rect key="frame" x="66" y="161" width="27.5" height="19.5"/>
+                                <rect key="frame" x="66" y="159" width="27.5" height="21.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                 <color key="textColor" red="0.94901960780000005" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <size key="shadowOffset" width="0.0" height="0.0"/>
+                                <color key="shadowColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <size key="shadowOffset" width="0.0" height="2"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -79,11 +87,13 @@
                             <constraint firstAttribute="bottom" secondItem="pno-C7-L5O" secondAttribute="bottom" constant="25.5" id="zCx-V7-BOI"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Space Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNj-9B-7Vz">
-                        <rect key="frame" x="16" y="128" width="106" height="25"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Space Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CNj-9B-7Vz">
+                        <rect key="frame" x="16" y="128" width="106" height="23"/>
                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="18"/>
                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
+                        <color key="shadowColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <size key="shadowOffset" width="0.0" height="2"/>
                     </label>
                 </subviews>
             </view>
@@ -101,6 +111,11 @@
                 <constraint firstItem="hCs-IV-308" firstAttribute="top" secondItem="CNj-9B-7Vz" secondAttribute="bottom" constant="5" id="y9q-BQ-tYA"/>
             </constraints>
             <size key="customSize" width="160" height="114"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="0.0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="priceLabel" destination="EZf-pn-woh" id="TDJ-ce-ChE"/>
                 <outlet property="spaceNameLabel" destination="CNj-9B-7Vz" id="ew8-8Z-noS"/>

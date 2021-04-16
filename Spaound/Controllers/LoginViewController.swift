@@ -16,7 +16,6 @@ class LoginViewController: UIViewController {
         button.layer.cornerRadius = 16.0
         button.clipsToBounds = true
         button.setTitle("Continue with Facebook", for: .normal)
-        //        button.titleLabel?.adjustsFontForContentSizeCategory = (UIFont(name: "Avenir Roman", size: 20.0) != nil)
         button.permissions = ["email","public_profile"]
         return button
         
@@ -43,7 +42,7 @@ class LoginViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         
-        facebookLoginButton.frame = CGRect(x: 32, y: 700, width: loginButton.frame.width , height: loginButton.frame.height)
+        facebookLoginButton.frame = CGRect(x: 32, y: 710, width: loginButton.frame.width , height: loginButton.frame.height)
         
     }
     
@@ -83,26 +82,6 @@ class LoginViewController: UIViewController {
             let user = results.user
             print("logged in user with\(user)")
             
-            SpacesDatabaseManager.shared.retrieveSpace(completion: { space in
-//                UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
-//                UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_district")
-//                UserDefaults.standard.setValue(space.spaceStreetName, forKey: "space_street")
-//                UserDefaults.standard.setValue(space.freeWiFi, forKey: "free_wifi")
-//                UserDefaults.standard.setValue(space.booksLibrary, forKey: "books_library")
-//                UserDefaults.standard.setValue(space.coffee, forKey: "coffee")
-//                UserDefaults.standard.setValue(space.meetingRoom, forKey: "meeting_room")
-//                UserDefaults.standard.setValue(space.gamingRoom, forKey: "gamingRoom")
-//                UserDefaults.standard.setValue(space.aboutSpace, forKey: "about_space")
-//                UserDefaults.standard.setValue(space.pricePerDay, forKey: "price_per_day")
-//                UserDefaults.standard.setValue(space.pricePerDayMeetingRoom, forKey: "price_meeting")
-//                UserDefaults.standard.setValue(space.pricePerDaySmallRoom, forKey: "price_small")
-//                UserDefaults.standard.setValue(space.pricePerDayGamesRoom, forKey: "price_games")
-//                UserDefaults.standard.setValue(space.pricePerDaySharedSpace, forKey: "price_shared")
-//                UserDefaults.standard.setValue(space.facebookLink, forKey: "facebook")
-//                UserDefaults.standard.setValue(space.whatsAppNumber, forKey: "whatsapp")
-//                UserDefaults.standard.setValue(space.contactNumber, forKey: "contact_number")
-
-            })
             
             var safeEmail = email.replacingOccurrences(of: ".", with: "-")
             safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
@@ -116,7 +95,7 @@ class LoginViewController: UIViewController {
                 var user = UserInfo()
                 user.firstName = value["first_name"] as! String
                 user.lastName = value["last_name"] as! String
-                user.phoneNumber = value["phone_number"] as! Int
+                user.phoneNumber = value["phone_number"] as? String
                 
                 UserDefaults.standard.setValue(user.firstName, forKey: "first_name")
                 UserDefaults.standard.setValue(user.lastName, forKey: "last_name")
@@ -128,6 +107,7 @@ class LoginViewController: UIViewController {
             }
             
             let vc = TabBarViewController()
+           
             self?.navigationController?.pushViewController(vc, animated: true)
         })
         
@@ -199,11 +179,9 @@ extension LoginViewController:UITextFieldDelegate {
 
 extension LoginViewController: LoginButtonDelegate {
     
-    
     func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
         //no operation, won't use fb button to log out
     }
-    
     
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         guard let token = result?.token?.tokenString else {
@@ -233,7 +211,7 @@ extension LoginViewController: LoginButtonDelegate {
             UserDatabaseManager.shared.userExists(with: email, completion: { exists in
                 if !exists {
                     
-                    UserDatabaseManager.shared.insertUser(with: SpaoundUser(firstName: firstName, lastName: lastName, emailAddress: email, phoneNumber: nil))
+                    UserDatabaseManager.shared.insertUser(with: SpaoundUser(firstName: firstName, lastName: lastName, emailAddress: email, phoneNumber: ""))
                     
                     guard let url = URL(string: pictureURL) else {
                         return
@@ -283,28 +261,6 @@ extension LoginViewController: LoginButtonDelegate {
                 }
                 
                 print("Successfully logged user in")
-                
-                SpacesDatabaseManager.shared.retrieveSpace(completion: { space in
-                    
-//                    UserDefaults.standard.setValue(space.spaceName, forKey: "space_name")
-//                    UserDefaults.standard.setValue(space.spaceDistrict, forKey: "space_district")
-//                    UserDefaults.standard.setValue(space.spaceStreetName, forKey: "space_street")
-//                    UserDefaults.standard.setValue(space.freeWiFi, forKey: "free_wifi")
-//                    UserDefaults.standard.setValue(space.booksLibrary, forKey: "books_library")
-//                    UserDefaults.standard.setValue(space.coffee, forKey: "coffee")
-//                    UserDefaults.standard.setValue(space.meetingRoom, forKey: "meeting_room")
-//                    UserDefaults.standard.setValue(space.gamingRoom, forKey: "gamingRoom")
-//                    UserDefaults.standard.setValue(space.aboutSpace, forKey: "about_space")
-//                    UserDefaults.standard.setValue(space.pricePerDay, forKey: "price_per_day")
-//                    UserDefaults.standard.setValue(space.pricePerDayMeetingRoom, forKey:"price_meeting")
-//                    UserDefaults.standard.setValue(space.pricePerDaySmallRoom, forKey: "price_small")
-//                    UserDefaults.standard.setValue(space.pricePerDayGamesRoom, forKey: "price_games")
-//                    UserDefaults.standard.setValue(space.pricePerDaySharedSpace, forKey: "price_shared")
-//                    UserDefaults.standard.setValue(space.facebookLink, forKey: "facebook")
-//                    UserDefaults.standard.setValue(space.whatsAppNumber, forKey: "whatsapp")
-//                    UserDefaults.standard.setValue(space.contactNumber, forKey: "contact_number")
-
-                })
                 
                 UserDefaults.standard.setValue(email, forKey: "email")
                 UserDefaults.standard.setValue(firstName, forKey: "first_name")

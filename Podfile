@@ -12,8 +12,9 @@ target 'Spaound' do
  pod 'JGProgressHUD'
  pod 'Firebase/Storage'
  pod 'Kingfisher', '~> 6.0'
- pod "ExpandableLabel"
  pod 'PhoneNumberKit', '~> 3.3'
+ pod 'Cosmos', '~> 23.0'
+ pod "ExpandableLabel"
 
 
 

@@ -1,5 +1,8 @@
 
 import UIKit
+import JGProgressHUD
+import Cosmos
+import ExpandableLabel
 
 class DetailsViewController: UIViewController, UIGestureRecognizerDelegate {
 
@@ -25,35 +28,29 @@ class DetailsViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var facebookImage:UIImageView! 
     @IBOutlet weak var contactImage:UIImageView!
     @IBOutlet weak var whatsappImage:UIImageView!
-    
-    
-    let spaceName = UserDefaults.standard.value(forKey: "space_name") as? String
-    let spaceDistrict = UserDefaults.standard.value(forKey: "space_district") as? String
-    let spaceStreet = UserDefaults.standard.value(forKey: "space_street") as? String
-    let aboutSpace = UserDefaults.standard.value(forKey: "about_space") as? String
-    let spacePriceDay = UserDefaults.standard.value(forKey: "price_per_day") as? Int
-    let spacePriceMeeting = UserDefaults.standard.value(forKey: "price_meeting") as? Int
-    let spacePriceSmall = UserDefaults.standard.value(forKey: "price_small") as? Int
-    let spacePriceGames = UserDefaults.standard.value(forKey: "price_games") as? Int
-    let spacePriceShared = UserDefaults.standard.value(forKey: "price_shared") as? Int
-    let spaceFacebook = UserDefaults.standard.value(forKey: "facebook") as? String ?? "no value"
-    let spaceWhatsApp = UserDefaults.standard.value(forKey: "whatsapp") as? Int
-    let spaceContact = UserDefaults.standard.value(forKey: "contact_number") as? Int
+
+    let spinner = JGProgressHUD()
     var space: SpaceInfo?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.spinner.show(in: view)
+        aboutSpaceLabel.numberOfLines = 2
         interactivePopGestureDelegate()
         assignOutlets()
         assignGestureRecognizer()
         switchImageMethod()
-     
     }
     
     @IBAction private func backButtonPressed( _ sender: UIButton) {
         
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    private func didFinishTouchingCosmos(_ rating: Double) {
+    
+        UserDefaults.standard.setValue(rating, forKey: "rating")
+        
     }
     
 }
@@ -70,15 +67,17 @@ extension DetailsViewController {
     
     func assignOutlets() {
         
-            spaceNameLabel.text = spaceName
-            spaceAddressLabel.text = ("\(spaceDistrict ?? "no value") \(spaceStreet ?? "no value")")
-            aboutSpaceLabel.text = aboutSpace
-            pricePadgeLabel.text = String(spacePriceDay ?? 0)
-            priceDayLabel.text = String(spacePriceDay ?? 0)
-            priceMeetingLabel.text = String(spacePriceMeeting ?? 0)
-            priceSmallLabel.text = String(spacePriceSmall ?? 0)
-            priceGamesLabel.text = String(spacePriceGames ?? 0)
-            priceSharedLabel.text = String(spacePriceShared ?? 0)
+        spaceNameLabel.text = space?.name
+        spaceAddressLabel.text = space?.spaceDistrict
+        aboutSpaceLabel.text = space?.aboutSpace
+        pricePadgeLabel.text = space?.pricePerDay
+        priceDayLabel.text = space?.pricePerDay
+        priceMeetingLabel.text = space?.pricePerDayMeetingRoom
+        priceSmallLabel.text = space?.pricePerDaySmallRoom
+        priceGamesLabel.text = space?.pricePerDayGamesRoom
+        priceSharedLabel.text = space?.pricePerDaySharedSpace
+        
+        self.spinner.dismiss()
     }
 }
 
@@ -86,42 +85,42 @@ extension DetailsViewController {
 //MARK:- Contacts Gesture Recognizer Methods:
 
 extension DetailsViewController {
-    
+
     func assignGestureRecognizer() {
-        
+
         let gestureFacebook = UITapGestureRecognizer(target: self, action: #selector(facebookLink))
         facebookImage.addGestureRecognizer(gestureFacebook)
         facebookImage.isUserInteractionEnabled = true
-        
+
         let gestureContact = UITapGestureRecognizer(target: self, action: #selector(ConatctNumber))
         contactImage.addGestureRecognizer(gestureContact)
         contactImage.isUserInteractionEnabled = true
-        
+
         let gestureWhatsApp = UITapGestureRecognizer(target: self, action: #selector(WhatsAppNumber))
         whatsappImage.addGestureRecognizer(gestureWhatsApp)
         whatsappImage.isUserInteractionEnabled = true
     }
     
     @objc func facebookLink() {
-        if let url = URL(string: spaceFacebook) {
-            
+        if let url = URL(string: space!.facebookLink) {
+
             UIApplication.shared.open(url)
         }
     }
-    
+
     @objc func ConatctNumber() {
-        
-        if let phoneCallURL = URL(string: "tel://\(spaceContact ?? 000)") {
+
+        if let phoneCallURL = URL(string: "tel://\(space!.contactNumber)") {
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
                 application.open(phoneCallURL, options: [:], completionHandler: nil)
             }
         }
     }
-    
+
     @objc func WhatsAppNumber() {
-        
-        if let whatsAppURL = URL(string: "tel://\(spaceWhatsApp ?? 000)") {
+
+        if let whatsAppURL = URL(string: "tel://\(space!.whatsAppNumber)") {
             let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(whatsAppURL)) {
                 application.open(whatsAppURL, options: [:], completionHandler: nil)
@@ -136,42 +135,29 @@ extension DetailsViewController {
 extension DetailsViewController {
     func switchImageMethod() {
         
-        switch  UserDefaults.standard.bool(forKey: "free_wifi") {
-        case true:
+        if space?.freeWiFi == true {
             wifiImage.image = UIImage(systemName: "wifi")
-        case false:
-            wifiImage.image = UIImage(systemName: "xmark.seal.fill")
-        }
+        } else {wifiImage.image = UIImage(systemName: "xmark.seal.fill")}
         
-        switch  UserDefaults.standard.bool(forKey: "books_library") {
-        case true:
+        
+        if space?.bookLibrary == true {
             bookImage.image = UIImage(systemName: "book")
-        case false:
-            bookImage.image = UIImage(systemName: "xmark.seal.fill")
-        }
+        } else {bookImage.image = UIImage(systemName: "xmark.seal.fill")}
         
-        switch  UserDefaults.standard.bool(forKey: "coffee") {
-        case true:
+        
+        if space?.coffee == true {
             coffeeImage.image = UIImage(named: "Coffee")
-        case false:
-            coffeeImage.image = UIImage(systemName: "xmark.seal.fill")
-        }
+        } else {coffeeImage.image = UIImage(systemName: "xmark.seal.fill")}
         
-        switch  UserDefaults.standard.bool(forKey: "meeting_room") {
-        case true:
-            meetingImage.image = UIImage(named: "meeting")
-        case false:
-            meetingImage.image = UIImage(systemName: "xmark.seal.fill")
-        }
         
-        switch  UserDefaults.standard.bool(forKey: "gamingRoom") {
-        case true:
+        if space?.meetingRoom == true {
+            meetingImage.image = UIImage(named: "Meeting")
+        } else {meetingImage.image = UIImage(systemName: "xmark.seal.fill")}
+        
+        
+        if space?.gamingRoom == true {
             gamesImage.image = UIImage(systemName: "gamecontroller")
-        case false:
-            gamesImage.image = UIImage(systemName: "xmark.seal.fill")
-            
-
-        }
+        } else {gamesImage.image = UIImage(systemName: "xmark.seal.fill")}
 
     }
 }

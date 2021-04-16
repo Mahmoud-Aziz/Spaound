@@ -55,7 +55,7 @@ class RegisterViewController: UIViewController {
         guard let firstName = firstNameTextField.text,
               let lastName = lastNameTextField.text,
               let email = emailTextField.text,
-              let userPhoneNumber = Int(phoneNumberTextField.text!),
+              let userPhoneNumber = phoneNumberTextField.text,
               let password = passwordTextField.text,
               !email.isEmpty,!password.isEmpty,
               !firstName.isEmpty,!lastName.isEmpty,
